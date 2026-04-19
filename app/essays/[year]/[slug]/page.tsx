@@ -4,6 +4,8 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { EssayLayout } from '@/components/essay-layout';
 import { getAllEssays, getEssayBySlug } from '@/lib/content';
+import type { EssaySummary } from '@/lib/content';
+import { siteConfig } from '@/lib/site-config';
 
 type RouteParams = { year: string; slug: string };
 
@@ -35,6 +37,33 @@ export async function generateMetadata({
   };
 }
 
+function essayJsonLd(essay: EssaySummary) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: essay.title,
+    description: essay.description ?? essay.subtitle ?? '',
+    datePublished: new Date(essay.date).toISOString(),
+    dateModified: new Date(essay.date).toISOString(),
+    author: {
+      '@type': 'Person',
+      name: siteConfig.author.name,
+      url: siteConfig.url,
+      jobTitle: siteConfig.author.role,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteConfig.url}${essay.href}`,
+    },
+    inLanguage: 'en-US',
+  };
+}
+
 export default async function EssayPage({
   params,
 }: {
@@ -62,8 +91,16 @@ export default async function EssayPage({
   const MDXContent = mod.default;
 
   return (
-    <EssayLayout metadata={essay}>
-      <MDXContent />
-    </EssayLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(essayJsonLd(essay)),
+        }}
+      />
+      <EssayLayout metadata={essay}>
+        <MDXContent />
+      </EssayLayout>
+    </>
   );
 }

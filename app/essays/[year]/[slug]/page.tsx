@@ -37,6 +37,7 @@ export async function generateMetadata({
   const description = essay.description ?? essay.subtitle;
   const published = new Date(essay.date).toISOString();
   const modified = new Date(essay.updated ?? essay.date).toISOString();
+
   return {
     title: essay.title,
     description,
@@ -86,6 +87,9 @@ export default async function EssayPage({
   if (!essay) notFound();
 
   const all = await getAllEssays();
+  const idx = all.findIndex((e) => e.slug === essay.slug && e.year === essay.year);
+  const newer = idx > 0 ? all[idx - 1] : null;
+  const older = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
   const related = findRelated(essay, all, 3);
   const rt = readingTime(essay.body);
 
@@ -110,12 +114,16 @@ export default async function EssayPage({
   return (
     <>
       <JsonLd data={graph(articleNode, breadcrumbs)} />
+      {newer ? <link rel="prev" href={newer.href} /> : null}
+      {older ? <link rel="next" href={older.href} /> : null}
       <EssayLayout
         metadata={{
           ...essay,
           readingMinutes: rt.minutes,
         }}
         related={related}
+        prev={older ?? undefined}
+        next={newer ?? undefined}
       >
         <MDXContent />
       </EssayLayout>

@@ -61,6 +61,12 @@ export default async function SitemapPage() {
           <li>
             <Link href="/tags">Tags</Link>
           </li>
+          <li>
+            <Link href="/search">Search</Link>
+          </li>
+          <li>
+            <Link href="/colophon">Colophon</Link>
+          </li>
         </ul>
       </section>
 
@@ -110,7 +116,7 @@ export default async function SitemapPage() {
       ))}
 
       <section>
-        <h2>Feeds</h2>
+        <h2>Feeds &amp; standards</h2>
         <ul>
           <li>
             <Link href="/feed.xml">RSS (/feed.xml)</Link>
@@ -126,6 +132,12 @@ export default async function SitemapPage() {
           </li>
           <li>
             <Link href="/robots.txt">robots.txt</Link>
+          </li>
+          <li>
+            <Link href="/humans.txt">humans.txt</Link>
+          </li>
+          <li>
+            <Link href="/site.webmanifest">Web manifest</Link>
           </li>
         </ul>
       </section>

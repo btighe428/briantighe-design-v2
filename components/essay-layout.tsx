@@ -20,10 +20,14 @@ type EssayLayoutMetadata = {
 export function EssayLayout({
   metadata,
   related,
+  prev,
+  next,
   children,
 }: {
   metadata: EssayLayoutMetadata;
   related?: EssaySummary[];
+  prev?: EssaySummary;
+  next?: EssaySummary;
   children: ReactNode;
 }) {
   const classes = ['essay'];
@@ -93,6 +97,44 @@ export function EssayLayout({
             ))}
           </ul>
         </aside>
+      ) : null}
+      {(prev || next) ? (
+        <nav
+          aria-label="Essay navigation"
+          style={{
+            marginTop: '3rem',
+            paddingTop: '1.5rem',
+            borderTop: '1px solid var(--color-rule)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: '1rem',
+          }}
+        >
+          <div style={{ flex: '1 1 0', minWidth: 0 }}>
+            {prev ? (
+              <>
+                <p className="essay-meta" style={{ margin: 0 }}>
+                  <span className="sc">← Previous</span>
+                </p>
+                <p style={{ textIndent: 0, margin: 0 }}>
+                  <Link href={prev.href}>{prev.title}</Link>
+                </p>
+              </>
+            ) : null}
+          </div>
+          <div style={{ flex: '1 1 0', minWidth: 0, textAlign: 'right' }}>
+            {next ? (
+              <>
+                <p className="essay-meta" style={{ margin: 0 }}>
+                  <span className="sc">Next →</span>
+                </p>
+                <p style={{ textIndent: 0, margin: 0 }}>
+                  <Link href={next.href}>{next.title}</Link>
+                </p>
+              </>
+            ) : null}
+          </div>
+        </nav>
       ) : null}
     </article>
   );

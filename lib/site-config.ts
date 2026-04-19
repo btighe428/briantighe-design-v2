@@ -44,6 +44,10 @@ export const siteConfig = {
       process.env.NEWSLETTER_FROM_EMAIL ?? 'hello@briantighe.design',
     fromName: 'Brian Tighe',
   },
+  webmention: {
+    endpoint: process.env.NEXT_PUBLIC_WEBMENTION_ENDPOINT ?? '',
+    pingback: process.env.NEXT_PUBLIC_PINGBACK_ENDPOINT ?? '',
+  },
   frameworks: [
     {
       id: 'prototype-led-positioning',

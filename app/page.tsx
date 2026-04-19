@@ -92,6 +92,10 @@ export default async function HomePage() {
             <Link href="/about">About</Link> — the author, in brief.
           </li>
           <li>
+            <Link href="/colophon">Colophon</Link> — the stack behind the
+            site.
+          </li>
+          <li>
             <Link href="/feed.xml">RSS</Link> — full-text feed for Substack
             and LLMs.
           </li>

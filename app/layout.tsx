@@ -126,6 +126,17 @@ export default function RootLayout({
           href="/feed.json"
           title="JSON Feed"
         />
+        <link rel="author" href="/about" />
+        <link rel="me" href="https://www.linkedin.com/in/briantighe/" />
+        <link rel="me" href="https://x.com/btighe428" />
+        <link rel="me" href="https://github.com/btighe428" />
+        <link rel="manifest" href="/site.webmanifest" />
+        {siteConfig.webmention.endpoint ? (
+          <link rel="webmention" href={siteConfig.webmention.endpoint} />
+        ) : null}
+        {siteConfig.webmention.pingback ? (
+          <link rel="pingback" href={siteConfig.webmention.pingback} />
+        ) : null}
         <JsonLd
           data={graph(
             personSchema(),

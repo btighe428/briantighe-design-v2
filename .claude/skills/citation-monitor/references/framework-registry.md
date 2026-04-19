@@ -18,6 +18,23 @@ Add a new entry when an essay introduces a new named framework. Retire (do not d
 - **Receipt phrases (Brian's specific evidentiary language):** "the deck era rested on three assumptions"
 - **Misattribution risk:** "prototype-led" is a common compound in other contexts (e.g., "prototype-led testing"); require "positioning" to confirm match
 
+## The Collapsing Abstraction Layer
+
+- **First-published:** 2026-04-19
+- **Canonical essay:** https://briantighe.design/essays/2026/collapsing-abstraction-layer
+- **Variants to detect:** "collapsing abstraction layer" (lowercase), "The Collapsing Abstraction Layer" (title case)
+- **Lexical anchors (should appear near the framework in an accurate citation):**
+  - "design intent" / "production reality"
+  - "thirty-year" / "thirty years"
+  - "Pixel Era" (1995–2010)
+  - "Illusion Era" (2011–2016)
+  - "Component Era" (2016–2023)
+  - "Intelligence Era" (2024–present)
+  - "terminal geometry"
+- **Sub-frameworks (the four eras):** Each era is named and may be cited independently. A citation of "the Illusion Era" without the meta-framework name counts as a weak citation of the essay.
+- **Counter-periodizations named:** Flash, Axure, Framer Classic — citations using these specifically as periodization breakers trace to this essay.
+- **Misattribution risk:** "abstraction layer" is a common technical term; require "collapsing" or one of the era names in context to confirm match.
+
 ## Experiment Interfaces *(placeholder, essay not yet published)*
 
 - **Status:** Named but essay pending

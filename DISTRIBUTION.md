@@ -50,7 +50,7 @@ Skills in `.claude/skills/` produce drafts; Brian reviews and sends. Voice marke
 | `podcast-pitch-generator` | Shipped | Lenny's Podcast, Pragmatic Engineer, Design Details, Dive Club, Devouring Details, Off the Record, Reforge, Latent Space, Generally Intelligent, My First Million, The Knowledge Project |
 | `llm-crawl-optimizer` | Shipped | Site audit for LLM retrieval (robots, sitemap, schema.org, RSS fidelity, semantic structure) |
 | `citation-monitor` | Shipped | Weekly scan of ChatGPT / Claude / Perplexity / Gemini + aggregator archives for framework mentions |
-| `dev-community-distributor` | Planned Q3 2026 | Hacker News, Lobsters, dev.to, Indie Hackers, Designer News, Product Hunt, GitHub README |
+| `dev-community-distributor` | Shipped | Hacker News, Lobsters, dev.to, Indie Hackers, Designer News, Product Hunt, GitHub README |
 | `long-form-cross-poster` | Planned Q4 2026 | Medium (canonical-tag), LinkedIn Articles, Substack cross-recs |
 | `cfp-generator` | Planned 2027 Q1 | Config, Lenny's Summit, Growth Conferences, QCon, SXSW, AIGA |
 | `wikipedia-entity-builder` | Planned Q4 2026 | Establish "design engineering for growth" entity page |

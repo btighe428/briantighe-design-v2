@@ -42,6 +42,32 @@ export const viewport: Viewport = {
   ],
 };
 
+const entityGraph = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteConfig.url}#website`,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      inLanguage: 'en-US',
+      publisher: { '@id': `${siteConfig.url}#person` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteConfig.url}#person`,
+      name: siteConfig.author.name,
+      url: siteConfig.url,
+      jobTitle: siteConfig.author.role,
+      description:
+        'Principal Product Designer at Yahoo Mail. Establishing the category "design engineering for growth" through shippable prototypes and long-form essay research.',
+      knowsAbout: siteConfig.frameworks.map((f) => f.label),
+      mainEntityOfPage: siteConfig.url,
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -49,7 +75,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(entityGraph) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

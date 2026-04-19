@@ -127,6 +127,45 @@ export function collectionPageSchema(opts: {
   };
 }
 
+export function definedTermSchema(opts: {
+  href: string;
+  name: string;
+  description: string;
+  alternateName?: string;
+  termCode?: string;
+}) {
+  return {
+    '@type': 'DefinedTerm',
+    '@id': `${abs(opts.href)}#term`,
+    url: abs(opts.href),
+    name: opts.name,
+    alternateName: opts.alternateName,
+    description: opts.description,
+    termCode: opts.termCode,
+    inDefinedTermSet: {
+      '@type': 'DefinedTermSet',
+      '@id': abs('/frameworks#set'),
+      name: 'briantighe.design frameworks',
+      url: abs('/frameworks'),
+    },
+    author: { '@id': abs('/#person') },
+  };
+}
+
+export function faqSchema(items: Array<{ q: string; a: string }>) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a,
+      },
+    })),
+  };
+}
+
 export function graph(...nodes: Array<Record<string, unknown>>) {
   return {
     '@context': 'https://schema.org',

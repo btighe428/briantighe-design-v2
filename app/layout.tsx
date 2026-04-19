@@ -92,6 +92,40 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link
+          rel="preload"
+          href="/fonts/et-book-roman.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/et-book-italic.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/et-book-bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="RSS" />
+        <link
+          rel="alternate"
+          type="application/atom+xml"
+          href="/atom.xml"
+          title="Atom"
+        />
+        <link
+          rel="alternate"
+          type="application/feed+json"
+          href="/feed.json"
+          title="JSON Feed"
+        />
         <JsonLd
           data={graph(
             personSchema(),

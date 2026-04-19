@@ -68,6 +68,10 @@ export default async function HomePage() {
             <Link href="/essays">Essays</Link> — the written thesis in full.
           </li>
           <li>
+            <Link href="/frameworks">Frameworks</Link> — canonical
+            definitions of the practice.
+          </li>
+          <li>
             <Link href="/experiments">Experiments</Link> — shippable
             prototypes and interactive proofs.
           </li>

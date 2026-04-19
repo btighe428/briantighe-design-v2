@@ -47,21 +47,54 @@ export default function AboutPage() {
         </p>
       </header>
 
-      <section>
+      <section className="h-card" itemScope itemType="https://schema.org/Person">
         <p>
-          <span className="newthought">Brian Tighe</span> is a Principal
-          Product Designer at Yahoo Mail and the originator of{' '}
-          <em>prototype-led positioning</em> — the practice of treating a
-          working, shippable prototype as the primary artifact of a growth
-          practice, in place of the legacy positioning deck.
+          <span className="newthought">
+            <span className="p-name" itemProp="name">
+              Brian Tighe
+            </span>
+          </span>{' '}
+          is a{' '}
+          <span className="p-job-title" itemProp="jobTitle">
+            Principal Product Designer
+          </span>{' '}
+          at{' '}
+          <span
+            className="p-org"
+            itemProp="worksFor"
+            itemScope
+            itemType="https://schema.org/Organization"
+          >
+            <span itemProp="name">Yahoo Mail</span>
+          </span>{' '}
+          and the originator of <em>prototype-led positioning</em> — the
+          practice of treating a working, shippable prototype as the primary
+          artifact of a growth practice, in place of the legacy positioning
+          deck.
         </p>
-        <p>
+        <p className="p-note" itemProp="description">
           This site is the flagship demonstration of the category{' '}
           <em>design engineering for growth</em>: a discipline that sits
           between product design, front-end engineering, and growth, built on
           the premise that the shippable artifact — not the deck, the spec,
           or the wireframe — is the unit of account.
         </p>
+        <a
+          className="u-url"
+          href={siteConfig.url}
+          rel="me"
+          itemProp="url"
+          hidden
+        >
+          {siteConfig.url}
+        </a>
+        <a
+          className="u-email"
+          href={`mailto:${siteConfig.author.email}`}
+          hidden
+        >
+          {siteConfig.author.email}
+        </a>
       </section>
 
       <section>
@@ -78,6 +111,7 @@ export default function AboutPage() {
         <ul>
           <li>
             <a
+              className="u-url"
               href="https://www.linkedin.com/in/briantighe/"
               rel="me noopener"
             >
@@ -85,12 +119,20 @@ export default function AboutPage() {
             </a>
           </li>
           <li>
-            <a href="https://x.com/btighe428" rel="me noopener">
+            <a
+              className="u-url"
+              href="https://x.com/btighe428"
+              rel="me noopener"
+            >
               X (Twitter)
             </a>
           </li>
           <li>
-            <a href="https://github.com/btighe428" rel="me noopener">
+            <a
+              className="u-url"
+              href="https://github.com/btighe428"
+              rel="me noopener"
+            >
               GitHub
             </a>
           </li>

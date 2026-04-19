@@ -1,0 +1,468 @@
+/* ----------------------------------------------------------------
+   Tufte-maximalist typography system.
+   Reading column, sidenotes, margin figures, drop caps, small caps,
+   old-style numerals, epigraph, pull quotes, hanging indents.
+   Reimplemented from tufte-css and gwern patterns — no dependency.
+   ---------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'ET Book';
+  src: url('/fonts/et-book-roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ET Book';
+  src: url('/fonts/et-book-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ET Book';
+  src: url('/fonts/et-book-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ET Book LF';
+  src: url('/fonts/et-book-roman-lf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Reading column ---------- */
+
+.essay {
+  counter-reset: sidenote-counter;
+  max-width: 1400px;
+  padding: 4rem clamp(1.5rem, 5vw, 3rem) 6rem;
+  margin-left: clamp(1.5rem, 12vw, 14rem);
+  margin-right: clamp(1.5rem, 5vw, 3rem);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+}
+
+@media (max-width: 900px) {
+  .essay {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+    font-size: 1.125rem;
+  }
+}
+
+.essay > * {
+  max-width: var(--measure);
+}
+
+.essay > figure,
+.essay > hr,
+.essay > .full-width {
+  max-width: 90%;
+}
+
+/* ---------- Headings ---------- */
+
+.essay h1,
+.essay h2,
+.essay h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.essay h1 {
+  font-size: 3.25rem;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  letter-spacing: -0.01em;
+}
+
+.essay h1 + .subtitle {
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--color-ink-muted);
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+  line-height: 1.3;
+}
+
+.essay h2 {
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.essay h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.essay h2 a,
+.essay h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Paragraphs with hanging indent ---------- */
+
+.essay p {
+  margin: 0;
+  text-indent: 1.5em;
+  max-width: var(--measure);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.essay p:first-of-type,
+.essay h1 + p,
+.essay h2 + p,
+.essay h3 + p,
+.essay .epigraph + p,
+.essay > :first-child + p {
+  text-indent: 0;
+}
+
+/* ---------- Epigraph ---------- */
+
+.essay .epigraph {
+  max-width: var(--measure);
+  margin: 2rem 0 3rem;
+  padding-left: 3rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.essay .epigraph .epigraph-text {
+  display: block;
+  text-indent: 0;
+  margin-bottom: 0.4rem;
+}
+
+.essay .epigraph .epigraph-attribution {
+  display: block;
+  font-style: normal;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  text-indent: 0;
+}
+
+.essay .epigraph .epigraph-attribution::before {
+  content: '— ';
+}
+
+/* ---------- Drop cap ---------- */
+
+.essay.drop-cap > p:first-of-type::first-letter,
+.essay.drop-cap > .epigraph + p::first-letter {
+  font-family: var(--font-serif);
+  float: left;
+  font-size: 4.5em;
+  line-height: 0.85;
+  font-weight: 400;
+  margin: 0.05em 0.08em 0 -0.05em;
+  padding: 0;
+  color: var(--color-ink);
+  initial-letter: 3;
+}
+
+/* ---------- Pull quote ---------- */
+
+.essay .pull-quote {
+  max-width: var(--measure);
+  margin: 2.5rem 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 3px double var(--color-rule);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+.essay .pull-quote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.06em;
+  color: var(--color-ink-muted);
+}
+
+.essay .pull-quote cite::before {
+  content: '— ';
+}
+
+/* ---------- Small caps & old-style numerals ---------- */
+
+.essay .small-caps,
+.sc {
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.03em;
+}
+
+.essay .lining-figures,
+.lnum {
+  font-family: 'ET Book LF', var(--font-serif);
+  font-feature-settings: 'lnum';
+}
+
+.newthought {
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp';
+  letter-spacing: 0.06em;
+}
+
+/* ---------- Sidenote (CSS-only toggle) ---------- */
+
+.sidenote-ref {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number {
+  display: inline;
+  cursor: pointer;
+  vertical-align: baseline;
+  color: var(--color-accent);
+  font-size: 0.8em;
+  line-height: 0;
+  position: relative;
+  top: -0.5em;
+  margin: 0 0.1em 0 0.05em;
+  user-select: none;
+}
+
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+}
+
+.sidenote-toggle {
+  display: none;
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  width: var(--sidenote-width);
+  margin-right: calc(var(--sidenote-width) * -1 - var(--margin-gutter));
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+  vertical-align: baseline;
+  position: relative;
+  text-indent: 0;
+}
+
+.sidenote::before {
+  content: counter(sidenote-counter) '  ';
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  color: var(--color-accent);
+  margin-right: 0.2em;
+}
+
+@media (max-width: 1200px) {
+  .sidenote {
+    width: 14rem;
+    margin-right: calc(-14rem - 2vw);
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidenote {
+    display: none;
+  }
+
+  .sidenote-toggle:checked ~ .sidenote,
+  .sidenote-toggle:checked + .sidenote {
+    display: block;
+    float: none;
+    clear: both;
+    width: auto;
+    margin: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    background: var(--color-paper-dim);
+    border-left: 2px solid var(--color-rule);
+    font-size: 1rem;
+    color: var(--color-ink);
+  }
+}
+
+/* ---------- Margin figure ---------- */
+
+.essay .margin-figure {
+  float: right;
+  clear: right;
+  width: var(--sidenote-width);
+  margin-right: calc(var(--sidenote-width) * -1 - var(--margin-gutter));
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--color-ink-muted);
+}
+
+.essay .margin-figure img,
+.essay .margin-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.essay .margin-figure figcaption {
+  font-style: italic;
+}
+
+@media (max-width: 1200px) {
+  .essay .margin-figure {
+    width: 14rem;
+    margin-right: calc(-14rem - 2vw);
+  }
+}
+
+@media (max-width: 900px) {
+  .essay .margin-figure {
+    float: none;
+    width: auto;
+    margin: 1.5rem auto;
+  }
+}
+
+/* ---------- Lists, code, rules ---------- */
+
+.essay ul,
+.essay ol {
+  max-width: var(--measure);
+  padding-left: 1.75em;
+  margin: 0;
+}
+
+.essay li {
+  margin: 0.15em 0;
+}
+
+.essay blockquote {
+  max-width: var(--measure);
+  margin: 1.5rem 0 1.5rem 2rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  border-left: 2px solid var(--color-rule);
+  padding-left: 1rem;
+}
+
+.essay code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--color-paper-dim);
+  padding: 0.08em 0.3em;
+  border-radius: 2px;
+}
+
+.essay pre {
+  max-width: var(--measure);
+  overflow-x: auto;
+  background: var(--color-paper-dim);
+  padding: 1rem 1.1rem;
+  font-size: 0.92em;
+  line-height: 1.5;
+  border-left: 2px solid var(--color-rule);
+}
+
+.essay pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.essay hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-rule);
+  margin: 3rem auto;
+  width: 40%;
+}
+
+.essay table {
+  max-width: var(--measure);
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.98em;
+}
+
+.essay th,
+.essay td {
+  padding: 0.45em 0.8em;
+  border-bottom: 1px solid var(--color-rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.essay th {
+  font-weight: 400;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--color-ink);
+}
+
+/* ---------- Essay metadata block ---------- */
+
+.essay-meta {
+  max-width: var(--measure);
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.05em;
+}
+
+.essay-meta time {
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* ---------- Print ---------- */
+
+@media print {
+  .essay {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    font-size: 11pt;
+  }
+
+  .sidenote-number {
+    counter-increment: footnote-counter;
+    color: inherit;
+  }
+
+  .sidenote {
+    float: none;
+    display: block;
+    margin: 0;
+    width: auto;
+    color: inherit;
+    font-size: 10pt;
+  }
+}

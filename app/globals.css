@@ -1,26 +1,67 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import './typography.css';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-ink: #111010;
+  --color-ink-muted: #5a5854;
+  --color-paper: #fffff8;
+  --color-paper-dim: #f6f3ea;
+  --color-rule: #d8d3c3;
+  --color-accent: #8b0000;
+  --font-serif: 'ET Book', 'iowan old style', 'Palatino Linotype', Palatino, 'URW Palladio L', 'Book Antiqua', Baskerville, 'Bookman Old Style', 'Bitstream Charter', 'Nimbus Roman No9 L', Garamond, 'Apple Garamond', 'ITC Garamond Narrow', 'New Century Schoolbook', 'Century Schoolbook', 'Century Schoolbook L', Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  --measure: 65ch;
+  --sidenote-width: 17rem;
+  --margin-gutter: 3vw;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-ink: #e7e4da;
+    --color-ink-muted: #8a8880;
+    --color-paper: #151413;
+    --color-paper-dim: #1f1d1a;
+    --color-rule: #3a3631;
+    --color-accent: #d97b6c;
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-feature-settings: 'kern', 'liga', 'onum';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-size: 1.125rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
 }

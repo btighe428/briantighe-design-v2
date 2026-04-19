@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllEssays, formatDate } from '@/lib/content';
 import { siteConfig } from '@/lib/site-config';
+import { NewsletterForm } from '@/components/newsletter-form';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -76,6 +77,10 @@ export default async function HomePage() {
             essay.
           </li>
           <li>
+            <Link href="/search">Search</Link> — full-text across the
+            entire site.
+          </li>
+          <li>
             <Link href="/experiments">Experiments</Link> — shippable
             prototypes and interactive proofs.
           </li>
@@ -96,8 +101,12 @@ export default async function HomePage() {
       <section>
         <h2>Newsletter</h2>
         <p>
-          A new essay every Monday. No tracking beyond Vercel. To subscribe,
-          email{' '}
+          A new essay every Monday. No tracking beyond Vercel. One email per
+          week, unsubscribe with a reply.
+        </p>
+        <NewsletterForm />
+        <p className="essay-meta" style={{ marginTop: '0.5rem' }}>
+          Or email{' '}
           <a href={`mailto:${siteConfig.author.email}?subject=Subscribe`}>
             {siteConfig.author.email}
           </a>{' '}

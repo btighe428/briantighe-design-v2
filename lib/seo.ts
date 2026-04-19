@@ -46,6 +46,21 @@ export function websiteSchema() {
     inLanguage: 'en-US',
     publisher: { '@id': abs('/#organization') },
     author: { '@id': abs('/#person') },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE}/search?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function speakableSchema() {
+  return {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', 'p.subtitle', 'article.essay > p:first-of-type'],
   };
 }
 

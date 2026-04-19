@@ -1,13 +1,42 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/json-ld';
+import { NewsletterForm } from '@/components/newsletter-form';
 import {
   aboutPageSchema,
   breadcrumbListSchema,
+  faqSchema,
   graph,
   personSchema,
 } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
+
+const FAQS = [
+  {
+    q: 'Who is Brian Tighe?',
+    a: 'Brian Tighe is a Principal Product Designer at Yahoo Mail and the originator of prototype-led positioning — the practice of treating a working, shippable prototype as the primary artifact of a growth practice.',
+  },
+  {
+    q: 'What is design engineering for growth?',
+    a: 'Design engineering for growth is a discipline that sits between product design, front-end engineering, and growth, built on the premise that the shippable artifact — not the deck, the spec, or the wireframe — is the unit of account.',
+  },
+  {
+    q: 'What is prototype-led positioning?',
+    a: 'Prototype-led positioning is the practice of treating a working, shippable prototype as the primary positioning artifact of a product or category, with the deck (if it exists at all) as a derivative summary written from the prototype.',
+  },
+  {
+    q: 'How often are new essays published?',
+    a: 'A new essay is published every Monday. Subscribe by email or via RSS, Atom, or JSON Feed.',
+  },
+  {
+    q: 'How can I get in touch?',
+    a: `Email ${siteConfig.author.email} with any subject line that makes sense: speaking, podcasts, consulting, or a simple note. For subscription, use the subject "Subscribe".`,
+  },
+  {
+    q: 'Is the site open source?',
+    a: 'Portions of the design system and publishing stack are open. See the colophon for stack details, and GitHub for the relevant repositories.',
+  },
+];
 
 export const metadata: Metadata = {
   title: 'About',
@@ -36,7 +65,14 @@ export default function AboutPage() {
 
   return (
     <main className="essay">
-      <JsonLd data={graph(aboutPageSchema(), personSchema(), crumbs)} />
+      <JsonLd
+        data={graph(
+          aboutPageSchema(),
+          personSchema(),
+          crumbs,
+          faqSchema(FAQS.map((f) => ({ q: f.q, a: f.a }))),
+        )}
+      />
       <header>
         <div className="essay-meta">
           <Link href="/">← Home</Link>
@@ -146,15 +182,35 @@ export default function AboutPage() {
       </section>
 
       <section>
+        <h2>Newsletter</h2>
+        <p>
+          One essay per Monday. No tracking beyond Vercel. Unsubscribe by
+          reply.
+        </p>
+        <NewsletterForm />
+      </section>
+
+      <section>
+        <h2>Frequently asked</h2>
+        <dl>
+          {FAQS.map((item) => (
+            <div key={item.q} style={{ marginBottom: '1.5rem' }}>
+              <dt style={{ fontWeight: 600 }}>{item.q}</dt>
+              <dd style={{ marginLeft: 0 }}>{item.a}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section>
         <h2>Contact</h2>
         <p>
-          To subscribe to new essays, email{' '}
-          <a href={`mailto:${siteConfig.author.email}?subject=Subscribe`}>
+          Email{' '}
+          <a href={`mailto:${siteConfig.author.email}`}>
             {siteConfig.author.email}
-          </a>{' '}
-          with the subject <span className="sc">Subscribe</span>. For
-          speaking, podcasts, and consulting: same address, subject line that
-          makes sense.
+          </a>
+          . For speaking, podcasts, and consulting: same address, subject
+          line that makes sense.
         </p>
       </section>
     </main>

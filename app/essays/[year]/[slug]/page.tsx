@@ -14,6 +14,7 @@ import {
   articleSchema,
   breadcrumbListSchema,
   graph,
+  speakableSchema,
 } from '@/lib/seo';
 
 type RouteParams = { year: string; slug: string };
@@ -97,18 +98,18 @@ export default async function EssayPage({
     { name: essay.title, href: essay.href },
   ]);
 
+  const articleNode = {
+    ...articleSchema(essay, {
+      readingMinutes: rt.minutes,
+      wordCount: rt.words,
+      relatedHrefs: related.map((e) => e.href),
+    }),
+    speakable: speakableSchema(),
+  };
+
   return (
     <>
-      <JsonLd
-        data={graph(
-          articleSchema(essay, {
-            readingMinutes: rt.minutes,
-            wordCount: rt.words,
-            relatedHrefs: related.map((e) => e.href),
-          }),
-          breadcrumbs,
-        )}
-      />
+      <JsonLd data={graph(articleNode, breadcrumbs)} />
       <EssayLayout
         metadata={{
           ...essay,

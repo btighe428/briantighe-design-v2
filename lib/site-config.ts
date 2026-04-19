@@ -38,6 +38,12 @@ export const siteConfig = {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? '',
     bing: process.env.NEXT_PUBLIC_BING_VERIFICATION ?? '',
   },
+  newsletter: {
+    provider: 'resend',
+    fromEmail:
+      process.env.NEWSLETTER_FROM_EMAIL ?? 'hello@briantighe.design',
+    fromName: 'Brian Tighe',
+  },
   frameworks: [
     {
       id: 'prototype-led-positioning',

@@ -8,11 +8,15 @@ export type EssayFrontmatter = {
   title: string;
   subtitle?: string;
   date: string;
+  updated?: string;
   description?: string;
   epigraph?: string;
   epigraphAttribution?: string;
   dropCap?: boolean;
   tags?: string[];
+  keywords?: string[];
+  ogImage?: string;
+  canonical?: string;
   draft?: boolean;
 };
 

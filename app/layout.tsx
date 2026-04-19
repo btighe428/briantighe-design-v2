@@ -1,6 +1,15 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { siteConfig } from '@/lib/site-config';
+import { JsonLd } from '@/components/json-ld';
+import {
+  graph,
+  organizationSchema,
+  personSchema,
+  websiteSchema,
+} from '@/lib/seo';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -9,20 +18,36 @@ export const metadata: Metadata = {
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
   authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  category: 'technology',
+  keywords: [
+    'design engineering',
+    'product design',
+    'growth design',
+    'prototype-led positioning',
+    'Brian Tighe',
+    'Yahoo Mail',
+    'design engineering for growth',
+    'Tufte',
+    'essays',
+  ],
   openGraph: {
     type: 'website',
     url: siteConfig.url,
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+    locale: siteConfig.locale,
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ['/og-default.png'],
+    creator: siteConfig.social.twitter,
+    site: siteConfig.social.twitter,
   },
   alternates: {
     canonical: '/',
@@ -32,6 +57,23 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  verification: {
+    google: siteConfig.verification.google || undefined,
+    other: siteConfig.verification.bing
+      ? { 'msvalidate.01': siteConfig.verification.bing }
+      : undefined,
   },
 };
 
@@ -49,7 +91,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <JsonLd
+          data={graph(
+            personSchema(),
+            organizationSchema(),
+            websiteSchema(),
+          )}
+        />
+      </head>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

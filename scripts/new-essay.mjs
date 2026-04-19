@@ -48,7 +48,11 @@ const content = `---
 title: "${safeTitle}"
 subtitle: ""
 date: ${isoDate}
-description: ""
+# updated: ${isoDate}            # optional — set when materially revised
+description: ""                   # 150–160 chars, used for meta + OG
+# keywords: []                    # optional — used in Article schema
+# ogImage: ""                     # optional override; otherwise auto-generated
+# canonical: ""                   # optional — absolute URL if republished
 epigraph: ""
 epigraphAttribution: ""
 dropCap: false

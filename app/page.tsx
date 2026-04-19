@@ -1,6 +1,11 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getAllEssays, formatDate } from '@/lib/content';
 import { siteConfig } from '@/lib/site-config';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default async function HomePage() {
   const essays = await getAllEssays();
@@ -69,6 +74,9 @@ export default async function HomePage() {
           <li>
             <Link href="/work">Work</Link> — case studies from twenty years of
             product design.
+          </li>
+          <li>
+            <Link href="/about">About</Link> — the author, in brief.
           </li>
           <li>
             <Link href="/feed.xml">RSS</Link> — full-text feed for Substack

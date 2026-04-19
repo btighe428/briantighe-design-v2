@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: 'Experiments',
   description:
     'Shippable prototypes and interactive proofs. Each is a working test of an essay thesis.',
+  alternates: { canonical: '/experiments' },
+  openGraph: {
+    type: 'website',
+    url: '/experiments',
+    title: 'Experiments — Brian Tighe',
+    description:
+      'Shippable prototypes and interactive proofs. Each is a working test of an essay thesis.',
+  },
 };
 
 export default function ExperimentsIndex() {

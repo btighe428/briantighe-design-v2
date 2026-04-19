@@ -9,6 +9,7 @@ export async function GET() {
   const staticUrls = [
     { loc: '/', changefreq: 'weekly', priority: '1.0' },
     { loc: '/essays', changefreq: 'weekly', priority: '0.9' },
+    { loc: '/about', changefreq: 'monthly', priority: '0.8' },
     { loc: '/experiments', changefreq: 'monthly', priority: '0.6' },
     { loc: '/work', changefreq: 'monthly', priority: '0.6' },
   ];

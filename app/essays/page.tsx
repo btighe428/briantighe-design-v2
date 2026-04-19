@@ -1,18 +1,48 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAllEssays, formatDate } from '@/lib/content';
+import { JsonLd } from '@/components/json-ld';
+import {
+  breadcrumbListSchema,
+  collectionPageSchema,
+  graph,
+} from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Essays',
   description:
     'Essays on design engineering for growth, prototype-led positioning, and the craft of shippable ideas.',
+  alternates: { canonical: '/essays' },
+  openGraph: {
+    type: 'website',
+    url: '/essays',
+    title: 'Essays — Brian Tighe',
+    description:
+      'Essays on design engineering for growth, prototype-led positioning, and the craft of shippable ideas.',
+  },
 };
 
 export default async function EssaysIndex() {
   const essays = await getAllEssays();
+  const collection = collectionPageSchema({
+    href: '/essays',
+    name: 'Essays — Brian Tighe',
+    description:
+      'Essays on design engineering for growth, prototype-led positioning, and the craft of shippable ideas.',
+    items: essays.map((e) => ({
+      name: e.title,
+      href: e.href,
+      date: e.date,
+    })),
+  });
+  const crumbs = breadcrumbListSchema([
+    { name: 'Home', href: '/' },
+    { name: 'Essays', href: '/essays' },
+  ]);
 
   return (
     <main className="essay">
+      <JsonLd data={graph(collection, crumbs)} />
       <header>
         <div className="essay-meta">
           <Link href="/">← Home</Link>

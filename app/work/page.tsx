@@ -5,6 +5,14 @@ export const metadata: Metadata = {
   title: 'Work',
   description:
     'Case studies from twenty years of product design, framed around prototype-led positioning.',
+  alternates: { canonical: '/work' },
+  openGraph: {
+    type: 'website',
+    url: '/work',
+    title: 'Work — Brian Tighe',
+    description:
+      'Case studies from twenty years of product design, framed around prototype-led positioning.',
+  },
 };
 
 export default function WorkIndex() {

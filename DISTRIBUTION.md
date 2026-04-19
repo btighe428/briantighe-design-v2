@@ -48,9 +48,12 @@ Skills in `.claude/skills/` produce drafts; Brian reviews and sends. Voice marke
 | `distribution-generator` | Shipped | LinkedIn + X |
 | `aggregator-pitch-generator` | Shipped | Lenny's, Sidebar.io, Dense Discovery, UX Collective, Smashing, A List Apart, Pragmatic Engineer, Stratechery, Kottke, Benedict Evans |
 | `podcast-pitch-generator` | Shipped | Lenny's Podcast, Pragmatic Engineer, Design Details, Dive Club, Devouring Details, Off the Record, Reforge, Latent Space, Generally Intelligent, My First Million, The Knowledge Project |
+| `llm-crawl-optimizer` | Shipped | Site audit for LLM retrieval (robots, sitemap, schema.org, RSS fidelity, semantic structure) |
+| `citation-monitor` | Shipped | Weekly scan of ChatGPT / Claude / Perplexity / Gemini + aggregator archives for framework mentions |
 | `dev-community-distributor` | Planned Q3 2026 | Hacker News, Lobsters, dev.to, Indie Hackers, Designer News, Product Hunt, GitHub README |
 | `long-form-cross-poster` | Planned Q4 2026 | Medium (canonical-tag), LinkedIn Articles, Substack cross-recs |
 | `cfp-generator` | Planned 2027 Q1 | Config, Lenny's Summit, Growth Conferences, QCon, SXSW, AIGA |
+| `wikipedia-entity-builder` | Planned Q4 2026 | Establish "design engineering for growth" entity page |
 
 ### Tier 3 — Relational (skill produces briefing materials only)
 
@@ -89,16 +92,20 @@ Surfaces excluded from this architecture: Threads, Bluesky, Mastodon, YouTube, Y
 
 ### Phase 1 (April–June 2026) — Foundation
 - Scaffold shipped ✓
+- Vercel production deploy live ✓
 - `distribution-generator` (LinkedIn + X) ✓
 - `aggregator-pitch-generator` ✓
 - `podcast-pitch-generator` ✓
+- `llm-crawl-optimizer` ✓ (shipped early to close Tier 0 feedback loop)
+- `citation-monitor` ✓ (weekly scan cadence active)
 - Weekly publishing cadence begins
 - Substack mirror wired (automatic via RSS)
 
-### Phase 2 (July–September 2026) — LLM corpus + dev community
-- `llm-crawl-optimizer` — audits site for LLM crawlability; generates structured-data fixes, schema.org markup, citation-ready summaries at essay head
+### Phase 2 (July–September 2026) — Dev community + long-form distribution
 - `dev-community-distributor` — HN, Lobsters, dev.to, Designer News, Indie Hackers submissions with per-community calibration
-- `citation-monitor` (agent) — weekly query against the named frameworks; logs hits to `.distribution-log/`
+- `long-form-cross-poster` — Medium (canonical preserved), LinkedIn Articles
+- First `llm-crawl-optimizer` audit applied to site (schema.org Article markup)
+- First quarterly `citation-monitor` trend review
 
 ### Phase 3 (October–December 2026) — Long-form cross-post + Wikipedia
 - `long-form-cross-poster` — Medium (canonical preserved), LinkedIn Articles with proper indexing

@@ -42,3 +42,8 @@ next-env.d.ts
 
 # distribution skill working output
 .distribution-drafts/
+
+# citation scan log (local only by default)
+.citation-log/
+# llm audit output
+.llm-audit/

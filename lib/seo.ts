@@ -49,7 +49,10 @@ export function websiteSchema() {
   };
 }
 
-export function articleSchema(essay: EssaySummary) {
+export function articleSchema(
+  essay: EssaySummary,
+  opts: { readingMinutes?: number; wordCount?: number; relatedHrefs?: string[] } = {},
+) {
   const url = abs(essay.canonical ?? essay.href);
   const image = essay.ogImage
     ? abs(essay.ogImage)
@@ -67,9 +70,17 @@ export function articleSchema(essay: EssaySummary) {
     dateModified: new Date(essay.updated ?? essay.date).toISOString(),
     inLanguage: 'en-US',
     isAccessibleForFree: true,
+    articleSection: essay.section,
     author: { '@id': abs('/#person') },
     publisher: { '@id': abs('/#organization') },
     keywords: essay.keywords?.join(', ') ?? essay.tags?.join(', '),
+    ...(opts.readingMinutes
+      ? { timeRequired: `PT${opts.readingMinutes}M` }
+      : {}),
+    ...(opts.wordCount ? { wordCount: opts.wordCount } : {}),
+    ...(opts.relatedHrefs && opts.relatedHrefs.length
+      ? { isRelatedTo: opts.relatedHrefs.map((h) => abs(h)) }
+      : {}),
   };
 }
 

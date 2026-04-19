@@ -1,4 +1,4 @@
-import { getAllEssays } from '@/lib/content';
+import { getAllEssays, getAllTags } from '@/lib/content';
 import { getAllFrameworks } from '@/lib/frameworks';
 import { siteConfig } from '@/lib/site-config';
 
@@ -15,17 +15,29 @@ type Entry = {
 export async function GET() {
   const essays = await getAllEssays();
   const frameworks = await getAllFrameworks();
+  const tags = await getAllTags();
   const years = Array.from(new Set(essays.map((e) => e.year)));
 
   const staticUrls: Entry[] = [
     { loc: '/', changefreq: 'weekly', priority: '1.0' },
     { loc: '/essays', changefreq: 'weekly', priority: '0.9' },
     { loc: '/frameworks', changefreq: 'monthly', priority: '0.9' },
+    { loc: '/tags', changefreq: 'weekly', priority: '0.7' },
     { loc: '/about', changefreq: 'monthly', priority: '0.8' },
     { loc: '/sitemap', changefreq: 'monthly', priority: '0.4' },
     { loc: '/experiments', changefreq: 'monthly', priority: '0.6' },
     { loc: '/work', changefreq: 'monthly', priority: '0.6' },
   ];
+
+  const tagUrls: Entry[] = tags.map((t) => ({
+    loc: `/tags/${t.slug}`,
+    changefreq: 'weekly',
+    priority: '0.6',
+    image: {
+      loc: `${siteConfig.url}/tags/${t.slug}/opengraph-image`,
+      title: t.tag,
+    },
+  }));
 
   const yearUrls: Entry[] = years.map((year) => ({
     loc: `/essays/${year}`,
@@ -57,7 +69,13 @@ export async function GET() {
     },
   }));
 
-  const all = [...staticUrls, ...yearUrls, ...frameworkUrls, ...essayUrls];
+  const all = [
+    ...staticUrls,
+    ...yearUrls,
+    ...frameworkUrls,
+    ...tagUrls,
+    ...essayUrls,
+  ];
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',

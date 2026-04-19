@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getAllEssays, formatDate } from '@/lib/content';
+import { formatDate, getAllEssays, readingTime } from '@/lib/content';
 import { JsonLd } from '@/components/json-ld';
 import {
   breadcrumbListSchema,
@@ -57,30 +57,41 @@ export default async function EssaysIndex() {
         <p>No essays yet.</p>
       ) : (
         <ol className="list-none p-0">
-          {essays.map((e) => (
-            <li key={e.href} className="mb-8">
-              <p className="essay-meta" style={{ marginBottom: '0.25rem' }}>
-                <time dateTime={new Date(e.date).toISOString()}>
-                  {formatDate(e.date)}
-                </time>
-              </p>
-              <p style={{ textIndent: 0, fontSize: '1.35rem' }}>
-                <Link href={e.href}>{e.title}</Link>
-              </p>
-              {e.subtitle ? (
-                <p
-                  style={{
-                    textIndent: 0,
-                    fontStyle: 'italic',
-                    color: 'var(--color-ink-muted)',
-                    fontSize: '1.05rem',
-                  }}
-                >
-                  {e.subtitle}
+          {essays.map((e) => {
+            const rt = readingTime(e.body);
+            return (
+              <li key={e.href} className="mb-8">
+                <p className="essay-meta" style={{ marginBottom: '0.25rem' }}>
+                  <time dateTime={new Date(e.date).toISOString()}>
+                    {formatDate(e.date)}
+                  </time>
+                  {' · '}
+                  <span>{rt.minutes} min read</span>
+                  {e.section ? (
+                    <>
+                      {' · '}
+                      <span className="sc">{e.section}</span>
+                    </>
+                  ) : null}
                 </p>
-              ) : null}
-            </li>
-          ))}
+                <p style={{ textIndent: 0, fontSize: '1.35rem' }}>
+                  <Link href={e.href}>{e.title}</Link>
+                </p>
+                {e.subtitle ? (
+                  <p
+                    style={{
+                      textIndent: 0,
+                      fontStyle: 'italic',
+                      color: 'var(--color-ink-muted)',
+                      fontSize: '1.05rem',
+                    }}
+                  >
+                    {e.subtitle}
+                  </p>
+                ) : null}
+              </li>
+            );
+          })}
         </ol>
       )}
     </main>

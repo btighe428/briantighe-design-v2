@@ -72,6 +72,10 @@ export default async function HomePage() {
             definitions of the practice.
           </li>
           <li>
+            <Link href="/tags">Tags</Link> — faceted index across every
+            essay.
+          </li>
+          <li>
             <Link href="/experiments">Experiments</Link> — shippable
             prototypes and interactive proofs.
           </li>

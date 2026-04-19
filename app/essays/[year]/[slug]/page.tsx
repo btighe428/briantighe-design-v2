@@ -4,7 +4,12 @@ import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { EssayLayout } from '@/components/essay-layout';
 import { JsonLd } from '@/components/json-ld';
-import { getAllEssays, getEssayBySlug } from '@/lib/content';
+import {
+  findRelated,
+  getAllEssays,
+  getEssayBySlug,
+  readingTime,
+} from '@/lib/content';
 import {
   articleSchema,
   breadcrumbListSchema,
@@ -43,8 +48,7 @@ export async function generateMetadata({
       description,
       publishedTime: published,
       modifiedTime: modified,
-      authors: [`${process.env.NEXT_PUBLIC_SITE_URL ?? ''}/about`],
-      section: 'Essays',
+      section: essay.section ?? 'Essays',
       tags: essay.keywords ?? essay.tags,
       ...(essay.ogImage ? { images: [{ url: essay.ogImage }] } : {}),
     },
@@ -80,6 +84,10 @@ export default async function EssayPage({
   const essay = await getEssayBySlug(year, slug);
   if (!essay) notFound();
 
+  const all = await getAllEssays();
+  const related = findRelated(essay, all, 3);
+  const rt = readingTime(essay.body);
+
   const mod = await import(`@/content/essays/${year}/${slug}.mdx`);
   const MDXContent = mod.default;
 
@@ -91,8 +99,23 @@ export default async function EssayPage({
 
   return (
     <>
-      <JsonLd data={graph(articleSchema(essay), breadcrumbs)} />
-      <EssayLayout metadata={essay}>
+      <JsonLd
+        data={graph(
+          articleSchema(essay, {
+            readingMinutes: rt.minutes,
+            wordCount: rt.words,
+            relatedHrefs: related.map((e) => e.href),
+          }),
+          breadcrumbs,
+        )}
+      />
+      <EssayLayout
+        metadata={{
+          ...essay,
+          readingMinutes: rt.minutes,
+        }}
+        related={related}
+      >
         <MDXContent />
       </EssayLayout>
     </>

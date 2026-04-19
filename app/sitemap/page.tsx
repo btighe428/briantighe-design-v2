@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { JsonLd } from '@/components/json-ld';
-import { formatDate, getAllEssays } from '@/lib/content';
+import { formatDate, getAllEssays, getAllTags } from '@/lib/content';
 import { getAllFrameworks } from '@/lib/frameworks';
 import { breadcrumbListSchema, graph } from '@/lib/seo';
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default async function SitemapPage() {
   const essays = await getAllEssays();
   const frameworks = await getAllFrameworks();
+  const tags = await getAllTags();
   const years = Array.from(new Set(essays.map((e) => e.year))).sort(
     (a, b) => Number(b) - Number(a),
   );
@@ -57,6 +58,9 @@ export default async function SitemapPage() {
           <li>
             <Link href="/work">Work</Link>
           </li>
+          <li>
+            <Link href="/tags">Tags</Link>
+          </li>
         </ul>
       </section>
 
@@ -70,6 +74,22 @@ export default async function SitemapPage() {
           ))}
         </ul>
       </section>
+
+      {tags.length > 0 ? (
+        <section>
+          <h2>
+            <Link href="/tags">Tags</Link>
+          </h2>
+          <ul>
+            {tags.map((t) => (
+              <li key={t.slug}>
+                <Link href={`/tags/${t.slug}`}>{t.tag}</Link>{' '}
+                <span className="essay-meta">— {t.count}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       {years.map((year) => (
         <section key={year}>

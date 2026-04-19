@@ -50,6 +50,9 @@ subtitle: ""
 date: ${isoDate}
 # updated: ${isoDate}            # optional — set when materially revised
 description: ""                   # 150–160 chars, used for meta + OG
+section: theory                   # theory | practice | case-study | field-notes
+tags: []                          # first-class faceted browse
+# related: []                     # optional slugs; else tag-overlap is used
 # keywords: []                    # optional — used in Article schema
 # ogImage: ""                     # optional override; otherwise auto-generated
 # canonical: ""                   # optional — absolute URL if republished

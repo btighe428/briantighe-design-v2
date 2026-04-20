@@ -442,6 +442,64 @@
   font-variant-numeric: oldstyle-nums;
 }
 
+/* ---------- Embedded data story inside an essay ---------- */
+/* Lets the D3 figure break out of the 65ch text column without
+   breaking out of the .essay container. The essay body stays at
+   measure; the figure fills the wider container. */
+
+.essay > figure.data-story {
+  max-width: min(1100px, 95%);
+  margin: 2.5rem 0;
+}
+
+.essay > figure.data-story svg {
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  padding: 0.75rem 0;
+}
+
+.essay > figure.data-story figcaption {
+  max-width: var(--measure);
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  font-size: 1rem;
+}
+
+.essay > figure.data-story .event-list {
+  max-width: var(--measure);
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 2rem;
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+}
+
+.essay > figure.data-story .event-list li {
+  break-inside: avoid;
+  margin-bottom: 0.4rem;
+  text-indent: 0;
+}
+
+.essay > figure.data-story .event-year {
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-right: 0.3em;
+}
+
+@media (max-width: 900px) {
+  .essay > figure.data-story {
+    max-width: 100%;
+  }
+  .essay > figure.data-story .event-list {
+    columns: 1;
+  }
+}
+
 /* ---------- Data story / experiment ---------- */
 
 .experiment {

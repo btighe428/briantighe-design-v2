@@ -4,77 +4,93 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Twenty years of product design case studies. Migrating from the prior site through 2026; each will be reframed through the Prototype-Led Positioning thesis as it ships.',
+    'Fourteen years of product design case studies. Yahoo Mail, Daily Harvest, HelloFresh, Loeb.nyc / LxLabs, and the portfolio of growth-stage startups where the frameworks were shipped and tested.',
 };
 
-type WorkItem = {
-  title: string;
+type Role = {
   company: string;
   role: string;
-  period?: string;
-  summary: string;
-  slug?: string;
+  period: string;
+  location?: string;
+  outcomes: string[];
   receipt?: boolean;
 };
 
-const work: WorkItem[] = [
+const roles: Role[] = [
   {
-    title: 'HelloFresh — Growth Engineering',
-    company: 'HelloFresh',
-    role: 'Principal Product Designer',
-    period: '2020–2022',
-    summary:
-      'Conversion and retention work across the sign-up funnel and the meal selection surface. The canonical operator receipt for the Prototype-Led Positioning thesis.',
-    receipt: true,
-  },
-  {
-    title: 'Daily Harvest — Product Design Leadership',
-    company: 'Daily Harvest',
-    role: 'Principal Product Designer',
-    period: '2019–2020',
-    summary:
-      'Subscription lifecycle, reorder flow, and plan configuration across iOS, Android, and web. The second receipt the essays lean on.',
-    receipt: true,
-  },
-  {
-    title: 'HelloNotifications',
-    company: 'HelloFresh',
-    role: 'Principal Product Designer',
-    summary:
-      'Cross-channel notification system — push, email, in-app — unified under a single preference surface. Example of the experiment-interface pattern before the framework was named.',
-  },
-  {
-    title: 'Horizons',
     company: 'Yahoo',
-    role: 'Principal Product Designer',
-    summary: 'Yahoo Mail product design work.',
+    role: 'Principal Product Designer, Growth and Experimentation',
+    period: '2024 – present',
+    location: 'New York City',
+    receipt: true,
+    outcomes: [
+      '+$30M+ incremental revenue through conversion optimization and growth initiatives at Yahoo Mail, one of the world\'s largest email platforms.',
+      'Strategic design across acquisition, activation, retention, and monetization, driven by rigorous experimentation and close collaboration with engineering, product, and senior leadership.',
+      'Co-founded internal "Vibe Coding Club" and co-lead AI design working group — teaching and mentoring AI design workflows to designers, PMs, and engineers.',
+    ],
   },
   {
-    title: 'Boop (acquired by Chewy)',
-    company: 'Petabyte Technologies',
-    role: 'Product Designer',
-    summary:
-      'Pet healthcare platform. Acquired by Chewy. Early operator work that informed the current research program.',
+    company: 'Daily Harvest',
+    role: 'Principal Product Designer, Design Director',
+    period: '2023 – 2024',
+    location: 'New York City',
+    outcomes: [
+      'Digital Product Design leadership for an organic meal subscription service valued at $1.1B.',
+      'Led strategic Shopify migration and continuous advancement of the digital product portfolio in direct partnership with founder Rachel Drori and executive leadership.',
+    ],
   },
   {
-    title: 'First Place — Global Hackathon 2022',
     company: 'HelloFresh',
-    role: 'Team Lead',
-    summary: 'First place, global hackathon 2022.',
+    role: 'Staff Product Designer → Senior Product Designer, Conversions/Activations',
+    period: '2020 – 2023',
+    location: 'New York City',
+    receipt: true,
+    outcomes: [
+      '+$75M value increase and 100,000 additional monthly account creations — the most effective conversion optimization tests in HelloFresh history.',
+      'International cross-alliance design strategy across the global Design Organization; partnered with senior product leadership on high-impact roadmaps.',
+      'Managed three direct reports; mentored six junior designers.',
+      'Led both moderated and unmoderated user research programs that informed data-driven design decisions across the funnel.',
+    ],
   },
   {
-    title: 'Single Question Sign Up',
-    company: 'HelloFresh',
-    role: 'Principal Product Designer',
-    summary:
-      'A one-field sign-up flow that replaced a seven-step onboarding. Archetypal prototype-led positioning artifact: the prototype was the argument.',
+    company: 'Loeb.nyc / LxLabs',
+    role: 'Director, Digital Product Design',
+    period: '2017 – 2020',
+    location: 'New York City',
+    outcomes: [
+      'Founded and led LxLabs — an in-house product design agency of 3–7 designers servicing the Loeb.nyc portfolio.',
+      'Fetch Rewards: UI overhaul for a top-100 iOS shopping app.',
+      'Boop: brand identity for a pet-healthcare EHR startup — acquired by Chewy (2023).',
+      'Firstleaf: end-to-end platform and launch for a premier wine subscription service.',
+      'Nunbelievable: identity and branding for a socially conscious CPG cookie company in partnership with Tony Robbins\' Trillions VC.',
+      'SiO Beauty: conversion optimization strategy and implementation.',
+      'SingleCare: growth-stage healthcare product work.',
+    ],
   },
   {
-    title: 'Multi-preference Sign Up',
-    company: 'HelloFresh',
-    role: 'Principal Product Designer',
-    summary:
-      'The counter-experiment to single-question sign-up: when multi-preference capture improves downstream personalization more than it costs in drop-off.',
+    company: 'Loeb.nyc',
+    role: 'Senior UX Designer',
+    period: '2015 – 2017',
+    location: 'New York City',
+    outcomes: [
+      'First UX designer at Loeb.nyc — the family-office VC founded by Michael Loeb (Founder, Priceline.com).',
+      'Optimizely A/B testing program across 11,000 pages → +35%+ conversion increases.',
+      'Conceptualized, designed, and coded the MVP for SearchRx — later acquired by Optum as Optum Perks.',
+      'Streamlined 20+ brands into five distinct entities with unique value propositions.',
+      'SingleCare GTM work: tripled daily acquisition volume, halved cost per acquisition, grew the brand by +700%.',
+      'Instituted the first formal Agile process with an offshore partner using JIRA and Kanban.',
+    ],
+  },
+  {
+    company: 'Earlier career',
+    role: 'UX Design + Front-End Development',
+    period: '2011 – 2015',
+    location: 'New York City',
+    outcomes: [
+      'SourceMedia (2014–2015) — UX Designer: article pages, registration flows, responsive B2B publishing microsite templates.',
+      'Criteo (2014) — Interactive Designer: display ads, prototype and R&D on touch-specific multi-platform ad formats. Attended Criteo\'s NASDAQ IPO.',
+      'ExpandTheRoom (2011–2013) — Front-End Developer → UX Designer for Rolling Stone, Men\'s Weekly, and US Magazine. Self-taught the development foundation that anchors the current practice.',
+    ],
   },
 ];
 
@@ -87,42 +103,45 @@ export default function WorkIndex() {
         </div>
         <h1>Work</h1>
         <p className="subtitle">
-          Twenty years of product design. Case studies are migrating from the
-          prior site and are being reframed through the Prototype-Led
-          Positioning thesis rather than republished verbatim.
+          Fourteen years of product design across Yahoo Mail, Daily Harvest,
+          HelloFresh, and the Loeb.nyc / LxLabs portfolio of growth-stage
+          startups. The receipts the essays reach for.
         </p>
       </header>
 
       <section>
         <p>
-          Each case study below will, when live, document the prototype that
-          unlocked the position, the shipped result, and what moved as a
-          consequence. Until then, this page is a manifest — proof that the
-          frameworks did not arrive from nowhere.
+          The case studies below are the shipped work behind{' '}
+          <Link href="/essays">the frameworks</Link>. Two employers are
+          flagged as <span className="sc">receipt</span> because they produced
+          named, measurable operator outcomes the essays specifically cite.
         </p>
       </section>
 
       <section>
-        <h2>Case studies</h2>
-        <ul className="list-none p-0">
-          {work.map((w) => (
-            <li key={w.title} className="mb-6">
+        <ol className="list-none p-0" style={{ paddingLeft: 0 }}>
+          {roles.map((r) => (
+            <li
+              key={`${r.company}-${r.period}`}
+              className="mb-8"
+              style={{ listStyle: 'none' }}
+            >
               <p
                 style={{
                   textIndent: 0,
-                  fontSize: '1.2rem',
-                  marginBottom: '0.25rem',
+                  fontSize: '1.3rem',
+                  marginBottom: '0.15rem',
                 }}
               >
-                {w.slug ? (
-                  <Link href={`/work/${w.slug}`}>{w.title}</Link>
-                ) : (
-                  <span>{w.title}</span>
-                )}
-                {w.receipt ? (
+                <strong>{r.company}</strong>
+                {r.receipt ? (
                   <span
                     className="sc"
-                    style={{ marginLeft: '0.5rem', fontSize: '0.85rem' }}
+                    style={{
+                      marginLeft: '0.55rem',
+                      fontSize: '0.8rem',
+                      color: 'var(--color-accent)',
+                    }}
                   >
                     receipt
                   </span>
@@ -130,25 +149,29 @@ export default function WorkIndex() {
               </p>
               <p
                 className="essay-meta"
-                style={{ marginBottom: '0.25rem', textIndent: 0 }}
+                style={{ textIndent: 0, marginBottom: '0.35rem' }}
               >
-                {w.company}
-                {w.role ? ` · ${w.role}` : null}
-                {w.period ? ` · ${w.period}` : null}
+                {r.role} · {r.period}
+                {r.location ? ` · ${r.location}` : null}
               </p>
-              <p
-                style={{
-                  textIndent: 0,
-                  color: 'var(--color-ink-muted)',
-                  fontStyle: 'italic',
-                  fontSize: '1rem',
-                }}
-              >
-                {w.summary}
-              </p>
+              <ul style={{ marginTop: 0, paddingLeft: '1.2rem' }}>
+                {r.outcomes.map((o, idx) => (
+                  <li
+                    key={idx}
+                    style={{
+                      color: 'var(--color-ink)',
+                      marginBottom: '0.25rem',
+                      fontSize: '1rem',
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {o}
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
-        </ul>
+        </ol>
       </section>
     </main>
   );

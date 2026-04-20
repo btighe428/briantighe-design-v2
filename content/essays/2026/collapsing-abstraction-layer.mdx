@@ -8,9 +8,13 @@ epigraphAttribution: "Brad Frost, Atomic Design (2016)"
 dropCap: true
 ---
 
+import CollapsingAbstractionChart from '@/content/experiments/collapsing-abstraction-layer/chart';
+
 **Thesis.** The history of digital product design is the relentless, decades-long collapse of the abstraction layer between "design intent" and "production reality." Every epoch of the discipline can be read as a compression of the distance between the artifact a designer authors and the software a user runs. The Pixel Era (1995–2010) produced literal pictures of software; the Illusion Era (2011–2016) produced clickable simulations of software; the Component Era (2016–2023) produced declarative, constraint-based representations that resembled code without executing; the Intelligence Era (2024–present) has obliterated the representation altogether — the artifact the designer produces is the running system, because the running system's UI is itself probabilistic and emergent, and nothing static can represent it. Design leaders who treat this trajectory as discontinuous will misallocate headcount, org design, and tooling. Those who treat it as a single compressive curve will recognize that the Design Engineer role, the post-Figma tool stack, and the reorganization of the design–engineering interface at AI-native companies are not fashions but the terminal geometry of a thirty-year convergence.
 
 The memo below traces this compression across four epochs, structured along four constant analytical dimensions — dominant tooling, the definition of fidelity, the Design–Engineering translation gap, and organizational consequence — and surfaces three counter-periodizations (Flash, Axure, Framer Classic) that complicate any simple progress narrative. It closes with a full labor-market analysis of the Design Engineer role and a synthesis of what this means for FAANG and AI-native org charts through 2030.
+
+<CollapsingAbstractionChart />
 
 ## Era 1: the Pixel Era, 1995–2010
 
@@ -142,6 +146,3 @@ The defining conceptual move of Era 4 is that fidelity is no longer a property o
 
 Agentic workflows — Claude Code, Replit Agent, Cursor Composer — run for minutes or hours, writing files, running tests, self-correcting, rolling back, sometimes forking into parallel sub-agents. The "UI" is temporal, and its state machine is not knowable at design time. Runtime-generated UI via the Vercel AI SDK's generative-UI primitives (2024) composes interfaces from LLM output at request time; a "design" for such an interface is not a mockup but a type system and a prompt. The mockup–handoff–build workflow that defined Eras 2 and 3 is not slow in Era 4 — it is semantically undefined. There is no artifact whose translation to code would be meaningful.
 
----
-
-**Related experiment:** [The Collapsing Abstraction Layer — interactive timeline](/experiments/collapsing-abstraction-layer). The same four eras rendered as a D3 chart of tool lifespans, with the Flash regression and the InVision collapse visible as gaps.

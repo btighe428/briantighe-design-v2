@@ -75,9 +75,8 @@ const items: Item[] = [
     type: 'external',
     title: 'Weather Story',
     tagline:
-      'E-ink weather instrument on reTerminal E1001 and Waveshare GDEY075T7. Custom ESP32 firmware; backend serves pre-rendered PNG frames per device configuration.',
-    url: 'https://weatherstory-reterminal.vercel.app',
-    status: 'live',
+      'E-ink weather instrument on reTerminal E1001 and Waveshare GDEY075T7. Custom ESP32 firmware; backend serves pre-rendered PNG frames per device configuration. Currently private while the form factor settles.',
+    status: 'private',
     stack: ['ESP32', 'e-ink', 'Arduino', 'Next.js', 'Vercel'],
     role: 'Hardware + backend',
     period: '2025–',

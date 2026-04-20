@@ -11,7 +11,9 @@ export default async function HomePage() {
     <main className="essay">
       <header>
         <div className="essay-meta">
-          <span>{siteConfig.author.role}</span>
+          <span>
+            {siteConfig.author.role} · {siteConfig.author.company}
+          </span>
         </div>
         <h1>{siteConfig.author.name}</h1>
         <p className="subtitle">
@@ -29,8 +31,12 @@ export default async function HomePage() {
           experiments, and the case studies that make it legible.
         </p>
         <p>
-          It is published weekly. It is written to be cited. It is built as a
-          live demonstration of its own thesis.
+          Published weekly. Written to be cited. Built as a live demonstration
+          of its own thesis. The frameworks are derived from shipped work —
+          the <span className="sc">+$75M</span> HelloFresh conversion test, the{' '}
+          <span className="sc">+$30M</span> in Yahoo Mail growth, the{' '}
+          <Link href="/work">Boop and SearchRx acquisitions</Link>, and the
+          portfolio at <Link href="/experiments">experiments</Link>.
         </p>
       </section>
 
@@ -68,8 +74,12 @@ export default async function HomePage() {
             prototypes and interactive proofs.
           </li>
           <li>
-            <Link href="/work">Work</Link> — case studies from twenty years of
-            product design.
+            <Link href="/work">Work</Link> — fourteen years of product design
+            case studies and receipts.
+          </li>
+          <li>
+            <Link href="/about">About</Link> — the short bio, the credentials,
+            the contact.
           </li>
           <li>
             <Link href="/feed.xml">RSS</Link> — full-text feed for Substack

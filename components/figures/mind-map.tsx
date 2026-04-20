@@ -42,9 +42,14 @@ function compute(data: MapData) {
   const root = hierarchy<MapNode>(data.root) as PositionedNode;
   tree<MapNode>()
     .size([2 * Math.PI, MAX_R])
-    .separation(
-      (a, b) => (a.parent === b.parent ? 1 : 1.3) / Math.max(a.depth, 1),
-    )(root);
+    .separation((a, b) => {
+      // Deeper depths need MORE angular room per leaf, not less.
+      // Previous formula (1/depth) caused sibling crowding at deep levels.
+      const sameParent = a.parent === b.parent;
+      const base = sameParent ? 1 : 1.6;
+      // Scale up as depth increases so leaves get real angular breathing room.
+      return base * (1 + (a.depth - 1) * 0.35);
+    })(root);
 
   let counter = 0;
   root.each((node) => {
@@ -287,7 +292,6 @@ export function MindMap({ data }: { data: MapData }) {
               if (n.depth === 0) return null;
               const angle = n.x ?? 0;
               const radius = n.y ?? 0;
-              const { x, y } = polar(angle, radius);
               const color =
                 data.branchColors[n.__branchIndex] ?? 'var(--color-ink)';
               const inAncestry = ancestryIds?.has(n.__id);
@@ -300,52 +304,58 @@ export function MindMap({ data }: { data: MapData }) {
               const fontSize = isBranch ? 32 : isSubBranch ? 22 : 17;
               const fontWeight = isBranch ? 600 : isSubBranch ? 500 : 400;
 
-              const sinA = Math.sin(angle);
-              const onRight = sinA > 0.04;
-              const onLeft = sinA < -0.04;
-              const dx = onRight ? 16 : onLeft ? -16 : 0;
-              const anchor = onRight ? 'start' : onLeft ? 'end' : 'middle';
-              const cosA = Math.cos(angle);
-              const verticalAdjust =
-                anchor === 'middle'
-                  ? cosA > 0
-                    ? -18
-                    : fontSize + 6
-                  : fontSize / 3;
+              // Radial-label layout: each node is placed via
+              // rotate(angleDeg) translate(radius, 0), and text
+              // extends outward along that spoke. Labels never
+              // stack horizontally, so zoomed-in views stay readable.
+              const rotateDeg = (angle * 180) / Math.PI - 90;
+              const isRightHalf = angle < Math.PI;
+              const textX = isRightHalf ? 14 : -14;
+              const textAnchor = isRightHalf ? 'start' : 'end';
+              const textTransform = isRightHalf
+                ? undefined
+                : 'rotate(180)';
 
               return (
                 <g
                   key={n.__id}
+                  transform={`rotate(${rotateDeg}) translate(${radius}, 0)`}
                   onMouseEnter={() => setHoveredId(n.__id)}
                   onMouseLeave={() => setHoveredId(null)}
                   style={{ cursor: 'default' }}
                 >
                   <circle
-                    cx={x}
-                    cy={y}
+                    cx={0}
+                    cy={0}
                     r={isBranch ? 12 : isSubBranch ? 7 : 4}
                     fill={color}
                     fillOpacity={faded ? 0.2 : 1}
                   />
                   <text
-                    x={x + dx}
-                    y={y + verticalAdjust}
+                    x={textX}
+                    y={0}
+                    dy="0.32em"
                     fontSize={fontSize}
                     fontWeight={fontWeight}
                     fill={isBranch ? color : 'var(--color-ink)'}
                     fillOpacity={faded ? 0.25 : 1}
-                    textAnchor={anchor}
+                    textAnchor={textAnchor}
+                    transform={textTransform}
                     style={{
                       letterSpacing: isBranch ? '-0.005em' : '0',
                       transition: 'fill-opacity 120ms ease',
+                      paintOrder: 'stroke',
+                      stroke: 'var(--color-paper)',
+                      strokeWidth: isBranch ? 6 : 4,
+                      strokeLinejoin: 'round',
                     }}
                   >
                     {n.data.label}
                   </text>
                   <circle
-                    cx={x}
-                    cy={y}
-                    r={Math.max(fontSize * 4, 40)}
+                    cx={0}
+                    cy={0}
+                    r={Math.max(fontSize * 3, 36)}
                     fill="transparent"
                     pointerEvents="all"
                   />

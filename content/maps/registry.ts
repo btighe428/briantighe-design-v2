@@ -46,11 +46,13 @@ export const catalog: MapCatalogEntry[] = [
   {
     slug: 'silicon-valley-history',
     title: 'Silicon Valley Innovation History',
-    subtitle: 'Origins through The Future of Silicon Valley',
-    date: '2024-07-15',
+    subtitle: 'Seven eras, 1900–2030 — radio tubes to post-AGI economies',
+    date: '2026-04-19',
     summary:
-      'Five eras of Silicon Valley — early innovators, the microprocessor revolution, the Internet and dot-com boom, modern technological advances, and the future of the region.',
-    status: 'planned',
+      'Expanded mind map across seven eras of Silicon Valley — radio origins (1900–1955), the Semiconductor Era (1955–75), Microprocessor + PC (1971–95), Internet + Dot-Com (1993–2007), Mobile + Social (2007–20), the AI Era (2015–26), and the 2020–2030 future-and-challenges horizon. ~200 named facts.',
+    status: 'published',
+    load: () =>
+      import('./silicon-valley-history').then((m) => ({ map: m.map })),
   },
   {
     slug: 'thomas-edison',

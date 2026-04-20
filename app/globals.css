@@ -16,15 +16,44 @@
   --margin-gutter: 3vw;
 }
 
+/* --- Theme switching -----------------------------------------
+   Three states:
+   1. No data-theme attribute → system preference via @media
+   2. data-theme="light" → always light (values below match light base)
+   3. data-theme="dark" → always dark
+---------------------------------------------------------------- */
+
+:root,
+:root[data-theme='light'] {
+  --color-ink: #111010;
+  --color-ink-muted: #5a5854;
+  --color-paper: #fffff8;
+  --color-paper-dim: #f6f3ea;
+  --color-rule: #d8d3c3;
+  --color-accent: #8b0000;
+  color-scheme: light;
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --color-ink: #e7e4da;
     --color-ink-muted: #8a8880;
     --color-paper: #151413;
     --color-paper-dim: #1f1d1a;
     --color-rule: #3a3631;
     --color-accent: #d97b6c;
+    color-scheme: dark;
   }
+}
+
+:root[data-theme='dark'] {
+  --color-ink: #e7e4da;
+  --color-ink-muted: #8a8880;
+  --color-paper: #151413;
+  --color-paper-dim: #1f1d1a;
+  --color-rule: #3a3631;
+  --color-accent: #d97b6c;
+  color-scheme: dark;
 }
 
 *,
@@ -64,4 +93,115 @@ a:hover {
 ::selection {
   background: var(--color-accent);
   color: var(--color-paper);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Subscribe form --- */
+
+.subscribe-form {
+  max-width: var(--measure);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: stretch;
+  font-family: var(--font-serif);
+}
+
+.subscribe-form input[type='email'] {
+  grid-column: 1;
+  padding: 0.55rem 0.8rem;
+  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-rule);
+  border-radius: 2px;
+  outline: none;
+  min-width: 0;
+}
+
+.subscribe-form input[type='email']:focus {
+  border-color: var(--color-ink);
+}
+
+.subscribe-form input[type='email']:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.subscribe-form button {
+  grid-column: 2;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp';
+  letter-spacing: 0.06em;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: 1px solid var(--color-ink);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.subscribe-form button:hover:not(:disabled) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.subscribe-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.subscribe-message {
+  grid-column: 1 / -1;
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  font-style: italic;
+}
+
+/* --- Theme toggle --- */
+
+.theme-toggle {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  z-index: 40;
+  background: transparent;
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp';
+  letter-spacing: 0.08em;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.theme-toggle:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+@media print {
+  .theme-toggle,
+  .subscribe-form {
+    display: none;
+  }
 }

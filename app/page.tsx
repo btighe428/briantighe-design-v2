@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getAllEssays, formatDate } from '@/lib/content';
 import { siteConfig } from '@/lib/site-config';
+import { SubscribeForm } from '@/components/subscribe-form';
 
 export default async function HomePage() {
   const essays = await getAllEssays();
@@ -42,7 +43,7 @@ export default async function HomePage() {
               <>
                 {' '}
                 —{' '}
-                <em className="text-[var(--color-ink-muted)]">
+                <em style={{ color: 'var(--color-ink-muted)' }}>
                   {latest.subtitle}
                 </em>
               </>
@@ -79,14 +80,7 @@ export default async function HomePage() {
 
       <section>
         <h2>Newsletter</h2>
-        <p>
-          A new essay every Monday. No tracking beyond Vercel. To subscribe,
-          email{' '}
-          <a href={`mailto:${siteConfig.author.email}?subject=Subscribe`}>
-            {siteConfig.author.email}
-          </a>{' '}
-          with the subject <span className="sc">Subscribe</span>.
-        </p>
+        <SubscribeForm source="homepage" />
       </section>
     </main>
   );

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { siteConfig } from '@/lib/site-config';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -68,6 +69,9 @@ const entityGraph = {
   ],
 };
 
+// Applied before body renders to avoid flash-of-wrong-theme.
+const themeInitScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: {
@@ -75,11 +79,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(entityGraph) }}
         />
+        <ThemeToggle />
         {children}
       </body>
     </html>

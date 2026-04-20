@@ -442,6 +442,65 @@
   font-variant-numeric: oldstyle-nums;
 }
 
+/* ---------- Data story / experiment ---------- */
+
+.experiment {
+  max-width: 1280px;
+}
+
+.experiment > section.experiment-body {
+  max-width: none;
+}
+
+.experiment figure.data-story {
+  margin: 2rem 0;
+  max-width: none;
+}
+
+.experiment figure.data-story svg {
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  padding: 1rem 0;
+}
+
+.experiment figure.data-story figcaption {
+  max-width: var(--measure);
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  font-size: 1rem;
+}
+
+.experiment figure.data-story .event-list {
+  max-width: var(--measure);
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 2rem;
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+}
+
+.experiment figure.data-story .event-list li {
+  break-inside: avoid;
+  margin-bottom: 0.4rem;
+}
+
+.experiment figure.data-story .event-year {
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-right: 0.3em;
+}
+
+@media (max-width: 900px) {
+  .experiment figure.data-story .event-list {
+    columns: 1;
+  }
+}
+
 /* ---------- Print ---------- */
 
 @media print {

@@ -3,6 +3,11 @@
   "framework": "nextjs",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/cart", "destination": "/", "permanent": true },
+    { "source": "/contact", "destination": "/", "permanent": false },
+    { "source": "/brian-tighe-design", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/fonts/(.*)",

@@ -74,6 +74,10 @@ export default async function HomePage() {
             prototypes and interactive proofs.
           </li>
           <li>
+            <Link href="/maps">Mind Maps</Link> — a series on contemporary
+            topics in innovation, structured as radial trees.
+          </li>
+          <li>
             <Link href="/work">Work</Link> — fourteen years of product design
             case studies and receipts.
           </li>

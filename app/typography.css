@@ -453,6 +453,39 @@
   font-variant-numeric: oldstyle-nums;
 }
 
+/* ---------- Mind map page layout ---------- */
+
+.essay.map-page {
+  max-width: 1600px;
+  margin-left: clamp(1rem, 5vw, 4rem);
+}
+
+.essay.map-page > section.map-container {
+  max-width: none;
+  margin: 2rem 0 3rem;
+}
+
+.essay.map-page .mind-map-figure {
+  max-width: none;
+  margin: 0;
+}
+
+.essay.map-page .mind-map-figure svg {
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  padding: 1.5rem 0;
+}
+
+.essay.map-page .mind-map-figure figcaption {
+  max-width: var(--measure);
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--color-ink-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+  text-indent: 0;
+}
+
 /* ---------- Inline enrichment figures in essays ---------- */
 /* D3 figures placed next to the claim they support. They break
    out well beyond the 65ch measure so the data reads big; captions

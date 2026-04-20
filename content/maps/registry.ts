@@ -65,6 +65,17 @@ export const catalog: MapCatalogEntry[] = [
       'Edison as a mind map across six dimensions: early life, major inventions, business ventures and partnerships, impact on technology and society, challenges and controversies, legacy and recognition.',
     status: 'planned',
   },
+  {
+    slug: 'history-of-innovation',
+    title: 'The History of Innovation',
+    subtitle: 'Seven epochs from pre-industrial foundations through 2026 plus the theory',
+    date: '2026-04-19',
+    summary:
+      'Expanded mind map of innovation across human history: pre-industrial foundations (pre-1760), First Industrial Revolution (1760–1840), Second Industrial Revolution (1870–1914), 20th-century science and engineering (1914–1970), Information Age (1970–2010), Contemporary Era (2010–2026), and the theoretical patterns (Kondratieff, Schumpeter, Christensen, S-curves, combinatorial innovation) that organize the whole.',
+    status: 'published',
+    load: () =>
+      import('./history-of-innovation').then((m) => ({ map: m.map })),
+  },
 ];
 
 export function findCatalogEntry(slug: string): MapCatalogEntry | undefined {

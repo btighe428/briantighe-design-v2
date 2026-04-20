@@ -25,11 +25,11 @@
 
 :root,
 :root[data-theme='light'] {
-  --color-ink: #111010;
-  --color-ink-muted: #5a5854;
+  --color-ink: #0f0e0e;
+  --color-ink-muted: #4a4844;
   --color-paper: #fffff8;
-  --color-paper-dim: #f6f3ea;
-  --color-rule: #d8d3c3;
+  --color-paper-dim: #f4efe4;
+  --color-rule: #cec8b4;
   --color-accent: #8b0000;
   color-scheme: light;
 }
@@ -47,12 +47,12 @@
 }
 
 :root[data-theme='dark'] {
-  --color-ink: #e7e4da;
-  --color-ink-muted: #8a8880;
-  --color-paper: #151413;
-  --color-paper-dim: #1f1d1a;
-  --color-rule: #3a3631;
-  --color-accent: #d97b6c;
+  --color-ink: #ece9df;
+  --color-ink-muted: #a39f92;
+  --color-paper: #141312;
+  --color-paper-dim: #1e1c19;
+  --color-rule: #3d3832;
+  --color-accent: #dc8373;
   color-scheme: dark;
 }
 

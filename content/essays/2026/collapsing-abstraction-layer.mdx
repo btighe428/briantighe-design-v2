@@ -8,13 +8,14 @@ epigraphAttribution: "Brad Frost, Atomic Design (2016)"
 dropCap: true
 ---
 
-import CollapsingAbstractionChart from '@/content/experiments/collapsing-abstraction-layer/chart';
+import { Blues41 } from '@/components/figures/blues-41';
+import { FigmaValuation } from '@/components/figures/figma-valuation';
+import { InvisionArc } from '@/components/figures/invision-arc';
+import { AiArr } from '@/components/figures/ai-arr';
 
 **Thesis.** The history of digital product design is the relentless, decades-long collapse of the abstraction layer between "design intent" and "production reality." Every epoch of the discipline can be read as a compression of the distance between the artifact a designer authors and the software a user runs. The Pixel Era (1995–2010) produced literal pictures of software; the Illusion Era (2011–2016) produced clickable simulations of software; the Component Era (2016–2023) produced declarative, constraint-based representations that resembled code without executing; the Intelligence Era (2024–present) has obliterated the representation altogether — the artifact the designer produces is the running system, because the running system's UI is itself probabilistic and emergent, and nothing static can represent it. Design leaders who treat this trajectory as discontinuous will misallocate headcount, org design, and tooling. Those who treat it as a single compressive curve will recognize that the Design Engineer role, the post-Figma tool stack, and the reorganization of the design–engineering interface at AI-native companies are not fashions but the terminal geometry of a thirty-year convergence.
 
 The memo below traces this compression across four epochs, structured along four constant analytical dimensions — dominant tooling, the definition of fidelity, the Design–Engineering translation gap, and organizational consequence — and surfaces three counter-periodizations (Flash, Axure, Framer Classic) that complicate any simple progress narrative. It closes with a full labor-market analysis of the Design Engineer role and a synthesis of what this means for FAANG and AI-native org charts through 2030.
-
-<CollapsingAbstractionChart />
 
 ## Era 1: the Pixel Era, 1995–2010
 
@@ -37,6 +38,8 @@ The table-to-CSS transition that would eventually make hand-coded layout tractab
 The Pixel Era invented the "web designer" as a role distinct from "graphic designer," seeded first at HotWired in 1994 where Jeff Veen's "interface team" became the prototype for every in-house digital-design group that followed. Don Norman, who joined Apple in 1993 as the world's first User Experience Architect, coined the framing: "I invented the term because I thought human interface and usability were too narrow. I wanted to cover all aspects of the person's experience with a system." Jakob Nielsen's Alertbox launched on useit.com in 1995; Nielsen Norman Group was founded August 8, 1998; the Web Standards Project and *A List Apart* were founded the same year. Jesse James Garrett's *The Elements of User Experience* (New Riders, July 2002) codified the five-plane model — Strategy, Scope, Structure, Skeleton, Surface — that would structure UX curricula for two decades, and Garrett himself coined "Ajax" in a February 18, 2005 essay. Adaptive Path, which he co-founded in 2001 with Veen, Merholz, and four others, was acquired by Capital One in 2014 — the consultancy-to-enterprise trajectory that would recur in 2020s design-org history.
 
 The era's closing cultural artifact is Douglas Bowman's "Goodbye, Google" post, March 20, 2009: "A team at Google couldn't decide between two blues, so they're testing 41 shades between each blue to see which one performs better… I had a recent debate over whether a border should be 3, 4 or 5 pixels wide, and was asked to prove my case. I can't operate in an environment like that." Bowman's resignation is the canonical artifact of the craft-vs-optimization fault line that continues to structure the discipline.
+
+<Blues41 />
 
 ### Counter-periodization: Flash was a regression waiting to happen
 
@@ -76,6 +79,8 @@ Figma — founded in 2012 by Dylan Field (Thiel Fellow, 2012, $100K) and Evan Wa
 
 Funding compounded: Series A 2015 (Greylock, ~$48M val), Series B 2018 (Kleiner, ~$115M), Series C February 2019 ($40M, ~$440M), Series D April 30, 2020 ($50M, a16z, $2B val), Series E June 2021 ($200M, Durable Capital, $10B val). ARR trajectory: $75M (2020) → $400M exiting 2022 → ~$600M end-2023, 40% YoY, 150% net dollar retention, ~90% gross margins, ~1,400 employees. The file was dead. The canonical design artifact became a URL.
 
+<FigmaValuation />
+
 ### The Adobe–Figma deal was the regulatory confirmation of Figma's dominance
 
 On September 15, 2022 Adobe announced a $20B acquisition of Figma — half cash, half stock, with ~6M RSUs vesting to employees over four years. Shantanu Narayen: "The combination of Adobe and Figma is transformational and will accelerate our vision for collaborative creativity." Field, at announcement: "With Adobe's amazing innovation and expertise, especially in 3D, video, vector, imaging and fonts, we can further reimagine end-to-end product design in the browser." Adobe's stock dropped ~17% on the news; the $20B implied a 50× ARR multiple against an ~8.3× Bessemer Cloud Index average.
@@ -97,6 +102,8 @@ Framer, founded 2014 in Amsterdam by Koen Bok and Jorn van Dijk (ex-Sofa, acquir
 ### The InVision autopsy
 
 InVision's trajectory from $1.9B unicorn in December 2018 to December 2024 shutdown is the clearest case study of Era 2-to-Era 3 collapse, and worth tabulating precisely:
+
+<InvisionArc />
 
 | Date | Event |
 | --- | --- |
@@ -128,6 +135,8 @@ The Intelligence Era is defined not by a single dominant tool but by a stack tha
 
 A second tier of prompt-to-app tools emerged: Bolt.new (StackBlitz, Eric Simons and Albert Pai) launched via a single tweet October 3, 2024 and went "$0 to $4M ARR in 30 days," $20M ARR in month two, $40M ARR by mid-March 2025 with 15–20 staff — one of the fastest-growing products in software history — raising $105M Series B in January 2025 (Emergence/GV, ~$700M val). Lovable (Stockholm, Anton Osika, Fabian Hedin), launched December 2024 from Osika's GPT-Engineer open-source project, hit $100M ARR in under a year and $200M ARR by November 2025, with 25M projects built in the first year and customers including Klarna, Uber, and Zendesk; raised $200M Series A (Accel) at $1.8B and $330M Series B in December 2025 at $6.6B. Replit Agent launched September 2024, reached $100M+ ARR by mid-2025 on 50M+ users, and shipped Agent 3 (September 2025) and Agent 4 (March 2026). Amjad Masad's position is characteristic of the epoch: "I no longer think you should learn to code."
 
+<AiArr />
+
 ### The component-library collapse into shadcn/ui and Tailwind
 
 shadcn/ui — first committed by pseudonymous Shadab/shadcn Ahmed on January 24, 2023 — is not an npm package but a CLI that copies Radix UI + Tailwind components into the user's codebase. Vercel hired shadcn as Design Engineer on August 8, 2023 (announced on X by Rauch and shadcn together). It became the default component library that v0, Bolt, Lovable, and Cursor generate against, because its transparent, owned-code model is legible to LLMs and editable by humans. Over 105,000 GitHub stars by 2025. Adam Wathan and Steve Schoger's Tailwind CSS (v1.0 May 13, 2019) provides the utility-first substrate that makes LLM generation practical — no class-naming debates, all composition. Tailwind Labs, ironically, reported losing ~80% of revenue and 75% of engineering in 2025 because "LLMs generate Tailwind components for free," disrupting the paid-components business model — one of the first observable instances of generative AI commoditizing its own substrate.
@@ -145,4 +154,3 @@ The defining conceptual move of Era 4 is that fidelity is no longer a property o
 ### The handoff has collapsed because there is nothing to hand off
 
 Agentic workflows — Claude Code, Replit Agent, Cursor Composer — run for minutes or hours, writing files, running tests, self-correcting, rolling back, sometimes forking into parallel sub-agents. The "UI" is temporal, and its state machine is not knowable at design time. Runtime-generated UI via the Vercel AI SDK's generative-UI primitives (2024) composes interfaces from LLM output at request time; a "design" for such an interface is not a mockup but a type system and a prompt. The mockup–handoff–build workflow that defined Eras 2 and 3 is not slow in Era 4 — it is semantically undefined. There is no artifact whose translation to code would be meaningful.
-

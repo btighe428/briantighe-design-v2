@@ -1,0 +1,169 @@
+---
+title: "Ten Things You Didn't Learn in UX Bootcamp"
+subtitle: "A senior-level field guide — stakeholders to AI-era practice, 2026 edition"
+date: 2026-04-20
+description: "The ten dimensions of senior design practice that bootcamps leave out — stakeholder management, developer handoff, PM collaboration, lean methodology, measurement, research, foundations, critique, systems, and career — plus the AI acceleration since 2023 that rewires all of them."
+epigraph: "Respect the one you weren't paying attention to. Respect is the parallel between art and life."
+epigraphAttribution: "Josef Albers, in critique at Black Mountain College (quoted in Frederick Horowitz, BMC Museum)"
+dropCap: true
+---
+
+import { BoehmCostCurve } from '@/components/figures/boehm-cost-curve';
+import { NielsenFiveUsers } from '@/components/figures/nielsen-five-users';
+import { JaggedFrontier } from '@/components/figures/jagged-frontier';
+import { DesignLeadershipTimeline } from '@/components/figures/design-leadership-timeline';
+import { FaangExperiments } from '@/components/figures/faang-experiments';
+
+**Thesis.** UX bootcamp teaches the visible craft — personas, wireframes, usability heuristics, the basic vocabulary of interface design. It does not teach the ten dimensions that separate a portfolio-ready junior from a senior practitioner shipping at scale. Those dimensions are not optional skills to learn eventually; they are the substance of the actual work. The sections below trace each through its historical canon, its primary-source evidence, its quantified outcomes where the evidence supports them, and the 2023–2026 AI acceleration that is rewiring all ten at once.
+
+The meta-pattern worth naming at the start: every one of these sections converges, in 2026, on the same premium skill — *knowing when the output is wrong*. Whether the output comes from a junior designer, a stakeholder's opinion, an A/B test result, a Figma Make generation, or your own earlier draft. The discipline is no longer about producing output. Output is commodified. The discipline is about judging it.
+
+## 1. Working with stakeholders
+
+The canonical frame is Aubrey Mendelow's 1991 Power × Interest grid, published at the Second International Conference on Information Systems (Kent State University). Four quadrants: Manage Closely (high power, high interest — the CEO, the exec sponsor), Keep Satisfied (high power, low interest — the CFO, the regulator), Keep Informed (low power, high interest — the user, the junior IC), Monitor (low/low). Murray-Webster and Simon's 2006 extension adds a supportive/oppositional axis. NN/g's "Stakeholder Analysis for UX Projects" applies Mendelow directly to design.
+
+Underneath Mendelow sits the RACI matrix (Responsible, Accountable, Consulted, Informed), which evolved from 1950s systems engineering and 1970s matrix-management consulting. For design work, RACI matters most at handoff and approval points — design-system change governance, accessibility sign-offs, research-finding distribution.
+
+The senior-level move is not producing RACI charts. It is managing the manager, a skill formalized in Gabarro and Kotter's 1980 *Harvard Business Review* essay "Managing Your Boss" and elaborated in Linda Hill's thirty years of HBS research (*Becoming a Manager*, 1992; *Managing Up*, 2008). The thesis: the manager-subordinate relationship is one of *mutual dependence*. Understand both parties' strengths, weaknesses, work styles, and goals — and engineer visibility and cooperation in both directions.
+
+The critical modern addition is psychological safety. Amy Edmondson's 1999 *Administrative Science Quarterly* study of 51 work teams defined it as "a shared belief held by members of a team that the team is safe for interpersonal risk taking" and showed that learning behavior mediates the link to team performance. Google's Project Aristotle (2012–2015, lead researcher Julia Rozovsky, 180+ teams, 250+ inputs) identified five team dynamics — in order — as *(1) psychological safety, (2) dependability, (3) structure and clarity, (4) meaning, (5) impact*. High-psychological-safety sales teams at Google exceeded targets by 17%; low-psych-safety teams missed by 19%.
+
+<DesignLeadershipTimeline />
+
+Design leadership as a discipline emerged across a sixty-year arc: the Royal Society of Arts Presidential Medals for Design Management (term coined 1964), the Design Management Institute's founding at Massachusetts College of Art (1975), Apple's first Human Interface Guidelines (1987), Mauro Porcini becoming 3M's first Chief Design Officer (2010), and the IBM Design Program Office growing under Phil Gilbert from 230 designers in 2013 to over 3,000 across 100+ studios in 175 countries by 2021, certifying 100,000+ IBMers in IBM Design Thinking.
+
+## 2. Working with developers
+
+The empirical backbone of every senior designer's argument with engineering is Barry Boehm's cost-of-change curve (*Software Engineering Economics*, Prentice-Hall, 1981; revisited in Boehm and Basili, *IEEE Computer* 2001). Finding and fixing a defect after deployment is approximately one hundred times more expensive than finding it during requirements and design. The NIST Planning Report 02-3 (2002) estimated that buggy software costs the US economy $22.2–$59.5 billion annually, roughly 0.6% of GDP, with ~50% of development budgets consumed by testing.
+
+<BoehmCostCurve />
+
+The curve flattens considerably on small, agile projects — closer to 1:4 or 1:5 than 1:100 — but the logarithmic shape holds. The senior designer's job is knowing when to spend design minutes to save engineering hours, and when to ship to learn. Boehm and Basili's 2001 top-ten list also found that 40–50% of project effort is avoidable rework and that 20% of defects drive 80% of it.
+
+The handoff boundary has moved three times since 2010. Sketch (September 2010) and InVision (2011) replaced the sliced-PSD artifact. Figma's public launch (September 27, 2016) replaced Sketch with multiplayer on the browser. Then the Adobe–Figma deal at $20B was announced (September 15, 2022), regulatory review killed it fourteen months later (December 18, 2023), Adobe paid Figma a $1B reverse-termination fee, and Figma IPO'd on NYSE in August 2025. The current collapse — Figma Make, v0, Cursor, Claude Code, Code Connect — is the subject of Section 11.
+
+Design tokens evolved through the same window: the W3C Design Tokens Community Group was founded in 2019 and published its first stable specification on October 28, 2025. Jina Anne and Jon Levine at Salesforce's Lightning Design System team popularized the term; Nathan Curtis at EightShapes is the authoritative practitioner on measuring token ROI.
+
+## 3. Working with product management
+
+The product manager role begins with Neil McElroy's May 13, 1931 "Brand Men" memo at Procter & Gamble — three pages, 800 words, breaking P&G's one-page rule. McElroy later became P&G President and US Secretary of Defense, and his philosophy reached HP through his mentorship of Hewlett and Packard at Stanford. Jabe Blumenthal invented the "Program Manager" role at Microsoft on Excel for Mac in the late 1980s. Ben Horowitz's 1996 "Good Product Manager / Bad Product Manager" memo at Netscape introduced the "CEO of the product" framing. Marty Cagan founded Silicon Valley Product Group in 2001 and has since codified the discipline across three canonical books: *Inspired* (2008; second edition 2017), *Empowered* (2020, with Chris Jones), and *Transformed* (2024).
+
+Cagan's cornerstone concept — the product *trio* (PM + designer + tech lead) collaborating on discovery, not handoff — was amplified by Teresa Torres's *Continuous Discovery Habits* (May 2021) and the Opportunity Solution Tree: business outcome → customer opportunities → solutions → assumption tests, with weekly customer interviews by the full trio.
+
+The product-failure data is more contested than the canonical citations suggest. CB Insights' 2024 update to "Top 12 Reasons Startups Fail" (431 VC-backed shutdowns since 2023) found 43% failed from poor product-market fit, 29% from bad timing, 19% from broken unit economics; 70% ran out of capital, now framed as a symptom rather than a cause. Clayton Christensen's widely-cited 95% CPG failure rate was denied by Christensen himself — Castellion and Markham documented the rebuttal in the 2013 *Journal of Product Innovation Management*. Real CPG failure rates are closer to 40%; Nielsen BASES cites 85%. Cite carefully.
+
+Value frameworks that matter at the senior level: Customer Lifetime Value (Shaw and Stone, *Database Marketing*, 1988); the Kano Model (Noriaki Kano et al., 1984, five categories — Must-Be, Performance, Attractive/Delighter, Indifferent, Reverse); Jobs-to-Be-Done (Tony Ulwick founded Strategyn in 1991; deployed Outcome-Driven Innovation at Cordis in 1992, lifting market share from 1% to 20%; Christensen popularized in *The Innovator's Solution*, 2003); Lean Canvas (Ash Maurya, 2010); RICE prioritization (Sean McBride at Intercom, 2016).
+
+NN/g's survey of 372 UX and PM professionals ("UXers and Product Managers Both Say Others Intrude on Their Work," Anna Kaley) found frequent duplication across discovery, early design, and research. The recommendation is explicit and senior: define responsibilities per role *and per project*, not once in perpetuity. Encroachment damages product quality; collaboration compounds it.
+
+## 4. Lean product development and MVPs
+
+The lean genealogy is a chain of translations. Taiichi Ohno's Toyota Production System (1948–1975) — just-in-time, kanban, jidoka, *muda* elimination — was studied by John Krafcik at MIT, who coined the term "lean" in his 1988 *Sloan Management Review* article "Triumph of the Lean Production System." (Krafcik originally considered calling it "fragile.") Womack, Jones, and Roos formalized it in *The Machine That Changed the World* (1990), a five-year, $5M IMVP study. Mary and Tom Poppendieck translated lean to software in *Lean Software Development* (Addison-Wesley, May 8, 2003) — seven principles, 22 thinking tools. Steve Blank added customer development in *The Four Steps to the Epiphany* (2005). Eric Ries named the genre in *The Lean Startup* (September 2011) — MVP, Build-Measure-Learn, pivot/persevere, validated learning. Jeff Gothelf and Josh Seiden applied it to design in *Lean UX* (April 9, 2013), winner of the 2013 *Dr. Dobb's* Jolt Award.
+
+<FaangExperiments />
+
+The quantitative break with the Lean Startup era is the FAANG experimentation infrastructure. Kohavi and Thomke's "The Surprising Power of Online Experiments" (*Harvard Business Review*, September–October 2017) reports that *Microsoft, Amazon, Booking.com, Facebook, and Google each conduct more than 10,000 online controlled experiments annually*. Their flagship anecdote: a Bing engineer's small headline change, shelved for months as low-priority, was A/B-tested — a 12% revenue increase, worth $100 million, the best revenue-generating idea Bing ever had. Only 10–20% of changes positively move target metrics (Kohavi et al., 2020). Booking.com runs "in excess of 1,000 concurrent experiments at any given moment" (Lukas Vermeer, Director of Experimentation).
+
+"Validated learning" in 2026 means always-on causal inference at scale, not a single pivot-or-persevere decision. Amazon's Working Backwards / PR-FAQ method (Bryar and Carr, *Working Backwards*, St. Martin's Press, 2021) complements the experimentation stack — since roughly 2004, most major initiatives begin with a one-page mock press release and five-page FAQ, often redrafted ten or more times before a line of code is written.
+
+## 5. OKRs, KPIs, and measuring success
+
+The OKR lineage is Drucker (1954, Management by Objectives, *The Practice of Management*) → Andy Grove at Intel (1971+, iMBOs, codified in *High Output Management*, 1983) → John Doerr learns iMBOs at a 1975 Grove seminar → Doerr introduces OKRs to Larry Page and Sergey Brin in Fall 1999 at Google → Doerr, *Measure What Matters*, Portfolio/Penguin, April 24, 2018. Target attainment norm: 70% for aspirational KRs, 1.0 reserved for committed deliverables. Page's endorsement: "OKRs have helped lead us to 10× growth, many times over."
+
+The full measurement stack answers different questions at different altitudes. OKRs (Grove/Doerr) for corporate alignment. North Star Metric (Sean Ellis, GrowthHackers, June 21, 2017) for growth. AARRR (Dave McClure, Ignite Seattle, August 8, 2007 — acquisition, activation, retention, referral, revenue) for funnel health. SUS (John Brooke, DEC UK, 1986) for perceived usability — a 10-item Likert instrument yielding a 0–100 score; Jeff Sauro's 500-study benchmark puts the mean at 68. HEART (Rodden, Hutchinson, and Fu, CHI 2010) for product UX. NPS (Reichheld, *HBR* December 2003) for loyalty, with Sauro's partial replication finding NPS explains roughly 38% of variance in firm growth — meaningful but smaller than Reichheld's original 76% claim.
+
+Two pillar studies link design investment to business outcomes. McKinsey's "The Business Value of Design" (October 25, 2018) constructed the McKinsey Design Index across 300 public companies, 5 years, 100,000+ design actions: top-quartile MDI scorers showed +32 percentage points higher revenue growth and +56 percentage points higher total return to shareholders versus industry peers. The DMI Design Value Index (Jeneanne Rae, 2013–) tracks 16 design-centric public companies; the 2015 edition showed 211% outperformance versus S&P 500 over 10 years.
+
+Both studies are correlational, use curated portfolios, and originate from organizations with commercial stakes in their conclusions. Present as strong indicative evidence, not settled causal fact.
+
+## 6. Working with UX research
+
+User-experience research has a long genealogy: Alphonse Chapanis's WWII cockpit-error research (1942–1949), Henry Dreyfuss's anthropometric figures in *Designing for People* (1955) and *The Measure of Man* (1960), the founding of CHI in 1982, Don Norman coining "User Experience" at Apple in 1993 (forming the User Experience Architect's Office with Tom Erickson and Harry Saddler), the founding of Nielsen Norman Group in 1998, and ResearchOps as a formal discipline from 2018 (Kate Towsey, *Research That Scales*, Rosenfeld Media, 2024).
+
+The single most-cited finding in the field — Nielsen's "Why You Only Need to Test with 5 Users" (March 19, 2000) — is also its most contested. The foundation is the Nielsen and Landauer INTERCHI '93 model, yielding approximately 85% of usability problems detected with 5 users via the formula 1 − (1 − L)ⁿ at L ≈ 31%.
+
+<NielsenFiveUsers />
+
+Three rebuttals belong in every senior research playbook. Laura Faulkner's 2003 *Behavior Research Methods* study ran 60 users; random subsets of 5 detected anywhere from 55% to 99% of problems — the variance being the point. Ten users pushed the floor to ≥80%, twenty to ≥95%. Jared Spool and Will Schroeder (CHI 2001) argued five users is "nowhere near enough" for modern sites. Lindgaard and Chattratichart's SIGCHI 2007 study of nine expert teams testing the same site found coverage of 7% to 43% of known problems — task coverage matters more than participant count.
+
+Method selection at the senior level draws on Christian Rohrer's NN/g framework (2008, updated 2022) — attitudinal vs. behavioral, qualitative vs. quantitative, natural vs. scripted vs. limited vs. decontextualized, plotting 20 common methods on three axes. Practitioner canon: Erika Hall's *Just Enough Research* (2013), Steve Krug's *Rocket Surgery Made Easy* (2009), Jeff Sauro and James Lewis's *Quantifying the User Experience* (2012), Indi Young's *Mental Models* (2008), Bob Moesta's Jobs-to-Be-Done "switch" interview method.
+
+NN/g's 6-level UX Maturity Model (Pernice, Nielsen, Rosala, September 2021) — Absent → Limited → Emergent → Structured → Integrated → User-Driven — found, in a 5,000+ self-assessment analysis, that most organizations concentrate in the middle stages. User Interviews' "State of User Research" annual report has tracked the discipline's professional maturation since 2018: the 2025 edition's themes are ResearchOps, democratization ("people who do research" beyond dedicated researchers), and AI-assisted synthesis.
+
+## 7. Design foundations
+
+Gestalt psychology is the closest thing the field has to a first-principles science. Max Wertheimer's 1912 study introducing the phi phenomenon (his subjects were Kurt Koffka and Wolfgang Köhler — the school's co-founders) predates the discipline of design entirely. Wertheimer's 1923 laws — Proximity, Similarity, Common Fate, Good Continuation, Closure, Symmetry, Parallelism, Prägnanz, Figure/Ground — still describe the geometry of every screen layout. Palmer's 1992 "Common Region" principle adds extrinsic grouping.
+
+Color theory runs from Newton's *Opticks* (1704) through Goethe's *Theory of Colours* (1810), Chevreul's *De la loi du contraste simultané des couleurs* (1839, which influenced the Impressionists), Munsell's *A Color Notation* (1905), Johannes Itten's *The Art of Color* (Bauhaus, 1961), to Josef Albers's *Interaction of Color* (Yale, 1963). Albers: "If one says 'Red' … there will be 50 reds in their minds." Color psychology beyond specific context-dependent effects is largely pseudoscientific. Peperkoorn, Roberts, and Pollet's 2016 *Evolutionary Psychology* paper (N=830 men) documented three well-powered null replications of the "romantic red" effect; Lehmann, Elliot, and Calin-Jageman's 2018 meta-analysis found effects "small and methodologically fragile." Cross-cultural variation has been documented since Adams and Osgood (1973). Sweeping color-emotion claims remain pseudoscientific; invoke modestly.
+
+Don Norman's *The Psychology of Everyday Things* (Basic Books, 1988; retitled *The Design of Everyday Things* in 1990; substantially revised 2013) is the field's textbook. "Affordances" was borrowed from J. J. Gibson's 1977 paper and 1979 book; Norman narrowed it to *perceivable* action possibilities and added "signifiers" in his 2008 *Interactions* column — "signifiers are of far more importance to designers than are affordances."
+
+The classical laws — Fitts's Law (1954), Hick-Hyman Law (1952), Miller's 7±2 (1956, with Cowan's 2001 revision to ~4 and a reminder that Miller used "magical" ironically), Doherty Threshold (IBM, November 1982, 400ms), Tesler's Law of Conservation of Complexity, Postel's Law — are consolidated in Jon Yablonski's *Laws of UX* (O'Reilly, 2020) and at lawsofux.com.
+
+The Bauhaus lineage (Walter Gropius, founded April 1, 1919; Weimar 1919–1925, Dessau 1925–1932, Berlin 1932–1933; closed April 19–20, 1933 under Nazi pressure) produced the Vorkurs foundation taught by Itten, Moholy-Nagy, and Albers. The Hochschule für Gestaltung Ulm (1953–1968) carried it forward through Dieter Rams's Ten Principles of Good Design ("innovative, useful, aesthetic, understandable, unobtrusive, honest, long-lasting, thorough, environmentally friendly, as little design as possible — *Weniger, aber besser*") to Jonathan Ive and Apple.
+
+Information design culminates in Edward Tufte's canon (Graphics Press): *The Visual Display of Quantitative Information* (1983), *Envisioning Information* (1990), *Visual Explanations* (1997), *Beautiful Evidence* (2006), *Seeing with Fresh Eyes* (2020). Data-ink ratio, chartjunk, small multiples, the lie factor, sparklines.
+
+## 8. Design critique
+
+Critique has three intellectual ancestries. The École des Beaux-Arts (Académie royale 1648, reorganized 1816) established the atelier *patron* model — 2–3 studio visits per week, critique "table to table" against a fixed classical standard. The Bauhaus Vorkurs (1919–1933) replaced hierarchical judgment with group critique centered on material investigation; Albers's method — "direct and systematic" — carried into his American teaching. Black Mountain College (1933–1957) inherited Albers when he and Anni arrived in North Carolina at Philip Johnson's invitation; students included Rauschenberg, Twombly, and Asawa.
+
+The feedback-effectiveness research is sobering. Kluger and DeNisi's 1996 meta-analysis (*Psychological Bulletin*, 607 effect sizes, 23,663 observations) found a positive mean effect (d = 0.41) but noted over 38% of feedback interventions had negative effect sizes — performance degraded. Their Feedback Intervention Theory: when attention moves from the task to the self (ego threat), effectiveness collapses. Stone and Heen's *Thanks for the Feedback* (Viking, 2014) identifies three blocking triggers (truth, relationship, identity) and separates appreciation, coaching, and evaluation. Kim Scott's *Radical Candor* (2017) plots Care Personally × Challenge Directly into four quadrants — Radical Candor, Ruinous Empathy, Obnoxious Aggression, Manipulative Insincerity.
+
+Buckingham and Goodall's "The Feedback Fallacy" (*HBR*, March–April 2019) names three failure modes of conventional performance review: more than 50% of your rating of someone reflects your own characteristics, not theirs (rater idiosyncrasy); criticism triggers fight-or-flight and inhibits learning; excellence is idiosyncratic — prefabricated feedback models mislead. Their recommendation: "Yes! That!" — point at moments of success rather than gap-fix.
+
+The Pixar Braintrust model (Ed Catmull, *Creativity, Inc.*, Random House, 2014) codifies three rules: *candor* as the key to collaboration; the Braintrust has *no authority* — the director does not have to follow specific suggestions; feedback is *suggestion, not mandate*. Catmull explicitly barred Steve Jobs from Braintrust meetings to prevent hierarchy from suppressing candor. Adam Connor and Aaron Irizarry's *Discussing Design* (O'Reilly, 2015) distinguishes *critique* (analysis aligned with stated objectives) from reaction or authority-assertion.
+
+Teresa Amabile and Steven Kramer's *The Progress Principle* (HBR Press, 2011) analyzed 12,000 diary entries from 238 knowledge workers across seven companies. The strongest predictor of positive inner work life — and creativity — is making progress in meaningful work. Setbacks carry 2–3× the emotional impact of wins. In critique, protect momentum; surface what's working.
+
+The growth-mindset literature is more contested than its popular reception suggests. Sisk et al.'s 2018 meta-analysis in *Psychological Science* found mindset accounts for only ~1% of variance in academic achievement (d ≈ 0.08); Macnamara and Burgoyne's 2023 follow-up (63 studies) found d̄ = 0.05, non-significant after publication-bias correction. Invoke modestly.
+
+## 9. Thinking in design systems and patterns
+
+Pattern language descends from Christopher Alexander, Sara Ishikawa, and Murray Silverstein's *A Pattern Language: Towns, Buildings, Construction* (Oxford, 1977 — 253 patterns) and *The Timeless Way of Building* (1979). Doug Lea's 1994 *ACM SEN* paper formalized the software bridge; the Gang of Four's *Design Patterns* (Gamma, Helm, Johnson, Vlissides, Addison-Wesley, 1994) explicitly cites Alexander in its preface. Ward Cunningham and Kent Beck had applied Alexander to software at OOPSLA in 1987.
+
+Brad Frost's June 2013 "Atomic Web Design" blog post and 2016 book articulated the atomic hierarchy — atoms, molecules, organisms, templates, pages — that every design-system team now speaks. Frost notes the phrase "design systems" was not yet common when he wrote the post.
+
+The major design systems arrived in a tight window: the Yahoo Design Pattern Library (February 2006, released under CC-BY), Google's Material Design (Matías Duarte, Google I/O, June 25, 2014, codenamed "Quantum Paper"), Salesforce Lightning Design System (August 25, 2015), Airbnb DLS (Karri Saarinen, April 2016), Microsoft Fluent (May 11, 2017), Shopify Polaris (2017), IBM Carbon (v9 public milestone June 2018), GOV.UK Design System (June 22, 2018), Adobe Spectrum (public October 22, 2019), Material You / Material 3 (2021), Fluent 2 (2023).
+
+The Sparkbox Design Systems Survey (annual since 2018) tracks the industry's maturity. Recurring findings: adoption and silos are the top challenge every year; only ~16% of teams track success metrics (2022); ~35% have considered starting over (2021). Consistency and efficiency are the top-cited benefits; Nathan Curtis at EightShapes is the authoritative practitioner on ROI modeling.
+
+Software debt underlies all of it. Ward Cunningham coined "technical debt" at OOPSLA '92 (March 26, 1992) describing the WyCash Portfolio Management System: "Shipping first-time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite." The DRY principle (Hunt and Thomas, *The Pragmatic Programmer*, 1999): "Every piece of knowledge must have a single, unambiguous, authoritative representation within a system." Design tokens — as structured data through the W3C DTCG specification (v1.0 October 28, 2025) — are the current mechanism for paying down cross-surface visual debt.
+
+## 10. Navigating your career
+
+The individual-contributor and manager tracks are now formal, parallel ladders at every major tech company. Camille Fournier's *The Manager's Path* (O'Reilly, March 13, 2017) maps engineer → tech lead → manager → CTO. Will Larson's *Staff Engineer: Leadership Beyond the Management Track* (StaffEng.com, 2021) names four archetypes: Tech Lead, Architect, Solver, Right Hand. Tanya Reilly's *The Staff Engineer's Path* (O'Reilly, October 2022) applies the model to design-adjacent work.
+
+Compensation data (Levels.fyi, as of April 2026): Meta Product Designer IC5 median ~$379K; IC6 (Staff) ~$504K; IC7 (Senior Staff / Principal) ~$912K with ranges up to $1.48M; IC8 up to $970K. Google L5 product designers ~$300–400K; L6 ~$501K; L7 frequently above $600K. Apple ICT5/6 designers ~$400–700K+. Self-reported; sample sizes thinner for senior design than engineering.
+
+The T-shaped designer metaphor originated with David Guest in *The Independent* (1991) and was popularized by Tim Brown at IDEO (*Change by Design*, 2009; *HBR* "Design Thinking," June 2008). Variants followed: pi-shaped, comb-shaped, M-shaped.
+
+The Chief Design Officer role emerged in a specific seven-year window. Mauro Porcini became 3M's first CDO (2010), then PepsiCo's first CDO (June 2012, reporting to Indra Nooyi), then Samsung's first CDO (2025). Phil Gilbert became IBM GM of Design under Ginni Rometty (December 2012). Jony Ive was promoted to Apple CDO on May 26, 2015 — third C-level executive alongside Cook and Maestri. Katie Dill went to Lyft as VP Design (October 2017), later Head of Design at Stripe.
+
+The specializations that emerged in 2020–2026 are worth knowing by name. *Design Engineer* — the hybrid designer/front-end engineer championed at Vercel, Linear, Figma, Replit, and Notion. Atlassian's David Hoang called it "the most sought-after role this decade"; US salary range $120K–$300K+, with Netflix's Senior Design Technologist listed at $100K–$720K. *DesignOps* formalized through DesignOps Assembly (Meredith Black and Elyse Eshel, 2017) and the Rosenfeld DesignOps Summit (same year). *AI Product Designer* and *AI Design Engineer* emerged from 2024 — LinkedIn's 2025 "Jobs on the Rise" put AI Engineer at #1; Autodesk's 2025 AI Jobs Report (~3M postings) found design skills *surpassed coding* as the most in-demand AI-job skill, with AI mentions in postings up 114.8% (2023), 120.6% (2024), and 56.1% year-to-date 2025.
+
+Senior portfolios carry business-impact metrics with causal narrative, strategic work (roadmaps, org design, systems thinking), leadership stories (coaching, cross-functional alignment), and fewer but deeper case studies. Exemplars: Brian Lovin, Pavithra Aravindan, Karri Saarinen, Jason Yuan.
+
+## 11. AI's impact on design practice, 2023–2026
+
+The generative-design tool stack arrived faster than any prior tool transition in the field's history. Adobe Firefly beta (March 21, 2023), general availability September 2023. v0 by Vercel (October 11, 2023) as "Generative UI" — 100K waitlist in three weeks. Figma AI announced at Config 2024 (June 26, 2024) with Make Designs, Visual Search, Rename Layers. Config 2025 (May 7, 2025) shipped Figma Make — prompt-to-code with Claude Sonnet 4 output to React and Tailwind — plus Figma Sites, Draw, Buzz, and Grid. Galileo AI relaunched as Stitch in Google Labs (May 21, 2025). v0.dev became v0.app in August 2025 with full-stack app generation, reportedly 6M+ developers and ~$42M ARR by early 2026.
+
+The productivity evidence is precise enough to plan around. Dell'Acqua et al.'s "Navigating the Jagged Technological Frontier" (HBS Working Paper 24-013, September 22, 2023) ran a randomized field experiment with 758 BCG consultants using GPT-4. Inside the AI frontier: 12.2% more tasks completed, 25.1% faster, approximately 40% higher quality. Lower-baseline workers gained most (up to +43%). Outside the frontier, AI-assisted consultants performed 19 percentage points *worse* than non-AI consultants on tasks the model gets subtly wrong.
+
+<JaggedFrontier />
+
+Peng et al.'s GitHub Copilot study (arXiv 2302.06590) found a 55.8% speed advantage (71 min vs. 161 min, p = 0.0017) on a controlled JavaScript HTTP-server task. GitHub's follow-up with Accenture found 10.6% more PRs and a 3.5-hour reduction in cycle time. GitClear's 2024 follow-up documented a concurrent decline in code maintainability — the jagged frontier shows up as technical debt on a six-month lag.
+
+Adoption is still uneven. The UX Tools 2024 Design Tools Survey (2,220 respondents, fielded November 2024–January 2025) found design leaders adopt AI at 29% versus individual contributors at 19.9% — an unusual top-down gap. 75.2% of designer AI usage is text-first (writing, documentation, research synthesis), not visual generation. Stack Overflow's 2025 survey found 65% of developers use AI coding tools weekly or more.
+
+What mid-career designers should internalize in 2026: *prompt craft and AI orchestration* (Claude, GPT-5, Figma Make, v0, Cursor); *code literacy* — read and edit React and Tailwind, design systems expressed as code through Code Connect and shadcn/ui; *experience architecture* across AI touchpoints — conversation design, agent behaviors, context engineering; *judgment and taste* — the jagged-frontier finding makes knowing when AI output is wrong the premium skill; *full-stack prototyping* — ship working prototypes, not static mocks. The designer-developer handoff is collapsing: v0, Figma Make, Cursor, Claude Code, and Code Connect together dissolve the Figma-to-code boundary that the 2010s tooling stack was built around.
+
+## The meta-pattern
+
+The ten sections converge on a single senior-level move. In every one, the premium skill in 2026 is *judgment of output* rather than *production of output*.
+
+Stakeholder work: judging which stakeholder's feedback is load-bearing and which is noise. Developer work: judging which design decision saves engineering hours and which wastes them. Product-management work: judging which opportunity is real and which is a pivot fantasy. Lean work: judging which experiment result is signal and which is novelty effect. Measurement work: judging which metric is proxy for the business outcome and which is proxy for activity. Research work: judging whether five users found the problems or missed them. Foundations work: judging which design decision is grounded in perception science and which is taste dressed up as principle. Critique work: judging when feedback is analysis aligned with stated objectives and when it is ego or authority-assertion. Systems work: judging which component abstraction compounds and which codifies yesterday's mistake. Career work: judging when to specialize deeper and when to widen.
+
+The AI era does not change this pattern. It intensifies it. The output is generated faster; the judgment must be better.
+
+That judgment is what the bootcamp can't teach, because it is only accumulated by shipping, critiquing, being critiqued, measuring, failing, re-shipping, and paying close attention to which of the above was wrong in the specific case. This essay is a field guide to the canon that helps the accumulation go faster.

@@ -12,6 +12,20 @@ const CY = H / 2;
 const MAX_R = 1050;
 const CENTER_R = 180;
 
+// Per-branch stroke patterns. Seven distinguishable variants so the
+// viewer can match any edge back to its branch even when branches
+// overlap near the center. Index aligns with branchIndex.
+const BRANCH_DASH_PATTERNS: (string | undefined)[] = [
+  undefined, // branch 0 — solid
+  '14 5', // branch 1 — long dash
+  '4 4', // branch 2 — medium dash
+  '14 4 3 4', // branch 3 — dash-dot
+  '2 4', // branch 4 — dotted
+  '10 4 2 4 2 4', // branch 5 — dash-dot-dot
+  '7 7', // branch 6 — even
+  '16 3 1 3', // branch 7+ — long-dash-dot (spare)
+];
+
 type PositionedNode = HierarchyNode<MapNode> & {
   __branchIndex: number;
   __id: string;
@@ -128,21 +142,29 @@ export function MindMap({ data }: { data: MapData }) {
             const active = inAncestry || inDescendant;
             const faded = hoveredNode && !active;
 
+            const dash =
+              BRANCH_DASH_PATTERNS[
+                targetNode.__branchIndex % BRANCH_DASH_PATTERNS.length
+              ];
             return (
               <path
                 key={`link-${i}`}
                 d={linkGen(link) ?? ''}
                 fill="none"
                 stroke={color}
-                strokeOpacity={faded ? 0.08 : targetNode.depth === 1 ? 0.75 : 0.55}
+                strokeOpacity={
+                  faded ? 0.1 : targetNode.depth === 1 ? 0.95 : 0.75
+                }
                 strokeWidth={
                   targetNode.depth === 1
-                    ? 3
+                    ? 4
                     : targetNode.depth === 2
-                      ? 2
-                      : 1.2
+                      ? 2.5
+                      : 1.6
                 }
+                strokeDasharray={dash}
                 strokeLinecap="round"
+                strokeLinejoin="round"
               />
             );
           })}

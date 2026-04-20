@@ -483,6 +483,71 @@
   background: var(--color-paper);
 }
 
+.essay.map-page .mind-map-figure svg:active {
+  cursor: grabbing;
+}
+
+.mind-map-controls {
+  position: absolute;
+  top: 1.5rem;
+  right: clamp(1rem, 3vw, 2.5rem);
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  z-index: 5;
+  background: var(--color-paper);
+  border: 1px solid var(--color-rule);
+  border-radius: 999px;
+  padding: 0.25rem 0.35rem;
+}
+
+.mind-map-controls .mm-btn {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+}
+
+.mind-map-controls .mm-btn:hover {
+  background: var(--color-paper-dim);
+  color: var(--color-accent);
+}
+
+.mind-map-controls .mm-btn:active {
+  background: var(--color-rule);
+}
+
+.mind-map-controls .mm-btn-reset {
+  width: auto;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp';
+  letter-spacing: 0.08em;
+}
+
+.mind-map-controls .mm-zoom-readout {
+  padding: 0 0.6rem 0 0.4rem;
+  font-size: 0.75rem;
+  color: var(--color-ink-muted);
+  font-variant-caps: all-small-caps;
+  font-feature-settings: 'smcp', 'onum';
+  letter-spacing: 0.05em;
+  min-width: 2.75rem;
+  text-align: center;
+}
+
 .essay.map-page .mind-map-figure figcaption {
   max-width: var(--measure);
   margin: 1rem auto 0;

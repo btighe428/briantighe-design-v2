@@ -43,12 +43,12 @@ function compute(data: MapData) {
   tree<MapNode>()
     .size([2 * Math.PI, MAX_R])
     .separation((a, b) => {
-      // Deeper depths need MORE angular room per leaf, not less.
-      // Previous formula (1/depth) caused sibling crowding at deep levels.
+      // With horizontal labels, leaves need MORE angular room than
+      // inner nodes because label text has the same screen width
+      // regardless of depth. Scale separation up with depth.
       const sameParent = a.parent === b.parent;
-      const base = sameParent ? 1 : 1.6;
-      // Scale up as depth increases so leaves get real angular breathing room.
-      return base * (1 + (a.depth - 1) * 0.35);
+      const base = sameParent ? 1 : 1.8;
+      return base * (1 + (a.depth - 1) * 0.6);
     })(root);
 
   let counter = 0;
@@ -292,6 +292,7 @@ export function MindMap({ data }: { data: MapData }) {
               if (n.depth === 0) return null;
               const angle = n.x ?? 0;
               const radius = n.y ?? 0;
+              const { x, y } = polar(angle, radius);
               const color =
                 data.branchColors[n.__branchIndex] ?? 'var(--color-ink)';
               const inAncestry = ancestryIds?.has(n.__id);
@@ -304,43 +305,44 @@ export function MindMap({ data }: { data: MapData }) {
               const fontSize = isBranch ? 32 : isSubBranch ? 22 : 17;
               const fontWeight = isBranch ? 600 : isSubBranch ? 500 : 400;
 
-              // Radial-label layout: each node is placed via
-              // rotate(angleDeg) translate(radius, 0), and text
-              // extends outward along that spoke. Labels never
-              // stack horizontally, so zoomed-in views stay readable.
-              const rotateDeg = (angle * 180) / Math.PI - 90;
-              const isRightHalf = angle < Math.PI;
-              const textX = isRightHalf ? 14 : -14;
-              const textAnchor = isRightHalf ? 'start' : 'end';
-              const textTransform = isRightHalf
-                ? undefined
-                : 'rotate(180)';
+              // Horizontal labels anchored by which side of the
+              // vertical axis the node sits on. Readable at any
+              // zoom level because text is never rotated.
+              const sinA = Math.sin(angle);
+              const onRight = sinA > 0.04;
+              const onLeft = sinA < -0.04;
+              const dx = onRight ? 14 : onLeft ? -14 : 0;
+              const anchor = onRight ? 'start' : onLeft ? 'end' : 'middle';
+              const cosA = Math.cos(angle);
+              const verticalAdjust =
+                anchor === 'middle'
+                  ? cosA > 0
+                    ? -18
+                    : fontSize + 6
+                  : fontSize / 3;
 
               return (
                 <g
                   key={n.__id}
-                  transform={`rotate(${rotateDeg}) translate(${radius}, 0)`}
                   onMouseEnter={() => setHoveredId(n.__id)}
                   onMouseLeave={() => setHoveredId(null)}
                   style={{ cursor: 'default' }}
                 >
                   <circle
-                    cx={0}
-                    cy={0}
+                    cx={x}
+                    cy={y}
                     r={isBranch ? 12 : isSubBranch ? 7 : 4}
                     fill={color}
                     fillOpacity={faded ? 0.2 : 1}
                   />
                   <text
-                    x={textX}
-                    y={0}
-                    dy="0.32em"
+                    x={x + dx}
+                    y={y + verticalAdjust}
                     fontSize={fontSize}
                     fontWeight={fontWeight}
                     fill={isBranch ? color : 'var(--color-ink)'}
                     fillOpacity={faded ? 0.25 : 1}
-                    textAnchor={textAnchor}
-                    transform={textTransform}
+                    textAnchor={anchor}
                     style={{
                       letterSpacing: isBranch ? '-0.005em' : '0',
                       transition: 'fill-opacity 120ms ease',
@@ -353,8 +355,8 @@ export function MindMap({ data }: { data: MapData }) {
                     {n.data.label}
                   </text>
                   <circle
-                    cx={0}
-                    cy={0}
+                    cx={x}
+                    cy={y}
                     r={Math.max(fontSize * 3, 36)}
                     fill="transparent"
                     pointerEvents="all"

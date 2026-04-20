@@ -2,6 +2,8 @@
 // the Google A/B test that prompted his resignation.
 
 const N = 41;
+const SWATCH = 26;
+const SWATCH_H = 180;
 const START = [66, 133, 244]; // Google blue
 const END = [13, 71, 161]; // deeper indigo
 
@@ -14,10 +16,12 @@ function blend(t: number): string {
 
 export function Blues41() {
   const swatches = Array.from({ length: N }, (_, i) => i / (N - 1));
+  const W = N * SWATCH;
+  const H = SWATCH_H + 40;
   return (
     <figure className="inline-figure blues-41">
       <svg
-        viewBox={`0 0 ${N * 18} 64`}
+        viewBox={`0 0 ${W} ${H}`}
         role="img"
         aria-label="41 shades of blue, linearly interpolated between Google's original blue and a deeper indigo."
         style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -25,32 +29,26 @@ export function Blues41() {
         {swatches.map((t, i) => (
           <rect
             key={i}
-            x={i * 18}
+            x={i * SWATCH}
             y={0}
-            width={18}
-            height={56}
+            width={SWATCH}
+            height={SWATCH_H}
             fill={blend(t)}
           />
         ))}
-        <text
-          x={0}
-          y={62}
-          fontSize={9}
-          fill="var(--color-ink-muted)"
-          style={{ fontFeatureSettings: "'onum'" }}
-        >
-          1
-        </text>
-        <text
-          x={N * 18}
-          y={62}
-          textAnchor="end"
-          fontSize={9}
-          fill="var(--color-ink-muted)"
-          style={{ fontFeatureSettings: "'onum'" }}
-        >
-          41
-        </text>
+        {[1, 11, 21, 31, 41].map((n) => (
+          <text
+            key={n}
+            x={(n - 1) * SWATCH + SWATCH / 2}
+            y={SWATCH_H + 24}
+            textAnchor="middle"
+            fontSize={16}
+            fill="var(--color-ink-muted)"
+            style={{ fontFeatureSettings: "'onum'" }}
+          >
+            {n}
+          </text>
+        ))}
       </svg>
       <figcaption>
         Forty-one shades of blue, linearly interpolated. The one Google's A/B

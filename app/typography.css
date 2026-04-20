@@ -454,32 +454,29 @@
 }
 
 /* ---------- Inline enrichment figures in essays ---------- */
-/* Small D3 figures placed next to the claim they support.
-   Break out slightly beyond the 65ch measure; caption stays at
-   measure for legibility. */
+/* D3 figures placed next to the claim they support. They break
+   out well beyond the 65ch measure so the data reads big; captions
+   snap back to measure for prose legibility. */
 
 .essay > figure.inline-figure {
-  max-width: min(760px, 100%);
-  margin: 2rem 0;
+  max-width: min(1100px, 100%);
+  margin: 3rem 0;
 }
 
 .essay > figure.inline-figure figcaption {
   max-width: var(--measure);
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   font-style: italic;
   color: var(--color-ink-muted);
-  font-size: 0.95rem;
-  line-height: 1.45;
+  font-size: 1rem;
+  line-height: 1.55;
   text-indent: 0;
-}
-
-.essay > figure.blues-41 {
-  max-width: min(560px, 100%);
 }
 
 @media (max-width: 900px) {
   .essay > figure.inline-figure {
     max-width: 100%;
+    margin: 2rem 0;
   }
 }
 

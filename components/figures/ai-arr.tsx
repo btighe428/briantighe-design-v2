@@ -61,9 +61,9 @@ const tools: Tool[] = [
   },
 ];
 
-const W = 760;
-const H = 300;
-const PAD = { t: 26, r: 110, b: 44, l: 60 };
+const W = 1100;
+const H = 480;
+const PAD = { t: 40, r: 150, b: 60, l: 80 };
 
 function formatUSD(v: number) {
   if (v >= 1e9) return `$${(v / 1e9).toFixed(v >= 10e9 ? 0 : 1)}B`;
@@ -100,10 +100,10 @@ export function AiArr() {
               strokeDasharray="2 3"
             />
             <text
-              x={PAD.l - 8}
-              y={y(v) + 3}
+              x={PAD.l - 12}
+              y={y(v) + 5}
               textAnchor="end"
-              fontSize={10}
+              fontSize={14}
               fill="var(--color-ink-muted)"
               style={{ fontFeatureSettings: "'onum'" }}
             >
@@ -126,14 +126,14 @@ export function AiArr() {
               x1={x(yr)}
               x2={x(yr)}
               y1={H - PAD.b}
-              y2={H - PAD.b + 4}
+              y2={H - PAD.b + 6}
               stroke="var(--color-ink-muted)"
             />
             <text
               x={x(yr)}
-              y={H - PAD.b + 18}
+              y={H - PAD.b + 26}
               textAnchor="middle"
-              fontSize={10}
+              fontSize={14}
               fill="var(--color-ink-muted)"
               style={{ fontFeatureSettings: "'onum'" }}
             >
@@ -153,7 +153,7 @@ export function AiArr() {
                   .join(' ')}
                 fill="none"
                 stroke={tool.color}
-                strokeWidth={1.5}
+                strokeWidth={2.5}
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
@@ -162,16 +162,16 @@ export function AiArr() {
                   key={i}
                   cx={x(p.t)}
                   cy={y(p.arr)}
-                  r={2.5}
+                  r={4}
                   fill={tool.color}
                 />
               ))}
               <text
-                x={x(last.t) + 6}
-                y={y(last.arr) + 4}
-                fontSize={11}
+                x={x(last.t) + 10}
+                y={y(last.arr) + 5}
+                fontSize={15}
                 fill={tool.color}
-                style={{ fontStyle: 'italic' }}
+                style={{ fontStyle: 'italic', fontWeight: 500 }}
               >
                 {tool.name}
               </text>

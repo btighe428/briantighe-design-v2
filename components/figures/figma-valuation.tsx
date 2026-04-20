@@ -19,9 +19,9 @@ const rounds: Round[] = [
   { label: 'E', date: 2021.5, val: 10e9, raised: 200e6, lead: 'Durable' },
 ];
 
-const W = 720;
-const H = 260;
-const PAD = { t: 24, r: 24, b: 44, l: 56 };
+const W = 1100;
+const H = 420;
+const PAD = { t: 40, r: 40, b: 60, l: 80 };
 
 function formatUSD(v: number) {
   if (v >= 1e9) return `$${(v / 1e9).toFixed(v >= 10e9 ? 0 : 1)}B`;
@@ -57,10 +57,10 @@ export function FigmaValuation() {
               strokeDasharray="2 3"
             />
             <text
-              x={PAD.l - 8}
-              y={y(v) + 3}
+              x={PAD.l - 12}
+              y={y(v) + 5}
               textAnchor="end"
-              fontSize={10}
+              fontSize={14}
               fill="var(--color-ink-muted)"
               style={{ fontFeatureSettings: "'onum'" }}
             >
@@ -84,26 +84,30 @@ export function FigmaValuation() {
             <circle
               cx={x(r.date)}
               cy={y(r.val)}
-              r={5}
+              r={8}
               fill="var(--color-ink)"
               stroke="var(--color-paper)"
-              strokeWidth={2}
+              strokeWidth={3}
             />
             <text
               x={x(r.date)}
-              y={y(r.val) - 12}
+              y={y(r.val) - 18}
               textAnchor="middle"
-              fontSize={11}
+              fontSize={15}
               fill="var(--color-ink)"
-              style={{ fontVariantCaps: 'all-small-caps', fontFeatureSettings: "'smcp'" }}
+              style={{
+                fontVariantCaps: 'all-small-caps',
+                fontFeatureSettings: "'smcp'",
+                letterSpacing: '0.06em',
+              }}
             >
               Series {r.label}
             </text>
             <text
               x={x(r.date)}
-              y={y(r.val) + 22}
+              y={y(r.val) + 30}
               textAnchor="middle"
-              fontSize={11}
+              fontSize={16}
               fill="var(--color-accent)"
               style={{ fontFeatureSettings: "'onum'" }}
             >
@@ -126,14 +130,14 @@ export function FigmaValuation() {
               x1={x(yr)}
               x2={x(yr)}
               y1={H - PAD.b}
-              y2={H - PAD.b + 4}
+              y2={H - PAD.b + 6}
               stroke="var(--color-ink-muted)"
             />
             <text
               x={x(yr)}
-              y={H - PAD.b + 18}
+              y={H - PAD.b + 26}
               textAnchor="middle"
-              fontSize={10}
+              fontSize={14}
               fill="var(--color-ink-muted)"
               style={{ fontFeatureSettings: "'onum'" }}
             >

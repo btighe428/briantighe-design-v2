@@ -23,9 +23,9 @@ const points: Point[] = [
   { t: 2024.99, y: 0, label: 'Shutdown', dead: true },
 ];
 
-const W = 720;
-const H = 240;
-const PAD = { t: 20, r: 36, b: 32, l: 36 };
+const W = 1100;
+const H = 400;
+const PAD = { t: 32, r: 48, b: 48, l: 48 };
 
 export function InvisionArc() {
   const x = scaleLinear().domain([2011, 2025]).range([PAD.l, W - PAD.r]);
@@ -73,16 +73,16 @@ export function InvisionArc() {
             <circle
               cx={x(p.t)}
               cy={y(p.y)}
-              r={p.dead ? 4 : 3}
+              r={p.dead ? 7 : 5}
               fill={p.dead ? 'var(--color-accent)' : 'var(--color-ink)'}
               stroke="var(--color-paper)"
-              strokeWidth={1.5}
+              strokeWidth={2}
             />
             {p.dead && (
               <text
-                x={x(p.t) + 10}
-                y={y(p.y) + 4}
-                fontSize={14}
+                x={x(p.t) + 14}
+                y={y(p.y) + 6}
+                fontSize={22}
                 fill="var(--color-accent)"
               >
                 ×
@@ -96,9 +96,9 @@ export function InvisionArc() {
           <text
             key={yr}
             x={x(yr)}
-            y={H - PAD.b + 16}
+            y={H - PAD.b + 24}
             textAnchor="middle"
-            fontSize={10}
+            fontSize={14}
             fill="var(--color-ink-muted)"
             style={{ fontFeatureSettings: "'onum'" }}
           >
@@ -109,13 +109,14 @@ export function InvisionArc() {
         {/* peak label */}
         <text
           x={x(2018.95)}
-          y={y(95) - 10}
+          y={y(95) - 16}
           textAnchor="middle"
-          fontSize={10}
+          fontSize={15}
           fill="var(--color-ink)"
           style={{
             fontVariantCaps: 'all-small-caps',
             fontFeatureSettings: "'smcp', 'onum'",
+            letterSpacing: '0.06em',
           }}
         >
           $1.9B peak, 2018
@@ -123,14 +124,15 @@ export function InvisionArc() {
 
         {/* shutdown label */}
         <text
-          x={x(2024.99) - 8}
-          y={y(0) - 8}
+          x={x(2024.99) - 14}
+          y={y(0) - 12}
           textAnchor="end"
-          fontSize={10}
+          fontSize={15}
           fill="var(--color-accent)"
           style={{
             fontVariantCaps: 'all-small-caps',
             fontFeatureSettings: "'smcp', 'onum'",
+            letterSpacing: '0.06em',
           }}
         >
           shutdown, Dec 2024

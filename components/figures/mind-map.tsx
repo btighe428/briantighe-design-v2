@@ -251,53 +251,75 @@ export function MindMap({ data }: { data: MapData }) {
               />
             ))}
 
-            {allLinks.map((link, i) => {
-              const targetNode = link.target;
-              const color =
-                data.branchColors[targetNode.__branchIndex] ?? 'var(--color-rule)';
-              const inAncestry =
-                ancestryIds?.has(targetNode.__id) ||
-                ancestryIds?.has(link.source.__id);
-              const inDescendant = descendantIds?.has(targetNode.__id);
-              const active = inAncestry || inDescendant;
-              const faded = hoveredNode && !active;
-              const dash =
-                BRANCH_DASH_PATTERNS[
-                  targetNode.__branchIndex % BRANCH_DASH_PATTERNS.length
-                ];
-              return (
-                <path
-                  key={`link-${i}`}
-                  d={linkGen(link) ?? ''}
-                  fill="none"
-                  stroke={color}
-                  strokeOpacity={
-                    faded ? 0.1 : targetNode.depth === 1 ? 0.95 : 0.75
-                  }
-                  strokeWidth={
-                    targetNode.depth === 1
-                      ? 4
-                      : targetNode.depth === 2
-                        ? 2.5
-                        : 1.6
-                  }
-                  strokeDasharray={dash}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              );
-            })}
+            {(() => {
+              const decorated = allLinks.map((link, i) => {
+                const targetNode = link.target;
+                const inAncestry =
+                  ancestryIds?.has(targetNode.__id) ||
+                  ancestryIds?.has(link.source.__id);
+                const inDescendant = descendantIds?.has(targetNode.__id);
+                const active = !!(inAncestry || inDescendant);
+                return { link, i, active };
+              });
+              const order = hoveredNode
+                ? [
+                    ...decorated.filter((d) => !d.active),
+                    ...decorated.filter((d) => d.active),
+                  ]
+                : decorated;
+              return order.map(({ link, i, active }) => {
+                const targetNode = link.target;
+                const color =
+                  data.branchColors[targetNode.__branchIndex] ?? 'var(--color-rule)';
+                const faded = hoveredNode && !active;
+                const dash =
+                  BRANCH_DASH_PATTERNS[
+                    targetNode.__branchIndex % BRANCH_DASH_PATTERNS.length
+                  ];
+                return (
+                  <path
+                    key={`link-${i}`}
+                    d={linkGen(link) ?? ''}
+                    fill="none"
+                    stroke={color}
+                    strokeOpacity={
+                      faded ? 0.08 : targetNode.depth === 1 ? 0.95 : 0.75
+                    }
+                    strokeWidth={
+                      targetNode.depth === 1
+                        ? 4
+                        : targetNode.depth === 2
+                          ? 2.5
+                          : 1.6
+                    }
+                    strokeDasharray={dash}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                );
+              });
+            })()}
 
-            {allNodes.map((n) => {
-              if (n.depth === 0) return null;
+            {(() => {
+              const nonRoot = allNodes.filter((n) => n.depth > 0);
+              const decorated = nonRoot.map((n) => {
+                const inAncestry = ancestryIds?.has(n.__id);
+                const inDescendant = descendantIds?.has(n.__id);
+                const active = !!(inAncestry || inDescendant);
+                return { n, active };
+              });
+              const order = hoveredNode
+                ? [
+                    ...decorated.filter((d) => !d.active),
+                    ...decorated.filter((d) => d.active),
+                  ]
+                : decorated;
+              return order.map(({ n, active }) => {
               const angle = n.x ?? 0;
               const radius = n.y ?? 0;
               const { x, y } = polar(angle, radius);
               const color =
                 data.branchColors[n.__branchIndex] ?? 'var(--color-ink)';
-              const inAncestry = ancestryIds?.has(n.__id);
-              const inDescendant = descendantIds?.has(n.__id);
-              const active = inAncestry || inDescendant;
               const faded = hoveredNode && !active;
 
               const isBranch = n.depth === 1;
@@ -363,7 +385,8 @@ export function MindMap({ data }: { data: MapData }) {
                   />
                 </g>
               );
-            })}
+              });
+            })()}
 
             <g>
               <circle

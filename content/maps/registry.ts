@@ -28,11 +28,13 @@ export const catalog: MapCatalogEntry[] = [
   {
     slug: 'venture-capital',
     title: 'Contemporary Topics in Venture Capital',
-    subtitle: 'Emerging areas, strategies, players, risks, advancements, outlook',
-    date: '2024-06-15',
+    subtitle: 'Six branches — emerging areas, strategies, players, risks, advancements, outlook',
+    date: '2026-04-19',
     summary:
-      'The six-branch shape of contemporary venture capital: emerging investment areas, investment strategies, key players, challenges and risks, technological advancements, and future outlook.',
-    status: 'planned',
+      'Expanded mind map of contemporary venture capital as it stands in 2026. Six branches and ~150 named facts: AI + climate + bio + defense emerging areas; stage-focused, thesis-driven, alternative-structure, and specialized strategies; legacy + growth + ascendant + solo players; valuation, regulatory, exit, and LP risks; AI deal sourcing, portfolio tooling, data platforms, and on-chain structures; AI-native firms, geographic diffusion, evolving fund structures, and power-law dynamics.',
+    status: 'published',
+    load: () =>
+      import('./venture-capital').then((m) => ({ map: m.map })),
   },
   {
     slug: 'apple-inc',

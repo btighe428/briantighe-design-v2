@@ -74,21 +74,55 @@ Per the Phase 1 manifest, write remaining MDX files. Verbatim migrations are sho
 
 ### Phase 4 — DNS cutover (week 5)
 
+**Confirmed 2026-04-19:** Domain is registered at Squarespace, and the Squarespace site is currently using it. This produces a specific cutover sequence because Squarespace auto-manages DNS while the site is connected; DNS changes will be reverted unless the domain is explicitly disconnected from the Squarespace site first.
+
 Prerequisites before cutover:
 - All migrated case studies live on Vercel
 - Redirect map tested (see below)
-- Search Console property verified for the Vercel deploy URL (so we have pre-cutover baseline indexing data)
+- Search Console property verified for the Vercel deploy URL (pre-cutover baseline)
 - No broken internal links on V2
 
-Cutover sequence:
+Cutover sequence — follow in order, do not reorder:
 
-1. **Add `briantighe.design` and `www.briantighe.design` as custom domains in Vercel** — `vercel domains add briantighe.design --scope brians-projects-61d69cd7`
-2. **Update DNS records at registrar.** Squarespace manages DNS by default if the domain was registered through Squarespace. Check at squarespace.com → Domains. Records to update:
-   - `A` record `@` → Vercel IP (Vercel will display the exact record to create)
-   - `CNAME` `www` → `cname.vercel-dns.com`
-   - Remove Squarespace-specific `CNAME` and `A` records that route to Squarespace
-3. **Propagation window:** 10 minutes to 48 hours. Monitor with `dig briantighe.design +short` and `curl -I https://briantighe.design` to confirm the Vercel certificate is served.
-4. **Disable the Squarespace site** after Vercel confirms traffic serving — otherwise Squarespace will keep collecting traffic during the DNS transition window. Do NOT cancel the Squarespace subscription until the DNS is fully transitioned and Search Console confirms the new site is serving (30+ days post-cutover) — retain the Squarespace site as a fallback.
+1. **In Vercel (project dashboard or CLI):** add `briantighe.design` and `www.briantighe.design` as custom domains on the project. Vercel shows the exact A record and CNAME values required (typically `A @ 76.76.21.21` and `CNAME www cname.vercel-dns.com`). Copy these values down before continuing.
+   ```
+   vercel domains add briantighe.design --scope brians-projects-61d69cd7
+   vercel domains add www.briantighe.design --scope brians-projects-61d69cd7
+   ```
+
+2. **In Squarespace — disconnect the domain from the Squarespace site first.**
+   - Squarespace dashboard → *Settings* → *Domains* → `briantighe.design`
+   - Click *Use domain with another service* (or equivalent — Squarespace relabels this periodically)
+   - This stops Squarespace from auto-enforcing its DNS preset. Without this step, Squarespace will revert custom DNS changes within hours.
+
+3. **In Squarespace DNS — replace records.**
+   - Squarespace dashboard → *Domains* → `briantighe.design` → *DNS Settings* (or *Advanced DNS Settings*)
+   - **Remove** all existing `A` records pointing to Squarespace IPs (the 198.185.159.x range) on the `@` host
+   - **Remove** the default `CNAME` on `www` pointing to Squarespace
+   - **Add** new `A` record: host `@`, value from Vercel (typically `76.76.21.21`)
+   - **Add** new `CNAME`: host `www`, value `cname.vercel-dns.com`
+   - Leave any `MX` records for email alone unless the email provider has also changed
+   - Leave `TXT` records alone unless they reference Squarespace — Search Console verification `TXT` records stay
+
+4. **Unpublish the Squarespace site** — Squarespace dashboard → *Settings* → *Site Availability* → set to *Password-protected* or *Private*. Do not cancel the subscription yet. This prevents Squarespace from serving its version of the site during the propagation window and from future DNS resets.
+
+5. **Wait for propagation.** 10 minutes to 48 hours; typically under 2 hours with Squarespace. Monitor:
+   ```
+   dig briantighe.design +short                    # should show Vercel IPs
+   dig www.briantighe.design +short                # should show cname.vercel-dns.com
+   curl -sI https://briantighe.design | head -3    # should show Vercel headers and Vercel cert
+   ```
+
+6. **In Vercel:** once DNS resolves to Vercel, Vercel auto-provisions SSL certificates (Let's Encrypt). This typically takes 1–10 minutes after DNS propagation. The Vercel dashboard will show green checkmarks on both domains when ready.
+
+7. **Retain Squarespace subscription for 30+ days** post-cutover as a fallback. Once Search Console confirms the new site is serving and indexed, the Squarespace subscription can be canceled — but the domain registration should be kept at Squarespace (it's cheap, ~$20/year) OR transferred to Cloudflare/Porkbun at annual renewal for better tooling.
+
+**Squarespace-specific gotchas:**
+- Squarespace requires a *paid* plan to edit DNS records beyond basic A/CNAME. Brian is presumably already on a paid plan since the site is live; verify this before cutover day.
+- Squarespace occasionally renames the "Use domain with another service" toggle. If it's not where documented, search "Connect domain to external service" in Squarespace help.
+- Squarespace's DNS UI can be 5–15 minutes slow on save-and-propagate internally before records actually leave their DNS servers. Do not assume a record change has taken effect immediately after clicking save.
+
+**Future reconsideration — transfer the domain away from Squarespace:** optional. Recommended timing is 30+ days post-cutover, at annual renewal, to Cloudflare Registrar (free at cost, strongest DNS tooling) or Porkbun (low-cost, clean UI). No urgency; the migration can complete with the domain still at Squarespace.
 
 ### Phase 5 — Redirect map + Search Console (week 5–6)
 

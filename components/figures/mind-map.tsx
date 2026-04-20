@@ -1,139 +1,91 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { hierarchy, tree } from 'd3-hierarchy';
-import { linkHorizontal } from 'd3-shape';
+import { hierarchy, tree, type HierarchyNode } from 'd3-hierarchy';
+import { linkRadial } from 'd3-shape';
 import type { MapData, MapNode } from '@/content/maps/types';
 
-const W = 2800;
-const H = 2200;
+const W = 2400;
+const H = 2400;
 const CX = W / 2;
 const CY = H / 2;
-const DEPTH_STEP = 340;
-const NODE_GAP = 58;
+const MAX_R = 1050;
+const CENTER_R = 180;
 
-type PositionedNode = {
-  id: string;
-  label: string;
-  x: number;
-  y: number;
-  depth: number;
-  branchIndex: number;
-  path: string[]; // chain of ids from root
+type PositionedNode = HierarchyNode<MapNode> & {
+  __branchIndex: number;
+  __id: string;
 };
 
-function compute(
-  data: MapData,
-): { nodes: PositionedNode[]; links: { source: PositionedNode; target: PositionedNode; branchIndex: number }[] } {
-  const rootChildren = data.root.children ?? [];
-  const half = Math.ceil(rootChildren.length / 2);
-  const rightBranches = rootChildren.slice(0, half);
-  const leftBranches = rootChildren.slice(half);
+function compute(data: MapData) {
+  const root = hierarchy<MapNode>(data.root) as PositionedNode;
+  tree<MapNode>().size([2 * Math.PI, MAX_R]).separation((a, b) => {
+    // Tighter angular separation for deep nodes, looser for siblings in different branches
+    return (a.parent === b.parent ? 1 : 1.3) / a.depth;
+  })(root);
 
-  const allNodes: PositionedNode[] = [];
-  const allLinks: { source: PositionedNode; target: PositionedNode; branchIndex: number }[] = [];
+  // Assign stable ids + branchIndex
+  let counter = 0;
+  root.each((node) => {
+    const n = node as PositionedNode;
+    n.__id = `n-${counter++}`;
+    // Determine top-level branch
+    if (n.depth === 0) {
+      n.__branchIndex = -1;
+    } else {
+      // Walk up to find the depth-1 ancestor
+      let cur: HierarchyNode<MapNode> = n;
+      while (cur.depth > 1 && cur.parent) cur = cur.parent;
+      n.__branchIndex =
+        root.children?.indexOf(cur as PositionedNode) ?? -1;
+    }
+  });
 
-  const rootNode: PositionedNode = {
-    id: 'root',
-    label: data.root.label,
-    x: CX,
-    y: CY,
-    depth: 0,
-    branchIndex: -1,
-    path: [],
+  return root;
+}
+
+function polar(angle: number, radius: number) {
+  return {
+    x: radius * Math.sin(angle),
+    y: -radius * Math.cos(angle),
   };
-  allNodes.push(rootNode);
-
-  function layoutSide(
-    branches: MapNode[],
-    direction: 1 | -1,
-    branchOffset: number,
-  ) {
-    const sideRoot: MapNode = { label: 'side-root', children: branches };
-    const rootH = hierarchy(sideRoot);
-    const layout = tree<MapNode>().nodeSize([NODE_GAP, DEPTH_STEP]);
-    const laid = layout(rootH);
-
-    // Center the side vertically around CY
-    const values = laid.descendants().map((d) => d.x);
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-    const mid = (min + max) / 2;
-
-    laid.each((d) => {
-      if (d.depth === 0) return; // virtual side-root; skip
-      const depth = d.depth;
-      const branchIndex = branchOffset + (d.ancestors().slice(-2)[0].parent?.children?.indexOf(d.ancestors().slice(-2)[0]) ?? 0);
-      // ancestors()[0] is the node itself; ancestors.last is side-root
-      // The branch-level ancestor (depth 1 under side-root) tells us branch index
-      const ancestors = d.ancestors();
-      const branchAncestor = ancestors[ancestors.length - 2];
-      const actualBranchIndex =
-        branchOffset + (sideRoot.children!.indexOf(branchAncestor.data as MapNode));
-
-      const pathIds: string[] = [];
-      ancestors.slice(0, -1).reverse().forEach((a) => pathIds.push((a as any).__id ?? a.data.label));
-
-      const svgX = CX + direction * (depth * DEPTH_STEP);
-      const svgY = CY + (d.x - mid);
-
-      const node: PositionedNode = {
-        id: `${direction === 1 ? 'r' : 'l'}-${depth}-${d.data.label}-${svgY.toFixed(0)}`,
-        label: d.data.label,
-        x: svgX,
-        y: svgY,
-        depth,
-        branchIndex: actualBranchIndex,
-        path: [],
-      };
-      (d as any).__positioned = node;
-      allNodes.push(node);
-
-      if (d.parent && d.parent.depth >= 1) {
-        const parentNode = (d.parent as any).__positioned as PositionedNode;
-        if (parentNode) {
-          allLinks.push({
-            source: parentNode,
-            target: node,
-            branchIndex: actualBranchIndex,
-          });
-        }
-      } else if (d.depth === 1) {
-        // link from center root to this branch
-        allLinks.push({
-          source: rootNode,
-          target: node,
-          branchIndex: actualBranchIndex,
-        });
-      }
-    });
-  }
-
-  layoutSide(rightBranches, 1, 0);
-  layoutSide(leftBranches, -1, rightBranches.length);
-
-  // Build ancestor paths
-  const byId = new Map(allNodes.map((n) => [n.id, n]));
-  for (const link of allLinks) {
-    // stitch ancestry
-    link.target.path = [...link.source.path, link.source.id];
-  }
-
-  return { nodes: allNodes, links: allLinks };
 }
 
 export function MindMap({ data }: { data: MapData }) {
-  const { nodes, links } = useMemo(() => compute(data), [data]);
-  const [hovered, setHovered] = useState<PositionedNode | null>(null);
+  const root = useMemo(() => compute(data), [data]);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const hoveredAncestry = hovered ? new Set([hovered.id, ...hovered.path]) : null;
+  const hoveredNode = useMemo<PositionedNode | null>(() => {
+    if (!hoveredId) return null;
+    const all = root.descendants() as PositionedNode[];
+    return all.find((n) => n.__id === hoveredId) ?? null;
+  }, [hoveredId, root]);
 
-  const linkGen = linkHorizontal<
+  const ancestryIds = useMemo<Set<string> | null>(() => {
+    if (!hoveredNode) return null;
+    const ancestors = (hoveredNode.ancestors() as PositionedNode[]) ?? [];
+    return new Set(ancestors.map((a) => a.__id));
+  }, [hoveredNode]);
+
+  const descendantIds = useMemo<Set<string> | null>(() => {
+    if (!hoveredNode) return null;
+    const descendants =
+      (hoveredNode.descendants() as PositionedNode[]) ?? [];
+    return new Set(descendants.map((a) => a.__id));
+  }, [hoveredNode]);
+
+  const linkGen = linkRadial<
     { source: PositionedNode; target: PositionedNode },
     PositionedNode
   >()
-    .x((n) => n.x)
-    .y((n) => n.y);
+    .angle((d) => d.x ?? 0)
+    .radius((d) => d.y ?? 0);
+
+  const allNodes = root.descendants() as PositionedNode[];
+  const allLinks = root.links() as {
+    source: PositionedNode;
+    target: PositionedNode;
+  }[];
 
   return (
     <figure className="mind-map-figure">
@@ -141,131 +93,189 @@ export function MindMap({ data }: { data: MapData }) {
         viewBox={`0 0 ${W} ${H}`}
         role="img"
         aria-label={`Mind map: ${data.title}`}
-        style={{ width: '100%', height: 'auto', display: 'block', fontFamily: 'var(--font-serif)' }}
+        style={{
+          width: '100%',
+          height: 'auto',
+          display: 'block',
+          fontFamily: 'var(--font-serif)',
+        }}
       >
-        {/* Links */}
-        {links.map((link, i) => {
-          const color = data.branchColors[link.branchIndex] ?? 'var(--color-rule)';
-          const active =
-            hoveredAncestry?.has(link.target.id) || hoveredAncestry?.has(link.source.id);
-          return (
-            <path
-              key={`link-${i}`}
-              d={
-                linkGen({
-                  source: link.source,
-                  target: link.target,
-                }) ?? ''
-              }
+        <g transform={`translate(${CX}, ${CY})`}>
+          {/* Concentric depth rings — subtle guide rings */}
+          {[1, 2, 3, 4].map((d) => (
+            <circle
+              key={`ring-${d}`}
+              cx={0}
+              cy={0}
+              r={(MAX_R * d) / 4}
               fill="none"
-              stroke={color}
-              strokeOpacity={hovered ? (active ? 0.95 : 0.12) : 0.55}
-              strokeWidth={link.target.depth === 1 ? 3 : link.target.depth === 2 ? 2 : 1.2}
-              strokeLinecap="round"
+              stroke="var(--color-rule)"
+              strokeOpacity={0.3}
+              strokeDasharray="2 6"
+              strokeWidth={0.75}
             />
-          );
-        })}
+          ))}
 
-        {/* Nodes */}
-        {nodes.map((n) => {
-          if (n.depth === 0) return null; // draw root last
-          const color = data.branchColors[n.branchIndex] ?? 'var(--color-ink)';
-          const active = hoveredAncestry?.has(n.id);
-          const faded = hovered && !active;
-          const isBranch = n.depth === 1;
-          const isSubBranch = n.depth === 2;
+          {/* Links */}
+          {allLinks.map((link, i) => {
+            const targetNode = link.target;
+            const color =
+              data.branchColors[targetNode.__branchIndex] ?? 'var(--color-rule)';
+            const inAncestry =
+              ancestryIds?.has(targetNode.__id) ||
+              ancestryIds?.has(link.source.__id);
+            const inDescendant = descendantIds?.has(targetNode.__id);
+            const active = inAncestry || inDescendant;
+            const faded = hoveredNode && !active;
 
-          const fontSize = isBranch ? 28 : isSubBranch ? 20 : 16;
-          const fontWeight = isBranch ? 600 : isSubBranch ? 500 : 400;
-
-          // Determine text anchor by side
-          const onRight = n.x >= CX;
-          const textAnchor = onRight ? 'start' : 'end';
-          const dx = onRight ? 12 : -12;
-
-          return (
-            <g
-              key={n.id}
-              onMouseEnter={() => setHovered(n)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              {/* hit target */}
-              <rect
-                x={n.x - 80}
-                y={n.y - 14}
-                width={160}
-                height={28}
-                fill="transparent"
+            return (
+              <path
+                key={`link-${i}`}
+                d={linkGen(link) ?? ''}
+                fill="none"
+                stroke={color}
+                strokeOpacity={faded ? 0.08 : targetNode.depth === 1 ? 0.75 : 0.55}
+                strokeWidth={
+                  targetNode.depth === 1
+                    ? 3
+                    : targetNode.depth === 2
+                      ? 2
+                      : 1.2
+                }
+                strokeLinecap="round"
               />
-              <circle
-                cx={n.x}
-                cy={n.y}
-                r={isBranch ? 9 : isSubBranch ? 6 : 3.5}
-                fill={color}
-                fillOpacity={faded ? 0.25 : 1}
-              />
-              <text
-                x={n.x + dx}
-                y={n.y + fontSize / 3}
-                fontSize={fontSize}
-                fontWeight={fontWeight}
-                fill={isBranch ? color : 'var(--color-ink)'}
-                fillOpacity={faded ? 0.3 : 1}
-                textAnchor={textAnchor}
-                style={{
-                  letterSpacing: isBranch ? '-0.005em' : '0',
-                  transition: 'fill-opacity 120ms ease',
-                }}
+            );
+          })}
+
+          {/* Nodes */}
+          {allNodes.map((n) => {
+            if (n.depth === 0) return null;
+
+            const angle = n.x ?? 0;
+            const radius = n.y ?? 0;
+            const { x, y } = polar(angle, radius);
+
+            const color =
+              data.branchColors[n.__branchIndex] ?? 'var(--color-ink)';
+            const inAncestry = ancestryIds?.has(n.__id);
+            const inDescendant = descendantIds?.has(n.__id);
+            const active = inAncestry || inDescendant;
+            const faded = hoveredNode && !active;
+
+            const isBranch = n.depth === 1;
+            const isSubBranch = n.depth === 2;
+            const fontSize = isBranch ? 32 : isSubBranch ? 22 : 17;
+            const fontWeight = isBranch ? 600 : isSubBranch ? 500 : 400;
+
+            const sinA = Math.sin(angle);
+            const onRight = sinA > 0.04;
+            const onLeft = sinA < -0.04;
+            const dx = onRight ? 16 : onLeft ? -16 : 0;
+            const anchor = onRight ? 'start' : onLeft ? 'end' : 'middle';
+            const cosA = Math.cos(angle);
+            const verticalAdjust = anchor === 'middle' ? (cosA > 0 ? -18 : fontSize + 6) : fontSize / 3;
+
+            return (
+              <g
+                key={n.__id}
+                onMouseEnter={() => setHoveredId(n.__id)}
+                onMouseLeave={() => setHoveredId(null)}
+                style={{ cursor: 'default' }}
               >
-                {n.label}
-              </text>
-            </g>
-          );
-        })}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={isBranch ? 12 : isSubBranch ? 7 : 4}
+                  fill={color}
+                  fillOpacity={faded ? 0.2 : 1}
+                />
+                <text
+                  x={x + dx}
+                  y={y + verticalAdjust}
+                  fontSize={fontSize}
+                  fontWeight={fontWeight}
+                  fill={isBranch ? color : 'var(--color-ink)'}
+                  fillOpacity={faded ? 0.25 : 1}
+                  textAnchor={anchor}
+                  style={{
+                    letterSpacing: isBranch ? '-0.005em' : '0',
+                    transition: 'fill-opacity 120ms ease',
+                  }}
+                >
+                  {n.data.label}
+                </text>
+                {/* Invisible hit target, larger than the node */}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={Math.max(fontSize * 4, 40)}
+                  fill="transparent"
+                  pointerEvents="all"
+                />
+              </g>
+            );
+          })}
 
-        {/* Center root */}
-        <g>
-          <rect
-            x={CX - 280}
-            y={CY - 56}
-            width={560}
-            height={112}
-            rx={10}
-            fill="var(--color-ink)"
-          />
-          <text
-            x={CX}
-            y={CY - 8}
-            textAnchor="middle"
-            fontSize={26}
-            fontWeight={600}
-            fill="var(--color-paper)"
-          >
-            {data.title.length > 40
-              ? data.title.slice(0, data.title.indexOf(' in ')) || data.title.slice(0, 40)
-              : data.title}
-          </text>
-          <text
-            x={CX}
-            y={CY + 26}
-            textAnchor="middle"
-            fontSize={18}
-            fill="var(--color-paper)"
-            fillOpacity={0.75}
-            style={{
-              fontVariantCaps: 'all-small-caps',
-              letterSpacing: '0.08em',
-              fontFeatureSettings: "'smcp'",
-            }}
-          >
-            Brian Tighe · Mind Maps
-          </text>
+          {/* Center root node */}
+          <g>
+            <circle
+              cx={0}
+              cy={0}
+              r={CENTER_R}
+              fill="var(--color-ink)"
+              stroke="var(--color-paper)"
+              strokeWidth={6}
+            />
+            {wrapCenterLabel(data.title).map((line, i, arr) => (
+              <text
+                key={i}
+                x={0}
+                y={(i - (arr.length - 1) / 2) * 30 - 8}
+                textAnchor="middle"
+                fontSize={26}
+                fontWeight={600}
+                fill="var(--color-paper)"
+              >
+                {line}
+              </text>
+            ))}
+            <text
+              x={0}
+              y={CENTER_R * 0.55}
+              textAnchor="middle"
+              fontSize={15}
+              fill="var(--color-paper)"
+              fillOpacity={0.75}
+              style={{
+                fontVariantCaps: 'all-small-caps',
+                letterSpacing: '0.1em',
+                fontFeatureSettings: "'smcp'",
+              }}
+            >
+              Brian Tighe · Mind Maps
+            </text>
+          </g>
         </g>
       </svg>
       <figcaption>
-        Hover a node to highlight its path to the center. Six top-level
-        branches, color-coded; nesting goes three levels deep under each.
+        Orbital mind map. The six top-level branches fan around the center
+        on concentric depth rings; sub-branches extend outward in their
+        wedge, color-coded by branch. Hover a node to highlight its path
+        to the center and the subtree beneath it.
       </figcaption>
     </figure>
   );
+}
+
+// Wrap long center titles onto multiple lines for the center block.
+function wrapCenterLabel(title: string): string[] {
+  // Prefer splitting at " in " or the first natural break
+  if (title.length <= 26) return [title];
+  const inIdx = title.indexOf(' in ');
+  if (inIdx > 0 && inIdx < 28) {
+    return [title.slice(0, inIdx), title.slice(inIdx + 1)];
+  }
+  const words = title.split(' ');
+  const half = Math.ceil(words.length / 2);
+  return [words.slice(0, half).join(' '), words.slice(half).join(' ')];
 }

@@ -459,7 +459,7 @@
    snap back to measure for prose legibility. */
 
 .essay > figure.inline-figure {
-  max-width: min(1100px, 100%);
+  max-width: min(935px, 100%);
   margin: 3rem 0;
 }
 

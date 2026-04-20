@@ -5,12 +5,12 @@ import { hierarchy, tree } from 'd3-hierarchy';
 import { linkHorizontal } from 'd3-shape';
 import type { MapData, MapNode } from '@/content/maps/types';
 
-const W = 2600;
-const H = 2400;
+const W = 2800;
+const H = 2200;
 const CX = W / 2;
 const CY = H / 2;
-const DEPTH_STEP = 300;
-const NODE_GAP = 52;
+const DEPTH_STEP = 340;
+const NODE_GAP = 58;
 
 type PositionedNode = {
   id: string;

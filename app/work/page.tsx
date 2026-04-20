@@ -143,10 +143,6 @@ const roles: Role[] = [
   },
 ];
 
-const allExits = roles.flatMap((r) =>
-  (r.exits ?? []).map((e) => ({ ...e, period: r.period })),
-);
-
 function renderOutcome(o: Outcome, idx: number) {
   if (typeof o === 'string') {
     return (
@@ -238,39 +234,6 @@ export default function WorkIndex() {
         </p>
       </section>
 
-      {allExits.length > 0 ? (
-        <section>
-          <h2>Portfolio exits</h2>
-          <p>
-            Startups I did design work for that subsequently sold to public
-            acquirers. These are the operator receipts that compound longest —
-            acquired companies become durable proof that the work shipped.
-          </p>
-          <ul>
-            {allExits.map((e) => (
-              <li key={`${e.company}-${e.year}`}>
-                <strong>{e.company}</strong>{' '}
-                <span
-                  className="sc"
-                  style={{ color: 'var(--color-accent)' }}
-                >
-                  acquired by {e.acquirer} · {e.year}
-                </span>
-                {e.detail ? (
-                  <>
-                    {' '}
-                    —{' '}
-                    <em style={{ color: 'var(--color-ink-muted)' }}>
-                      {e.detail}
-                    </em>
-                  </>
-                ) : null}
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
       <section>
         <ol className="list-none p-0" style={{ paddingLeft: 0 }}>
           {roles.map((r) => (
@@ -297,22 +260,6 @@ export default function WorkIndex() {
                     }}
                   >
                     receipt
-                  </span>
-                ) : null}
-                {r.exits && r.exits.length > 0 ? (
-                  <span
-                    className="sc"
-                    style={{
-                      marginLeft: '0.55rem',
-                      fontSize: '0.78rem',
-                      color: 'var(--color-accent)',
-                      border: '1px solid var(--color-accent)',
-                      padding: '0.02rem 0.45rem',
-                      borderRadius: '2px',
-                      letterSpacing: '0.08em',
-                    }}
-                  >
-                    {r.exits.length} exit{r.exits.length > 1 ? 's' : ''}
                   </span>
                 ) : null}
               </p>

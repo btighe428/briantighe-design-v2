@@ -558,6 +558,90 @@
   text-indent: 0;
 }
 
+/* ---------- Scrollytelling block ----------------------------
+   Sticky chart on one side, scrolling step paragraphs on the
+   other. NYT / Pudding / FiveThirtyEight pattern. Collapses to
+   a stacked, pinned-top layout at narrow viewports. */
+
+.essay > .scrolly-block {
+  max-width: min(1100px, 100%);
+  margin: 3.5rem 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.essay > .scrolly-block .scrolly-sticky {
+  position: sticky;
+  top: 4rem;
+  align-self: start;
+}
+
+.essay > .scrolly-block .scrolly-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 45vh;
+  padding: 30vh 0;
+  max-width: none;
+}
+
+.essay > .scrolly-block .scrolly-step {
+  opacity: 0.35;
+  transition:
+    opacity 320ms ease,
+    border-color 320ms ease;
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  border-left: 2px solid var(--color-rule);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: none;
+}
+
+.essay > .scrolly-block .scrolly-step p {
+  margin: 0;
+  max-width: none;
+}
+
+.essay > .scrolly-block .scrolly-step.is-active {
+  opacity: 1;
+  border-left-color: var(--color-accent);
+}
+
+@media (max-width: 900px) {
+  .essay > .scrolly-block {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .essay > .scrolly-block .scrolly-sticky {
+    position: sticky;
+    top: 0.5rem;
+    background: var(--color-paper);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-rule);
+    z-index: 1;
+  }
+  .essay > .scrolly-block .scrolly-steps {
+    gap: 30vh;
+    padding: 1rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .essay > .scrolly-block .scrolly-step,
+  .inline-figure svg * {
+    transition: none !important;
+  }
+}
+
+/* Native SVG <title> gives browser-default hover tooltips on any
+   chart element wrapped around one. These selectors just add a
+   subtle hover feedback. */
+.inline-figure svg circle[r]:hover,
+.inline-figure svg rect:hover {
+  filter: brightness(1.08);
+}
+
 /* ---------- Inline enrichment figures in essays ---------- */
 /* D3 figures placed next to the claim they support. They break
    out well beyond the 65ch measure so the data reads big; captions

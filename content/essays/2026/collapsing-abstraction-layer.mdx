@@ -11,7 +11,7 @@ dropCap: true
 import { Blues41 } from '@/components/figures/blues-41';
 import { FigmaValuation } from '@/components/figures/figma-valuation';
 import { InvisionArc } from '@/components/figures/invision-arc';
-import { AiArr } from '@/components/figures/ai-arr';
+import { AiArrScrollyStory, Step } from '@/components/figures/ai-arr-scrolly-story';
 
 **Thesis.** The history of digital product design is the relentless, decades-long collapse of the abstraction layer between "design intent" and "production reality." Every epoch of the discipline can be read as a compression of the distance between the artifact a designer authors and the software a user runs. The Pixel Era (1995–2010) produced literal pictures of software; the Illusion Era (2011–2016) produced clickable simulations of software; the Component Era (2016–2023) produced declarative, constraint-based representations that resembled code without executing; the Intelligence Era (2024–present) has obliterated the representation altogether — the artifact the designer produces is the running system, because the running system's UI is itself probabilistic and emergent, and nothing static can represent it. Design leaders who treat this trajectory as discontinuous will misallocate headcount, org design, and tooling. Those who treat it as a single compressive curve will recognize that the Design Engineer role, the post-Figma tool stack, and the reorganization of the design–engineering interface at AI-native companies are not fashions but the terminal geometry of a thirty-year convergence.
 
@@ -131,11 +131,24 @@ The period institutionalized DesignOps (Rosenfeld Media's DesignOps Summit launc
 
 ### The probabilistic tooling stack
 
-The Intelligence Era is defined not by a single dominant tool but by a stack that treats generation as the primary design act. Cursor (Anysphere), founded 2022 by MIT classmates Michael Truell, Sualeh Asif, Aman Sanger, and Arvid Lunnemark, released March 2023 as a VS Code fork, compounded through $8M seed (OpenAI Startup Fund, October 2023), $60M Series A (a16z, August 2024), a ~$2.5B round in early 2025, a $900M Series C on June 5, 2025 at $9.9B (Thrive), and a $2.3B Series D in November 2025 at $29.3B (Accel/Coatue, with NVIDIA and Google). ARR trajectory: $100M in January 2025 (the fastest SaaS ever to that milestone, with no marketing spend) → ~$500M by June → >$1B by late 2025 → ~$2B by April 2026. v0 by Vercel (Guillermo Rauch) went to public beta October 11, 2023, generating React/Tailwind/shadcn components from prompts; rebranded to v0.app January 2026; 6M+ users; Vercel raised $300M Series F in September 2025 at $9.3B. Claude Artifacts launched June 20, 2024 with Claude 3.5 Sonnet, reaching GA on August 27, 2024, and Anthropic reported "tens of millions" of Artifacts created within two months. Claude Code shipped as research preview February 24, 2025 with Claude 3.7 Sonnet and GA'd May 22, 2025 with Claude 4, reaching ~$1B annualized revenue by November 2025.
+The Intelligence Era is defined not by a single dominant tool but by a stack that treats generation as the primary design act. Four prompt-to-app / agent tools together illustrate the shape of the shift — each with an ARR trajectory unmatched in prior software epochs. Scroll the paragraphs below; the line you are reading lights up.
 
-A second tier of prompt-to-app tools emerged: Bolt.new (StackBlitz, Eric Simons and Albert Pai) launched via a single tweet October 3, 2024 and went "$0 to $4M ARR in 30 days," $20M ARR in month two, $40M ARR by mid-March 2025 with 15–20 staff — one of the fastest-growing products in software history — raising $105M Series B in January 2025 (Emergence/GV, ~$700M val). Lovable (Stockholm, Anton Osika, Fabian Hedin), launched December 2024 from Osika's GPT-Engineer open-source project, hit $100M ARR in under a year and $200M ARR by November 2025, with 25M projects built in the first year and customers including Klarna, Uber, and Zendesk; raised $200M Series A (Accel) at $1.8B and $330M Series B in December 2025 at $6.6B. Replit Agent launched September 2024, reached $100M+ ARR by mid-2025 on 50M+ users, and shipped Agent 3 (September 2025) and Agent 4 (March 2026). Amjad Masad's position is characteristic of the epoch: "I no longer think you should learn to code."
+<AiArrScrollyStory>
+  <Step>
+    **Cursor** (Anysphere), founded 2022 by MIT classmates Michael Truell, Sualeh Asif, Aman Sanger, and Arvid Lunnemark, released March 2023 as a VS Code fork. It compounded through an $8M seed (OpenAI Startup Fund, October 2023), a $60M Series A (a16z, August 2024), a ~$2.5B round in early 2025, a $900M Series C on June 5, 2025 at $9.9B (Thrive), and a $2.3B Series D in November 2025 at $29.3B (Accel and Coatue, with NVIDIA and Google). ARR: $100M in January 2025 — the fastest SaaS ever to that milestone, with no marketing spend — then ~$500M by June, over $1B by late 2025, ~$2B by April 2026.
+  </Step>
+  <Step>
+    **Replit Agent** launched September 2024, reached $100M+ ARR by mid-2025 on 50M+ users, and shipped Agent 3 (September 2025) and Agent 4 (March 2026). Amjad Masad's position is characteristic of the epoch: "I no longer think you should learn to code." Replit's distribution edge is pre-existing developer-account installed base; its agent productization came latest but onto the strongest funnel.
+  </Step>
+  <Step>
+    **Bolt.new** (StackBlitz, Eric Simons and Albert Pai) launched via a single tweet on October 3, 2024 and went "$0 to $4M ARR in 30 days," $20M ARR in month two, $40M ARR by mid-March 2025 with 15–20 staff — one of the fastest-growing products in software history. Raised a $105M Series B in January 2025 (Emergence, GV, ~$700M valuation).
+  </Step>
+  <Step>
+    **Lovable** (Stockholm, Anton Osika and Fabian Hedin), launched December 2024 from Osika's GPT-Engineer open-source project, hit $100M ARR in under a year and $200M ARR by November 2025. 25M projects built in the first year; customers include Klarna, Uber, and Zendesk. Raised $200M Series A from Accel at $1.8B and $330M Series B in December 2025 at $6.6B. European origin, global distribution.
+  </Step>
+</AiArrScrollyStory>
 
-<AiArr />
+Behind the four lines above sit the parallel developer-surface tools that make the agent era work. v0 by Vercel (Guillermo Rauch) went to public beta October 11, 2023, generating React/Tailwind/shadcn components from prompts, rebranded to v0.app January 2026, 6M+ users, Vercel raised $300M Series F in September 2025 at $9.3B. Claude Artifacts launched June 20, 2024 with Claude 3.5 Sonnet, reaching GA on August 27, 2024, and Anthropic reported "tens of millions" of Artifacts created within two months. Claude Code shipped as research preview February 24, 2025 with Claude 3.7 Sonnet and GA'd May 22, 2025 with Claude 4, reaching ~$1B annualized revenue by November 2025.
 
 ### The component-library collapse into shadcn/ui and Tailwind
 

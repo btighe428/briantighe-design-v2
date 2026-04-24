@@ -87,3 +87,36 @@ export function rfc822(input: string | Date): string {
   const d = typeof input === 'string' ? new Date(input) : input;
   return d.toUTCString();
 }
+
+export type MethodologyMetadata = {
+  slug: string;
+  title: string;
+  essaySlug: string; // the essay this methodology documents
+  essayYear: string;
+  date: string;
+};
+
+export async function getMethodologyBySlug(
+  slug: string,
+): Promise<MethodologyMetadata | null> {
+  const file = path.join(CONTENT_ROOT, 'methodology', `${slug}.mdx`);
+  try {
+    const raw = await fs.readFile(file, 'utf8');
+    const { data } = matter(raw);
+    return { slug, ...(data as Omit<MethodologyMetadata, 'slug'>) };
+  } catch {
+    return null;
+  }
+}
+
+export async function getAllMethodologySlugs(): Promise<string[]> {
+  const dir = path.join(CONTENT_ROOT, 'methodology');
+  try {
+    const entries = await fs.readdir(dir);
+    return entries
+      .filter((e) => e.endsWith('.mdx') && !e.startsWith('_'))
+      .map((e) => e.replace(/\.mdx$/, ''));
+  } catch {
+    return [];
+  }
+}

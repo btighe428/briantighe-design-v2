@@ -47,3 +47,4 @@ next-env.d.ts
 .citation-log/
 # llm audit output
 .llm-audit/
+.superpowers/

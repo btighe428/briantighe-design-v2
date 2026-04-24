@@ -1,0 +1,31 @@
+{
+  "snapshotDate": "2026-04-24T00:00:00.000Z",
+  "windowWeeks": 52,
+  "windowStart": "2025-04-24T00:00:00.000Z",
+  "windowEnd": "2026-04-24T00:00:00.000Z",
+  "totalPosts": 24183,
+  "totalJds": 86201,
+  "rows": [
+    { "slug": "vibe-coding", "label": "Vibe coding", "category": "emergent", "influencerShare": 0.042, "jdShare": 0.004, "gapRatio": 10.5, "logGap": 3.39, "influencerCount": 1016, "jdCount": 345 },
+    { "slug": "ai-design-review", "label": "AI design review", "category": "emergent", "influencerShare": 0.037, "jdShare": 0.006, "gapRatio": 6.17, "logGap": 2.62, "influencerCount": 895, "jdCount": 517 },
+    { "slug": "ai-agents", "label": "AI agents", "category": "ai", "influencerShare": 0.128, "jdShare": 0.031, "gapRatio": 4.13, "logGap": 2.05, "influencerCount": 3096, "jdCount": 2672 },
+    { "slug": "mcp", "label": "Model Context Protocol", "category": "ai", "influencerShare": 0.024, "jdShare": 0.008, "gapRatio": 3.0, "logGap": 1.58, "influencerCount": 580, "jdCount": 690 },
+    { "slug": "generative-ui", "label": "Generative UI", "category": "emergent", "influencerShare": 0.031, "jdShare": 0.013, "gapRatio": 2.38, "logGap": 1.25, "influencerCount": 750, "jdCount": 1121 },
+    { "slug": "claude-code", "label": "Claude Code", "category": "tooling", "influencerShare": 0.022, "jdShare": 0.012, "gapRatio": 1.83, "logGap": 0.87, "influencerCount": 532, "jdCount": 1034 },
+    { "slug": "design-engineering", "label": "Design engineering", "category": "emergent", "influencerShare": 0.048, "jdShare": 0.028, "gapRatio": 1.71, "logGap": 0.78, "influencerCount": 1161, "jdCount": 2414 },
+    { "slug": "ai-product-designer", "label": "AI Product Designer", "category": "emergent", "influencerShare": 0.053, "jdShare": 0.032, "gapRatio": 1.66, "logGap": 0.73, "influencerCount": 1282, "jdCount": 2758 },
+    { "slug": "figma-make", "label": "Figma Make", "category": "tooling", "influencerShare": 0.014, "jdShare": 0.011, "gapRatio": 1.27, "logGap": 0.34, "influencerCount": 338, "jdCount": 948 },
+    { "slug": "prompt-engineering", "label": "Prompt engineering", "category": "ai", "influencerShare": 0.036, "jdShare": 0.030, "gapRatio": 1.20, "logGap": 0.26, "influencerCount": 870, "jdCount": 2586 },
+    { "slug": "design-systems", "label": "Design systems", "category": "design-process", "influencerShare": 0.072, "jdShare": 0.094, "gapRatio": 0.77, "logGap": -0.39, "influencerCount": 1741, "jdCount": 8103 },
+    { "slug": "accessibility", "label": "Accessibility", "category": "design-process", "influencerShare": 0.019, "jdShare": 0.031, "gapRatio": 0.61, "logGap": -0.71, "influencerCount": 459, "jdCount": 2672 },
+    { "slug": "research-ops", "label": "Research operations", "category": "design-process", "influencerShare": 0.011, "jdShare": 0.019, "gapRatio": 0.58, "logGap": -0.79, "influencerCount": 266, "jdCount": 1638 },
+    { "slug": "user-research", "label": "User research", "category": "design-process", "influencerShare": 0.024, "jdShare": 0.068, "gapRatio": 0.35, "logGap": -1.51, "influencerCount": 580, "jdCount": 5862 },
+    { "slug": "prototyping", "label": "Prototyping", "category": "design-process", "influencerShare": 0.018, "jdShare": 0.062, "gapRatio": 0.29, "logGap": -1.79, "influencerCount": 435, "jdCount": 5344 },
+    { "slug": "figma", "label": "Figma", "category": "tooling", "influencerShare": 0.041, "jdShare": 0.154, "gapRatio": 0.27, "logGap": -1.89, "influencerCount": 991, "jdCount": 13275 },
+    { "slug": "information-architecture", "label": "Information architecture", "category": "design-process", "influencerShare": 0.006, "jdShare": 0.023, "gapRatio": 0.26, "logGap": -1.94, "influencerCount": 145, "jdCount": 1983 }
+  ],
+  "excluded": [
+    { "slug": "fine-tuning", "label": "Fine-tuning", "reason": "sample-size", "influencerCount": 7, "jdCount": 312 },
+    { "slug": "embeddings", "label": "Embeddings", "reason": "sample-size", "influencerCount": 8, "jdCount": 245 }
+  ]
+}

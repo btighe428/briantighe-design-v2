@@ -4652,6 +4652,7 @@
     {
       "slug": "fine-tuning",
       "label": "Fine-tuning",
+      "category": "ai",
       "reason": "sample-size",
       "influencerCount": 7,
       "jdCount": 312
@@ -4659,6 +4660,7 @@
     {
       "slug": "embeddings",
       "label": "Embeddings",
+      "category": "ai",
       "reason": "sample-size",
       "influencerCount": 8,
       "jdCount": 245

@@ -20,6 +20,7 @@ export type GapRow = {
 export type ExcludedTopic = {
   slug: string;
   label: string;
+  category: "ai" | "design-process" | "tooling" | "growth-pm" | "emergent";
   reason: "sample-size" | "zero-jd-share";
   influencerCount: number;
   jdCount: number;

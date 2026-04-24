@@ -1,3 +1,9 @@
+export type WeeklyBucket = {
+  weekStart: string; // ISO date
+  posts: number;
+  jds: number;
+};
+
 export type GapRow = {
   slug: string;
   label: string;
@@ -8,6 +14,7 @@ export type GapRow = {
   logGap: number;
   influencerCount: number;
   jdCount: number;
+  weeklySeries: WeeklyBucket[];
 };
 
 export type ExcludedTopic = {
@@ -27,4 +34,5 @@ export type GapReport = {
   totalJds: number;
   rows: GapRow[];
   excluded: ExcludedTopic[];
+  weeklyTotals: WeeklyBucket[];
 };

@@ -1,0 +1,70 @@
+---
+title: "The discourse-vs-hiring gap"
+subtitle: "Forty topics, ranked by what design influencers talk about versus what companies actually hire for"
+date: 2026-04-24
+description: "A 52-week comparison of the topics dominating design discourse against the topics that actually show up in job descriptions. Forty topics, ranked by log ratio."
+epigraph: "The map is not the territory — but a bad map is worse than no map at all."
+epigraphAttribution: "Alfred Korzybski, paraphrased"
+dropCap: true
+---
+
+import dataJson from "@/content/data/2026/discourse-vs-hiring.json";
+import { DataSource } from "@/components/data-source";
+import { GapDumbbell } from "@/components/figures/discourse-vs-hiring/gap-dumbbell";
+import { TopicTaxonomyMap } from "@/components/figures/discourse-vs-hiring/topic-taxonomy-map";
+import { CorpusScaleOverTime } from "@/components/figures/discourse-vs-hiring/corpus-scale-over-time";
+import { TopicDivergenceDetails } from "@/components/figures/discourse-vs-hiring/topic-divergence-details";
+
+export const data = dataJson;
+
+<DataSource
+  source="Design Drift"
+  snapshotDate={data.snapshotDate}
+  methodologyHref="/methodology/discourse-vs-hiring"
+/>
+
+## The question
+
+[Section 1 — 400 words. Frame the problem: design discourse in 2024-2026 has exploded. The canonical voices on LinkedIn, X, Substack publish daily. But has what we *talk* about matched what we *hire* for? This essay reports a ratio.]
+
+## Methodology transparency
+
+[Section 2 — 400 words. Before results, describe the method. Name the corpora (483 influencers, N posts; N job listings), the taxonomy (~40 topics in five categories), the scoring formula (log₂ ratio of shares). Link to the methodology page.]
+
+<TopicTaxonomyMap data={data} />
+
+## Scale of both corpora
+
+[Section 3 — 200 words. Brief context on relative volumes. A sentence or two about how influencer volume has grown vs. how hiring volume has grown. The margin figure below normalizes each to its own peak; the real story is about shape, not magnitude.]
+
+<MarginFigure>
+  <CorpusScaleOverTime data={data} />
+</MarginFigure>
+
+## The main finding
+
+[Section 4 — 600 words. The headline. Walk the reader through the dumbbell: left end = hiring over-mentions, right end = discourse over-talks. Name the top three on each end. Offer plain-English interpretation for each. Keep claims proportionate to the data — avoid "influencers are wrong" framing.]
+
+<GapDumbbell data={data} />
+
+<PullQuote cite="The author, 2026">
+  [Pull-quote — the single most quotable sentence from section 4.]
+</PullQuote>
+
+## How specific topics diverge
+
+[Section 5 — 500 words. Zoom in on 6 featured topics. For each: when did discourse start climbing? When (if ever) did hiring catch up? Specific numbers from `data.rows.find(r => r.slug === "X").weeklySeries`. The goal is to show that some topics really are future-indicators and others are self-sustaining bubbles.]
+
+<TopicDivergenceDetails data={data} />
+
+## What this does and doesn't mean
+
+[Section 6 — 400 words. Caveats. This is a snapshot, not a causal claim. Influencer selection bias. ATS-source bias. Classifier precision bound. Some "overhyped" topics may genuinely lead hiring by more than 52 weeks.]
+
+## The series
+
+[Section 7 — 200 words. This is piece #1 of a recurring data journalism series on briantighe.design. Future pieces: the vocabulary of the ladder (Senior → Staff → Principal), the AI-PD audit, indie-SaaS multiples. Subscribe / return.]
+
+---
+
+*Data: Design Drift, 52-week window ending {new Date(data.snapshotDate).toLocaleDateString()}. [Methodology.](/methodology/discourse-vs-hiring)*

@@ -128,7 +128,7 @@ export function GapDumbbell({ data }: { data: GapReport }) {
         </text>
       </svg>
       <figcaption>
-        Forty topics, ranked by log₂ of the ratio between discourse mentions and job-listing mentions.
+        {rows.length} topics, ranked by log₂ of the ratio between discourse mentions and job-listing mentions.
         Anything above +1 appears twice as often in posts as in JDs. Data: 52-week window,
         Design Drift snapshot {new Date(data.snapshotDate).toLocaleDateString()}.
       </figcaption>

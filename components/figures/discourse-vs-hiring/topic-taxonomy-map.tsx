@@ -14,14 +14,7 @@ const ROW_H = 18;
 const HEADER_H = 36;
 
 export function TopicTaxonomyMap({ data }: { data: GapReport }) {
-  const all = [
-    ...data.rows,
-    ...data.excluded.map((e) => ({
-      slug: e.slug,
-      label: e.label,
-      category: categoryFor(e.slug, data),
-    })),
-  ];
+  const all = [...data.rows, ...data.excluded];
   const byCategory = CATEGORIES.map((c) => ({
     ...c,
     topics: all
@@ -76,9 +69,4 @@ export function TopicTaxonomyMap({ data }: { data: GapReport }) {
       </figcaption>
     </figure>
   );
-}
-
-function categoryFor(slug: string, data: GapReport): string {
-  const row = data.rows.find((r) => r.slug === slug);
-  return row?.category ?? "emergent";
 }

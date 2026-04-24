@@ -6,26 +6,4924 @@
   "totalPosts": 24183,
   "totalJds": 86201,
   "rows": [
-    { "slug": "vibe-coding", "label": "Vibe coding", "category": "emergent", "influencerShare": 0.042, "jdShare": 0.004, "gapRatio": 10.5, "logGap": 3.39, "influencerCount": 1016, "jdCount": 345 },
-    { "slug": "ai-design-review", "label": "AI design review", "category": "emergent", "influencerShare": 0.037, "jdShare": 0.006, "gapRatio": 6.17, "logGap": 2.62, "influencerCount": 895, "jdCount": 517 },
-    { "slug": "ai-agents", "label": "AI agents", "category": "ai", "influencerShare": 0.128, "jdShare": 0.031, "gapRatio": 4.13, "logGap": 2.05, "influencerCount": 3096, "jdCount": 2672 },
-    { "slug": "mcp", "label": "Model Context Protocol", "category": "ai", "influencerShare": 0.024, "jdShare": 0.008, "gapRatio": 3.0, "logGap": 1.58, "influencerCount": 580, "jdCount": 690 },
-    { "slug": "generative-ui", "label": "Generative UI", "category": "emergent", "influencerShare": 0.031, "jdShare": 0.013, "gapRatio": 2.38, "logGap": 1.25, "influencerCount": 750, "jdCount": 1121 },
-    { "slug": "claude-code", "label": "Claude Code", "category": "tooling", "influencerShare": 0.022, "jdShare": 0.012, "gapRatio": 1.83, "logGap": 0.87, "influencerCount": 532, "jdCount": 1034 },
-    { "slug": "design-engineering", "label": "Design engineering", "category": "emergent", "influencerShare": 0.048, "jdShare": 0.028, "gapRatio": 1.71, "logGap": 0.78, "influencerCount": 1161, "jdCount": 2414 },
-    { "slug": "ai-product-designer", "label": "AI Product Designer", "category": "emergent", "influencerShare": 0.053, "jdShare": 0.032, "gapRatio": 1.66, "logGap": 0.73, "influencerCount": 1282, "jdCount": 2758 },
-    { "slug": "figma-make", "label": "Figma Make", "category": "tooling", "influencerShare": 0.014, "jdShare": 0.011, "gapRatio": 1.27, "logGap": 0.34, "influencerCount": 338, "jdCount": 948 },
-    { "slug": "prompt-engineering", "label": "Prompt engineering", "category": "ai", "influencerShare": 0.036, "jdShare": 0.030, "gapRatio": 1.20, "logGap": 0.26, "influencerCount": 870, "jdCount": 2586 },
-    { "slug": "design-systems", "label": "Design systems", "category": "design-process", "influencerShare": 0.072, "jdShare": 0.094, "gapRatio": 0.77, "logGap": -0.39, "influencerCount": 1741, "jdCount": 8103 },
-    { "slug": "accessibility", "label": "Accessibility", "category": "design-process", "influencerShare": 0.019, "jdShare": 0.031, "gapRatio": 0.61, "logGap": -0.71, "influencerCount": 459, "jdCount": 2672 },
-    { "slug": "research-ops", "label": "Research operations", "category": "design-process", "influencerShare": 0.011, "jdShare": 0.019, "gapRatio": 0.58, "logGap": -0.79, "influencerCount": 266, "jdCount": 1638 },
-    { "slug": "user-research", "label": "User research", "category": "design-process", "influencerShare": 0.024, "jdShare": 0.068, "gapRatio": 0.35, "logGap": -1.51, "influencerCount": 580, "jdCount": 5862 },
-    { "slug": "prototyping", "label": "Prototyping", "category": "design-process", "influencerShare": 0.018, "jdShare": 0.062, "gapRatio": 0.29, "logGap": -1.79, "influencerCount": 435, "jdCount": 5344 },
-    { "slug": "figma", "label": "Figma", "category": "tooling", "influencerShare": 0.041, "jdShare": 0.154, "gapRatio": 0.27, "logGap": -1.89, "influencerCount": 991, "jdCount": 13275 },
-    { "slug": "information-architecture", "label": "Information architecture", "category": "design-process", "influencerShare": 0.006, "jdShare": 0.023, "gapRatio": 0.26, "logGap": -1.94, "influencerCount": 145, "jdCount": 1983 }
+    {
+      "slug": "vibe-coding",
+      "label": "Vibe coding",
+      "category": "emergent",
+      "influencerShare": 0.042,
+      "jdShare": 0.004,
+      "gapRatio": 10.5,
+      "logGap": 3.39,
+      "influencerCount": 1016,
+      "jdCount": 345,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 0,
+          "jds": 0
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 8,
+          "jds": 2
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 4,
+          "jds": 2
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 10,
+          "jds": 4
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 5,
+          "jds": 4
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 7,
+          "jds": 2
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 13,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 11,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 13,
+          "jds": 4
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 20,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 19,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 15,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 14,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 23,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 17,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 20,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 16,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 23,
+          "jds": 4
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 21,
+          "jds": 3
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 22,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 17,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 20,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 24,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 22,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 22,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 28,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 22,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 21,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 26,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 32,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 30,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 31,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 33,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 33,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 38,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 40,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 40,
+          "jds": 9
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 37,
+          "jds": 11
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 44,
+          "jds": 9
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 47,
+          "jds": 10
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 43,
+          "jds": 11
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 48,
+          "jds": 9
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 54,
+          "jds": 10
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 48,
+          "jds": 11
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 55,
+          "jds": 11
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 56,
+          "jds": 11
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 54,
+          "jds": 12
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 49,
+          "jds": 13
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 56,
+          "jds": 13
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 57,
+          "jds": 14
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 54,
+          "jds": 13
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 57,
+          "jds": 14
+        }
+      ]
+    },
+    {
+      "slug": "ai-design-review",
+      "label": "AI design review",
+      "category": "emergent",
+      "influencerShare": 0.037,
+      "jdShare": 0.006,
+      "gapRatio": 6.17,
+      "logGap": 2.62,
+      "influencerCount": 895,
+      "jdCount": 517,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 1,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 6,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 4,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 6,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 11,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 11,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 8,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 15,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 14,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 10,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 12,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 17,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 15,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 12,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 13,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 17,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 19,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 14,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 19,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 19,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 14,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 17,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 16,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 18,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 22,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 20,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 20,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 21,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 19,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 23,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 23,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 24,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 29,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 25,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 27,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 32,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 28,
+          "jds": 13
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 33,
+          "jds": 12
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 36,
+          "jds": 15
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 34,
+          "jds": 13
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 35,
+          "jds": 15
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 33,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 37,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 43,
+          "jds": 14
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 43,
+          "jds": 19
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 41,
+          "jds": 19
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 44,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 44,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 39,
+          "jds": 19
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 40,
+          "jds": 17
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 39,
+          "jds": 19
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 43,
+          "jds": 18
+        }
+      ]
+    },
+    {
+      "slug": "ai-agents",
+      "label": "AI agents",
+      "category": "ai",
+      "influencerShare": 0.128,
+      "jdShare": 0.031,
+      "gapRatio": 4.13,
+      "logGap": 2.05,
+      "influencerCount": 3096,
+      "jdCount": 2672,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 12,
+          "jds": 32
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 18,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 18,
+          "jds": 32
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 31,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 31,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 27,
+          "jds": 32
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 37,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 39,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 32,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 35,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 46,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 39,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 49,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 41,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 54,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 49,
+          "jds": 43
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 48,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 48,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 41,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 57,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 45,
+          "jds": 50
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 52,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 56,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 53,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 52,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 52,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 61,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 66,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 53,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 57,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 64,
+          "jds": 56
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 63,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 64,
+          "jds": 62
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 69,
+          "jds": 60
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 71,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 89,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 87,
+          "jds": 58
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 80,
+          "jds": 59
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 99,
+          "jds": 70
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 86,
+          "jds": 69
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 97,
+          "jds": 74
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 100,
+          "jds": 75
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 107,
+          "jds": 69
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 107,
+          "jds": 75
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 96,
+          "jds": 71
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 102,
+          "jds": 77
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 100,
+          "jds": 80
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 112,
+          "jds": 76
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 113,
+          "jds": 81
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 116,
+          "jds": 79
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 119,
+          "jds": 83
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 110,
+          "jds": 87
+        }
+      ]
+    },
+    {
+      "slug": "mcp",
+      "label": "Model Context Protocol",
+      "category": "ai",
+      "influencerShare": 0.024,
+      "jdShare": 0.008,
+      "gapRatio": 3,
+      "logGap": 1.58,
+      "influencerCount": 580,
+      "jdCount": 690,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 0,
+          "jds": 4
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 1,
+          "jds": 2
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 1,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 3,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 5,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 8,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 5,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 6,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 9,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 8,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 7,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 12,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 8,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 10,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 12,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 12,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 9,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 13,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 11,
+          "jds": 6
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 9,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 11,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 13,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 11,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 13,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 15,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 11,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 11,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 13,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 17,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 18,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 15,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 15,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 18,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 17,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 22,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 19,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 20,
+          "jds": 13
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 24,
+          "jds": 15
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 22,
+          "jds": 19
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 27,
+          "jds": 16
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 27,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 24,
+          "jds": 19
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 26,
+          "jds": 20
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 28,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 26,
+          "jds": 20
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 32,
+          "jds": 24
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 28,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 30,
+          "jds": 24
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 28,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 29,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 32,
+          "jds": 23
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 29,
+          "jds": 22
+        }
+      ]
+    },
+    {
+      "slug": "generative-ui",
+      "label": "Generative UI",
+      "category": "emergent",
+      "influencerShare": 0.031,
+      "jdShare": 0.013,
+      "gapRatio": 2.38,
+      "logGap": 1.25,
+      "influencerCount": 750,
+      "jdCount": 1121,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 3,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 2,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 4,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 10,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 6,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 8,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 12,
+          "jds": 18
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 7,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 8,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 12,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 13,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 11,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 12,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 13,
+          "jds": 18
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 14,
+          "jds": 19
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 15,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 10,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 12,
+          "jds": 16
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 15,
+          "jds": 18
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 12,
+          "jds": 19
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 14,
+          "jds": 16
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 17,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 17,
+          "jds": 19
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 16,
+          "jds": 22
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 15,
+          "jds": 21
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 18,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 15,
+          "jds": 18
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 19,
+          "jds": 19
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 19,
+          "jds": 24
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 18,
+          "jds": 23
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 17,
+          "jds": 25
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 23,
+          "jds": 21
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 22,
+          "jds": 22
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 19,
+          "jds": 24
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 23,
+          "jds": 25
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 22,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 26,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 23,
+          "jds": 27
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 26,
+          "jds": 26
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 27,
+          "jds": 30
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 24,
+          "jds": 33
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 30,
+          "jds": 30
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 31,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 29,
+          "jds": 33
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 28,
+          "jds": 34
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 32,
+          "jds": 34
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 32,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 31,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 34,
+          "jds": 35
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 35,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 33,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 31,
+          "jds": 38
+        }
+      ]
+    },
+    {
+      "slug": "claude-code",
+      "label": "Claude Code",
+      "category": "tooling",
+      "influencerShare": 0.022,
+      "jdShare": 0.012,
+      "gapRatio": 1.83,
+      "logGap": 0.87,
+      "influencerCount": 532,
+      "jdCount": 1034,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 2,
+          "jds": 5
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 5,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 1,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 4,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 3,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 4,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 7,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 9,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 8,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 10,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 7,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 12,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 12,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 12,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 10,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 12,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 12,
+          "jds": 16
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 11,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 8,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 11,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 12,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 9,
+          "jds": 16
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 11,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 14,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 15,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 13,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 14,
+          "jds": 16
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 12,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 15,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 13,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 14,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 19,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 15,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 16,
+          "jds": 21
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 19,
+          "jds": 22
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 20,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 20,
+          "jds": 23
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 23,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 24,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 22,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 23,
+          "jds": 25
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 23,
+          "jds": 23
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 24,
+          "jds": 27
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 24,
+          "jds": 25
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 25,
+          "jds": 31
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 26,
+          "jds": 27
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 29,
+          "jds": 31
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 26,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 27,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 28,
+          "jds": 32
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 27,
+          "jds": 31
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 26,
+          "jds": 30
+        }
+      ]
+    },
+    {
+      "slug": "design-engineering",
+      "label": "Design engineering",
+      "category": "emergent",
+      "influencerShare": 0.048,
+      "jdShare": 0.028,
+      "gapRatio": 1.71,
+      "logGap": 0.78,
+      "influencerCount": 1161,
+      "jdCount": 2414,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 10,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 13,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 9,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 17,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 18,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 17,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 13,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 17,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 22,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 23,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 21,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 20,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 18,
+          "jds": 43
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 24,
+          "jds": 43
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 20,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 24,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 21,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 26,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 21,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 24,
+          "jds": 43
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 24,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 20,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 26,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 27,
+          "jds": 44
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 24,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 23,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 28,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 27,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 27,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 31,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 26,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 31,
+          "jds": 50
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 30,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 29,
+          "jds": 43
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 31,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 36,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 39,
+          "jds": 50
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 35,
+          "jds": 51
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 34,
+          "jds": 52
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 35,
+          "jds": 55
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 40,
+          "jds": 59
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 43,
+          "jds": 59
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 43,
+          "jds": 61
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 46,
+          "jds": 58
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 42,
+          "jds": 55
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 41,
+          "jds": 60
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 40,
+          "jds": 62
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 41,
+          "jds": 64
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 47,
+          "jds": 57
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 42,
+          "jds": 65
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 43,
+          "jds": 60
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 42,
+          "jds": 65
+        }
+      ]
+    },
+    {
+      "slug": "ai-product-designer",
+      "label": "AI Product Designer",
+      "category": "emergent",
+      "influencerShare": 0.053,
+      "jdShare": 0.032,
+      "gapRatio": 1.66,
+      "logGap": 0.73,
+      "influencerCount": 1282,
+      "jdCount": 2758,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 8,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 9,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 6,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 12,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 16,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 12,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 17,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 14,
+          "jds": 44
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 17,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 15,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 16,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 25,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 20,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 17,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 18,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 25,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 19,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 20,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 24,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 26,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 26,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 21,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 22,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 29,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 20,
+          "jds": 44
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 21,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 22,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 24,
+          "jds": 44
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 27,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 30,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 26,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 32,
+          "jds": 54
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 35,
+          "jds": 56
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 30,
+          "jds": 52
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 40,
+          "jds": 50
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 41,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 39,
+          "jds": 54
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 44,
+          "jds": 59
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 39,
+          "jds": 60
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 45,
+          "jds": 57
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 46,
+          "jds": 61
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 44,
+          "jds": 65
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 42,
+          "jds": 63
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 49,
+          "jds": 61
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 47,
+          "jds": 67
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 52,
+          "jds": 65
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 47,
+          "jds": 73
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 53,
+          "jds": 72
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 48,
+          "jds": 66
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 52,
+          "jds": 78
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 55,
+          "jds": 70
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 55,
+          "jds": 70
+        }
+      ]
+    },
+    {
+      "slug": "figma-make",
+      "label": "Figma Make",
+      "category": "tooling",
+      "influencerShare": 0.014,
+      "jdShare": 0.011,
+      "gapRatio": 1.27,
+      "logGap": 0.34,
+      "influencerCount": 338,
+      "jdCount": 948,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 1,
+          "jds": 7
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 1,
+          "jds": 4
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 4,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 1,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 3,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 5,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 3,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 6,
+          "jds": 8
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 7,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 5,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 6,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 6,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 7,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 5,
+          "jds": 9
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 8,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 8,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 8,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 7,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 5,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 5,
+          "jds": 10
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 9,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 7,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 9,
+          "jds": 12
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 6,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 8,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 9,
+          "jds": 11
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 8,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 9,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 8,
+          "jds": 14
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 9,
+          "jds": 13
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 8,
+          "jds": 15
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 10,
+          "jds": 18
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 9,
+          "jds": 17
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 10,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 13,
+          "jds": 18
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 11,
+          "jds": 20
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 12,
+          "jds": 18
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 14,
+          "jds": 22
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 15,
+          "jds": 23
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 15,
+          "jds": 24
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 17,
+          "jds": 26
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 18,
+          "jds": 24
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 16,
+          "jds": 27
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 17,
+          "jds": 26
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 17,
+          "jds": 28
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 17,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 18,
+          "jds": 30
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 19,
+          "jds": 27
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 19,
+          "jds": 32
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 17,
+          "jds": 27
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 19,
+          "jds": 28
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 20,
+          "jds": 31
+        }
+      ]
+    },
+    {
+      "slug": "prompt-engineering",
+      "label": "Prompt engineering",
+      "category": "ai",
+      "influencerShare": 0.036,
+      "jdShare": 0.03,
+      "gapRatio": 1.2,
+      "logGap": 0.26,
+      "influencerCount": 870,
+      "jdCount": 2586,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 11,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 8,
+          "jds": 32
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 14,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 13,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 11,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 12,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 16,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 15,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 13,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 15,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 13,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 12,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 13,
+          "jds": 44
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 16,
+          "jds": 44
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 19,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 20,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 18,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 13,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 16,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 15,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 14,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 18,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 17,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 15,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 15,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 19,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 20,
+          "jds": 50
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 16,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 17,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 23,
+          "jds": 52
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 24,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 20,
+          "jds": 52
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 21,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 19,
+          "jds": 50
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 23,
+          "jds": 55
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 22,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 26,
+          "jds": 61
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 22,
+          "jds": 61
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 28,
+          "jds": 64
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 24,
+          "jds": 58
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 25,
+          "jds": 62
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 28,
+          "jds": 60
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 31,
+          "jds": 62
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 27,
+          "jds": 62
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 30,
+          "jds": 63
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 27,
+          "jds": 67
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 31,
+          "jds": 74
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 30,
+          "jds": 75
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 29,
+          "jds": 75
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 33,
+          "jds": 70
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 31,
+          "jds": 70
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 32,
+          "jds": 71
+        }
+      ]
+    },
+    {
+      "slug": "design-systems",
+      "label": "Design systems",
+      "category": "design-process",
+      "influencerShare": 0.072,
+      "jdShare": 0.094,
+      "gapRatio": 0.77,
+      "logGap": -0.39,
+      "influencerCount": 1741,
+      "jdCount": 8103,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 33,
+          "jds": 151
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 36,
+          "jds": 154
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 36,
+          "jds": 142
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 29,
+          "jds": 154
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 29,
+          "jds": 154
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 38,
+          "jds": 151
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 31,
+          "jds": 156
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 31,
+          "jds": 165
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 36,
+          "jds": 148
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 35,
+          "jds": 166
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 35,
+          "jds": 144
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 34,
+          "jds": 167
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 33,
+          "jds": 168
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 35,
+          "jds": 151
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 35,
+          "jds": 166
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 39,
+          "jds": 168
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 33,
+          "jds": 168
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 33,
+          "jds": 154
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 35,
+          "jds": 152
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 33,
+          "jds": 154
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 30,
+          "jds": 163
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 36,
+          "jds": 152
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 38,
+          "jds": 168
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 31,
+          "jds": 153
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 35,
+          "jds": 152
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 33,
+          "jds": 168
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 39,
+          "jds": 157
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 35,
+          "jds": 161
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 30,
+          "jds": 163
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 36,
+          "jds": 158
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 39,
+          "jds": 161
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 32,
+          "jds": 161
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 37,
+          "jds": 165
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 31,
+          "jds": 161
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 34,
+          "jds": 170
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 35,
+          "jds": 161
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 34,
+          "jds": 170
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 37,
+          "jds": 173
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 33,
+          "jds": 154
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 41,
+          "jds": 171
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 36,
+          "jds": 154
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 33,
+          "jds": 178
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 37,
+          "jds": 171
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 34,
+          "jds": 171
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 40,
+          "jds": 164
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 42,
+          "jds": 179
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 33,
+          "jds": 181
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 37,
+          "jds": 173
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 43,
+          "jds": 178
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 38,
+          "jds": 169
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 37,
+          "jds": 162
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 40,
+          "jds": 177
+        }
+      ]
+    },
+    {
+      "slug": "accessibility",
+      "label": "Accessibility",
+      "category": "design-process",
+      "influencerShare": 0.019,
+      "jdShare": 0.031,
+      "gapRatio": 0.61,
+      "logGap": -0.71,
+      "influencerCount": 459,
+      "jdCount": 2672,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 9,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 9,
+          "jds": 52
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 9,
+          "jds": 45
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 9,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 10,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 9,
+          "jds": 48
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 10,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 10,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 7,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 10,
+          "jds": 50
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 7,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 7,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 10,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 10,
+          "jds": 54
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 8,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 7,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 7,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 10,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 10,
+          "jds": 52
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 9,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 8,
+          "jds": 54
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 10,
+          "jds": 55
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 9,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 8,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 7,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 7,
+          "jds": 54
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 8,
+          "jds": 46
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 11,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 10,
+          "jds": 54
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 8,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 10,
+          "jds": 53
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 7,
+          "jds": 51
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 7,
+          "jds": 49
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 11,
+          "jds": 55
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 7,
+          "jds": 47
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 10,
+          "jds": 56
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 11,
+          "jds": 54
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 8,
+          "jds": 57
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 9,
+          "jds": 50
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 10,
+          "jds": 51
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 10,
+          "jds": 54
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 10,
+          "jds": 56
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 11,
+          "jds": 50
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 11,
+          "jds": 50
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 11,
+          "jds": 56
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 11,
+          "jds": 54
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 9,
+          "jds": 50
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 9,
+          "jds": 53
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 10,
+          "jds": 57
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 8,
+          "jds": 56
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 9,
+          "jds": 51
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 11,
+          "jds": 53
+        }
+      ]
+    },
+    {
+      "slug": "research-ops",
+      "label": "Research operations",
+      "category": "design-process",
+      "influencerShare": 0.011,
+      "jdShare": 0.019,
+      "gapRatio": 0.58,
+      "logGap": -0.79,
+      "influencerCount": 266,
+      "jdCount": 1638,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 6,
+          "jds": 27
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 5,
+          "jds": 27
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 6,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 4,
+          "jds": 29
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 6,
+          "jds": 31
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 4,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 5,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 6,
+          "jds": 31
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 6,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 4,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 6,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 6,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 4,
+          "jds": 31
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 6,
+          "jds": 31
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 5,
+          "jds": 29
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 4,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 6,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 4,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 5,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 6,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 5,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 7,
+          "jds": 32
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 7,
+          "jds": 31
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 5,
+          "jds": 28
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 6,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 6,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 5,
+          "jds": 32
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 5,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 6,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 4,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 6,
+          "jds": 33
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 7,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 5,
+          "jds": 34
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 7,
+          "jds": 29
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 7,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 6,
+          "jds": 30
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 5,
+          "jds": 31
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 6,
+          "jds": 28
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 6,
+          "jds": 31
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 6,
+          "jds": 34
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 7,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 5,
+          "jds": 32
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 5,
+          "jds": 33
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 6,
+          "jds": 34
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 7,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 6,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 6,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 5,
+          "jds": 37
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 5,
+          "jds": 34
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 7,
+          "jds": 35
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 5,
+          "jds": 29
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 6,
+          "jds": 35
+        }
+      ]
+    },
+    {
+      "slug": "user-research",
+      "label": "User research",
+      "category": "design-process",
+      "influencerShare": 0.024,
+      "jdShare": 0.068,
+      "gapRatio": 0.35,
+      "logGap": -1.51,
+      "influencerCount": 580,
+      "jdCount": 5862,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 14,
+          "jds": 100
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 12,
+          "jds": 105
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 14,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 14,
+          "jds": 103
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 13,
+          "jds": 111
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 14,
+          "jds": 110
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 11,
+          "jds": 119
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 12,
+          "jds": 118
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 11,
+          "jds": 117
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 11,
+          "jds": 115
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 11,
+          "jds": 113
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 11,
+          "jds": 116
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 12,
+          "jds": 117
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 10,
+          "jds": 104
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 10,
+          "jds": 112
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 10,
+          "jds": 112
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 12,
+          "jds": 117
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 12,
+          "jds": 112
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 12,
+          "jds": 107
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 14,
+          "jds": 119
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 11,
+          "jds": 103
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 10,
+          "jds": 109
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 11,
+          "jds": 116
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 11,
+          "jds": 112
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 9,
+          "jds": 104
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 12,
+          "jds": 115
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 12,
+          "jds": 105
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 13,
+          "jds": 118
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 12,
+          "jds": 103
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 12,
+          "jds": 109
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 12,
+          "jds": 119
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 13,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 12,
+          "jds": 111
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 13,
+          "jds": 114
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 11,
+          "jds": 111
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 13,
+          "jds": 117
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 13,
+          "jds": 108
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 10,
+          "jds": 106
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 13,
+          "jds": 114
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 9,
+          "jds": 109
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 9,
+          "jds": 115
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 12,
+          "jds": 109
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 12,
+          "jds": 123
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 11,
+          "jds": 107
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 8,
+          "jds": 108
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 9,
+          "jds": 116
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 12,
+          "jds": 107
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 13,
+          "jds": 118
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 11,
+          "jds": 116
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 9,
+          "jds": 123
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 12,
+          "jds": 125
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 10,
+          "jds": 110
+        }
+      ]
+    },
+    {
+      "slug": "prototyping",
+      "label": "Prototyping",
+      "category": "design-process",
+      "influencerShare": 0.018,
+      "jdShare": 0.062,
+      "gapRatio": 0.29,
+      "logGap": -1.79,
+      "influencerCount": 435,
+      "jdCount": 5344,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 11,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 8,
+          "jds": 100
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 11,
+          "jds": 98
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 9,
+          "jds": 110
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 9,
+          "jds": 100
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 9,
+          "jds": 100
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 10,
+          "jds": 92
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 8,
+          "jds": 94
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 10,
+          "jds": 104
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 9,
+          "jds": 97
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 10,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 10,
+          "jds": 98
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 11,
+          "jds": 94
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 8,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 11,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 8,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 8,
+          "jds": 99
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 11,
+          "jds": 97
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 11,
+          "jds": 104
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 7,
+          "jds": 111
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 9,
+          "jds": 96
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 8,
+          "jds": 93
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 11,
+          "jds": 110
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 9,
+          "jds": 109
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 9,
+          "jds": 99
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 8,
+          "jds": 103
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 11,
+          "jds": 106
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 8,
+          "jds": 109
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 9,
+          "jds": 96
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 8,
+          "jds": 111
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 9,
+          "jds": 110
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 9,
+          "jds": 95
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 11,
+          "jds": 94
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 10,
+          "jds": 110
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 8,
+          "jds": 105
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 7,
+          "jds": 97
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 9,
+          "jds": 95
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 10,
+          "jds": 98
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 7,
+          "jds": 107
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 10,
+          "jds": 108
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 8,
+          "jds": 96
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 8,
+          "jds": 96
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 7,
+          "jds": 101
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 8,
+          "jds": 107
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 7,
+          "jds": 104
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 10,
+          "jds": 98
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 6,
+          "jds": 99
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 9,
+          "jds": 102
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 7,
+          "jds": 105
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 10,
+          "jds": 97
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 9,
+          "jds": 114
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 8,
+          "jds": 109
+        }
+      ]
+    },
+    {
+      "slug": "figma",
+      "label": "Figma",
+      "category": "tooling",
+      "influencerShare": 0.041,
+      "jdShare": 0.154,
+      "gapRatio": 0.27,
+      "logGap": -1.89,
+      "influencerCount": 991,
+      "jdCount": 13275,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 24,
+          "jds": 256
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 24,
+          "jds": 256
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 22,
+          "jds": 248
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 23,
+          "jds": 262
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 20,
+          "jds": 250
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 24,
+          "jds": 251
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 20,
+          "jds": 241
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 23,
+          "jds": 250
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 24,
+          "jds": 253
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 22,
+          "jds": 263
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 19,
+          "jds": 267
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 19,
+          "jds": 265
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 19,
+          "jds": 248
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 20,
+          "jds": 249
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 22,
+          "jds": 266
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 19,
+          "jds": 266
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 23,
+          "jds": 268
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 18,
+          "jds": 267
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 18,
+          "jds": 267
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 18,
+          "jds": 243
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 20,
+          "jds": 247
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 18,
+          "jds": 260
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 19,
+          "jds": 244
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 19,
+          "jds": 248
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 16,
+          "jds": 257
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 16,
+          "jds": 252
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 17,
+          "jds": 248
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 20,
+          "jds": 268
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 17,
+          "jds": 247
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 16,
+          "jds": 258
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 18,
+          "jds": 241
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 18,
+          "jds": 268
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 17,
+          "jds": 258
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 20,
+          "jds": 248
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 16,
+          "jds": 266
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 17,
+          "jds": 258
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 16,
+          "jds": 268
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 17,
+          "jds": 250
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 17,
+          "jds": 268
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 18,
+          "jds": 251
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 18,
+          "jds": 261
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 20,
+          "jds": 267
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 18,
+          "jds": 267
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 15,
+          "jds": 248
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 16,
+          "jds": 267
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 17,
+          "jds": 266
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 15,
+          "jds": 251
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 18,
+          "jds": 245
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 17,
+          "jds": 258
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 16,
+          "jds": 251
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 16,
+          "jds": 274
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 15,
+          "jds": 252
+        }
+      ]
+    },
+    {
+      "slug": "information-architecture",
+      "label": "Information architecture",
+      "category": "design-process",
+      "influencerShare": 0.006,
+      "jdShare": 0.023,
+      "gapRatio": 0.26,
+      "logGap": -1.94,
+      "influencerCount": 145,
+      "jdCount": 1983,
+      "weeklySeries": [
+        {
+          "weekStart": "2025-04-21T00:00:00.000Z",
+          "posts": 4,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-04-28T00:00:00.000Z",
+          "posts": 3,
+          "jds": 41
+        },
+        {
+          "weekStart": "2025-05-05T00:00:00.000Z",
+          "posts": 3,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-05-12T00:00:00.000Z",
+          "posts": 3,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-05-19T00:00:00.000Z",
+          "posts": 4,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-05-26T00:00:00.000Z",
+          "posts": 3,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-06-02T00:00:00.000Z",
+          "posts": 4,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-06-09T00:00:00.000Z",
+          "posts": 3,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-06-16T00:00:00.000Z",
+          "posts": 3,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-06-23T00:00:00.000Z",
+          "posts": 3,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-06-30T00:00:00.000Z",
+          "posts": 3,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-07-07T00:00:00.000Z",
+          "posts": 3,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-07-14T00:00:00.000Z",
+          "posts": 3,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-07-21T00:00:00.000Z",
+          "posts": 3,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-07-28T00:00:00.000Z",
+          "posts": 3,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-08-04T00:00:00.000Z",
+          "posts": 2,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-08-11T00:00:00.000Z",
+          "posts": 3,
+          "jds": 39
+        },
+        {
+          "weekStart": "2025-08-18T00:00:00.000Z",
+          "posts": 3,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-08-25T00:00:00.000Z",
+          "posts": 3,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-09-01T00:00:00.000Z",
+          "posts": 3,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-09-08T00:00:00.000Z",
+          "posts": 4,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-09-15T00:00:00.000Z",
+          "posts": 3,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-09-22T00:00:00.000Z",
+          "posts": 2,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-09-29T00:00:00.000Z",
+          "posts": 3,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-10-06T00:00:00.000Z",
+          "posts": 3,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-10-13T00:00:00.000Z",
+          "posts": 4,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-10-20T00:00:00.000Z",
+          "posts": 3,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-10-27T00:00:00.000Z",
+          "posts": 2,
+          "jds": 35
+        },
+        {
+          "weekStart": "2025-11-03T00:00:00.000Z",
+          "posts": 2,
+          "jds": 38
+        },
+        {
+          "weekStart": "2025-11-10T00:00:00.000Z",
+          "posts": 3,
+          "jds": 37
+        },
+        {
+          "weekStart": "2025-11-17T00:00:00.000Z",
+          "posts": 3,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-11-24T00:00:00.000Z",
+          "posts": 3,
+          "jds": 42
+        },
+        {
+          "weekStart": "2025-12-01T00:00:00.000Z",
+          "posts": 3,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-12-08T00:00:00.000Z",
+          "posts": 4,
+          "jds": 40
+        },
+        {
+          "weekStart": "2025-12-15T00:00:00.000Z",
+          "posts": 4,
+          "jds": 36
+        },
+        {
+          "weekStart": "2025-12-22T00:00:00.000Z",
+          "posts": 3,
+          "jds": 43
+        },
+        {
+          "weekStart": "2025-12-29T00:00:00.000Z",
+          "posts": 3,
+          "jds": 41
+        },
+        {
+          "weekStart": "2026-01-05T00:00:00.000Z",
+          "posts": 4,
+          "jds": 38
+        },
+        {
+          "weekStart": "2026-01-12T00:00:00.000Z",
+          "posts": 3,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-01-19T00:00:00.000Z",
+          "posts": 3,
+          "jds": 42
+        },
+        {
+          "weekStart": "2026-01-26T00:00:00.000Z",
+          "posts": 4,
+          "jds": 37
+        },
+        {
+          "weekStart": "2026-02-02T00:00:00.000Z",
+          "posts": 3,
+          "jds": 40
+        },
+        {
+          "weekStart": "2026-02-09T00:00:00.000Z",
+          "posts": 2,
+          "jds": 37
+        },
+        {
+          "weekStart": "2026-02-16T00:00:00.000Z",
+          "posts": 4,
+          "jds": 41
+        },
+        {
+          "weekStart": "2026-02-23T00:00:00.000Z",
+          "posts": 3,
+          "jds": 36
+        },
+        {
+          "weekStart": "2026-03-02T00:00:00.000Z",
+          "posts": 2,
+          "jds": 38
+        },
+        {
+          "weekStart": "2026-03-09T00:00:00.000Z",
+          "posts": 3,
+          "jds": 38
+        },
+        {
+          "weekStart": "2026-03-16T00:00:00.000Z",
+          "posts": 3,
+          "jds": 41
+        },
+        {
+          "weekStart": "2026-03-23T00:00:00.000Z",
+          "posts": 2,
+          "jds": 39
+        },
+        {
+          "weekStart": "2026-03-30T00:00:00.000Z",
+          "posts": 2,
+          "jds": 39
+        },
+        {
+          "weekStart": "2026-04-06T00:00:00.000Z",
+          "posts": 3,
+          "jds": 43
+        },
+        {
+          "weekStart": "2026-04-13T00:00:00.000Z",
+          "posts": 2,
+          "jds": 42
+        }
+      ]
+    }
   ],
   "excluded": [
-    { "slug": "fine-tuning", "label": "Fine-tuning", "reason": "sample-size", "influencerCount": 7, "jdCount": 312 },
-    { "slug": "embeddings", "label": "Embeddings", "reason": "sample-size", "influencerCount": 8, "jdCount": 245 }
+    {
+      "slug": "fine-tuning",
+      "label": "Fine-tuning",
+      "reason": "sample-size",
+      "influencerCount": 7,
+      "jdCount": 312
+    },
+    {
+      "slug": "embeddings",
+      "label": "Embeddings",
+      "reason": "sample-size",
+      "influencerCount": 8,
+      "jdCount": 245
+    }
+  ],
+  "weeklyTotals": [
+    {
+      "weekStart": "2025-04-21T00:00:00.000Z",
+      "posts": 273,
+      "jds": 1335
+    },
+    {
+      "weekStart": "2025-04-28T00:00:00.000Z",
+      "posts": 249,
+      "jds": 1296
+    },
+    {
+      "weekStart": "2025-05-05T00:00:00.000Z",
+      "posts": 322,
+      "jds": 1286
+    },
+    {
+      "weekStart": "2025-05-12T00:00:00.000Z",
+      "posts": 313,
+      "jds": 1347
+    },
+    {
+      "weekStart": "2025-05-19T00:00:00.000Z",
+      "posts": 349,
+      "jds": 1329
+    },
+    {
+      "weekStart": "2025-05-26T00:00:00.000Z",
+      "posts": 338,
+      "jds": 1425
+    },
+    {
+      "weekStart": "2025-06-02T00:00:00.000Z",
+      "posts": 372,
+      "jds": 1343
+    },
+    {
+      "weekStart": "2025-06-09T00:00:00.000Z",
+      "posts": 392,
+      "jds": 1360
+    },
+    {
+      "weekStart": "2025-06-16T00:00:00.000Z",
+      "posts": 381,
+      "jds": 1416
+    },
+    {
+      "weekStart": "2025-06-23T00:00:00.000Z",
+      "posts": 403,
+      "jds": 1366
+    },
+    {
+      "weekStart": "2025-06-30T00:00:00.000Z",
+      "posts": 395,
+      "jds": 1434
+    },
+    {
+      "weekStart": "2025-07-07T00:00:00.000Z",
+      "posts": 412,
+      "jds": 1427
+    },
+    {
+      "weekStart": "2025-07-14T00:00:00.000Z",
+      "posts": 431,
+      "jds": 1347
+    },
+    {
+      "weekStart": "2025-07-21T00:00:00.000Z",
+      "posts": 444,
+      "jds": 1365
+    },
+    {
+      "weekStart": "2025-07-28T00:00:00.000Z",
+      "posts": 459,
+      "jds": 1393
+    },
+    {
+      "weekStart": "2025-08-04T00:00:00.000Z",
+      "posts": 427,
+      "jds": 1342
+    },
+    {
+      "weekStart": "2025-08-11T00:00:00.000Z",
+      "posts": 453,
+      "jds": 1327
+    },
+    {
+      "weekStart": "2025-08-18T00:00:00.000Z",
+      "posts": 497,
+      "jds": 1369
+    },
+    {
+      "weekStart": "2025-08-25T00:00:00.000Z",
+      "posts": 485,
+      "jds": 1404
+    },
+    {
+      "weekStart": "2025-09-01T00:00:00.000Z",
+      "posts": 514,
+      "jds": 1375
+    },
+    {
+      "weekStart": "2025-09-08T00:00:00.000Z",
+      "posts": 498,
+      "jds": 1408
+    },
+    {
+      "weekStart": "2025-09-15T00:00:00.000Z",
+      "posts": 515,
+      "jds": 1464
+    },
+    {
+      "weekStart": "2025-09-22T00:00:00.000Z",
+      "posts": 535,
+      "jds": 1436
+    },
+    {
+      "weekStart": "2025-09-29T00:00:00.000Z",
+      "posts": 545,
+      "jds": 1433
+    },
+    {
+      "weekStart": "2025-10-06T00:00:00.000Z",
+      "posts": 596,
+      "jds": 1446
+    },
+    {
+      "weekStart": "2025-10-13T00:00:00.000Z",
+      "posts": 591,
+      "jds": 1550
+    },
+    {
+      "weekStart": "2025-10-20T00:00:00.000Z",
+      "posts": 651,
+      "jds": 1604
+    },
+    {
+      "weekStart": "2025-10-27T00:00:00.000Z",
+      "posts": 679,
+      "jds": 1623
+    },
+    {
+      "weekStart": "2025-11-03T00:00:00.000Z",
+      "posts": 692,
+      "jds": 1629
+    },
+    {
+      "weekStart": "2025-11-10T00:00:00.000Z",
+      "posts": 703,
+      "jds": 1709
+    },
+    {
+      "weekStart": "2025-11-17T00:00:00.000Z",
+      "posts": 711,
+      "jds": 1663
+    },
+    {
+      "weekStart": "2025-11-24T00:00:00.000Z",
+      "posts": 723,
+      "jds": 1700
+    },
+    {
+      "weekStart": "2025-12-01T00:00:00.000Z",
+      "posts": 768,
+      "jds": 1774
+    },
+    {
+      "weekStart": "2025-12-08T00:00:00.000Z",
+      "posts": 758,
+      "jds": 1831
+    },
+    {
+      "weekStart": "2025-12-15T00:00:00.000Z",
+      "posts": 815,
+      "jds": 1788
+    },
+    {
+      "weekStart": "2025-12-22T00:00:00.000Z",
+      "posts": 800,
+      "jds": 1823
+    },
+    {
+      "weekStart": "2025-12-29T00:00:00.000Z",
+      "posts": 778,
+      "jds": 1912
+    },
+    {
+      "weekStart": "2026-01-05T00:00:00.000Z",
+      "posts": 807,
+      "jds": 1918
+    },
+    {
+      "weekStart": "2026-01-12T00:00:00.000Z",
+      "posts": 821,
+      "jds": 1886
+    },
+    {
+      "weekStart": "2026-01-19T00:00:00.000Z",
+      "posts": 798,
+      "jds": 1939
+    },
+    {
+      "weekStart": "2026-01-26T00:00:00.000Z",
+      "posts": 849,
+      "jds": 1885
+    },
+    {
+      "weekStart": "2026-02-02T00:00:00.000Z",
+      "posts": 863,
+      "jds": 1879
+    },
+    {
+      "weekStart": "2026-02-09T00:00:00.000Z",
+      "posts": 851,
+      "jds": 1949
+    },
+    {
+      "weekStart": "2026-02-16T00:00:00.000Z",
+      "posts": 856,
+      "jds": 1972
+    },
+    {
+      "weekStart": "2026-02-23T00:00:00.000Z",
+      "posts": 840,
+      "jds": 1967
+    },
+    {
+      "weekStart": "2026-03-02T00:00:00.000Z",
+      "posts": 849,
+      "jds": 1991
+    },
+    {
+      "weekStart": "2026-03-09T00:00:00.000Z",
+      "posts": 859,
+      "jds": 1987
+    },
+    {
+      "weekStart": "2026-03-16T00:00:00.000Z",
+      "posts": 903,
+      "jds": 1962
+    },
+    {
+      "weekStart": "2026-03-23T00:00:00.000Z",
+      "posts": 941,
+      "jds": 1877
+    },
+    {
+      "weekStart": "2026-03-30T00:00:00.000Z",
+      "posts": 941,
+      "jds": 1865
+    },
+    {
+      "weekStart": "2026-04-06T00:00:00.000Z",
+      "posts": 950,
+      "jds": 1917
+    },
+    {
+      "weekStart": "2026-04-13T00:00:00.000Z",
+      "posts": 961,
+      "jds": 1904
+    }
   ]
 }

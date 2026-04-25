@@ -1,0 +1,71 @@
+---
+title: Discourse vs. hiring — methodology
+essaySlug: discourse-vs-hiring
+essayYear: 2026
+date: 2026-04-24
+---
+
+## Purpose
+
+This page documents the full methodology behind *The discourse-vs-hiring gap*. Any finding in the essay can be traced back to the exact classifier prompt, scoring formula, and data snapshot used to produce it.
+
+## Data sources
+
+Two corpora, both scraped and maintained by Design Drift:
+
+1. **InfluencerPost** — LinkedIn, X, and Substack posts from 483 hand-curated design / AI / growth voices. Snapshot: 24,183 posts within the 52-week window ending April 24, 2026.
+2. **JobListing** — design job descriptions from Greenhouse, Ashby, SmartRecruiters, Workday, Adzuna, LinkedIn, Dribbble, and WeWorkRemotely. Snapshot: 86,201 JDs within the same window.
+
+*(Counts above are the values committed in the initial fixture snapshot at `content/data/2026/discourse-vs-hiring.json`; they will be replaced by real numbers after the classifier backfill described in plan Task B5 completes.)*
+
+## Taxonomy
+
+Forty topics grouped into five categories: AI, Design Process, Tooling, Growth / PM, Emergent. Each topic has canonical aliases for phrase-matching resilience (e.g., `"figma make" | "figma.make" | "FM"` all map to `figma-make`).
+
+The full taxonomy is seeded via `prisma/seed-topics.ts` in the Design Drift repo. Topic revisions are append-only — re-classifying with a new taxonomy produces a new snapshot with a new date.
+
+## Classifier
+
+Every post and JD is classified via Claude Haiku (`claude-haiku-4-5-20251001`) against the taxonomy. The system prompt instructs:
+
+> Return only slugs present in the taxonomy. A topic must be *discussed*, not merely name-dropped. Respond with JSON only.
+
+Full prompt and code: [`src/lib/topic-classifier.ts`](https://github.com/btighe428/design-drift/blob/main/src/lib/topic-classifier.ts).
+
+Classifier output is filtered against the active taxonomy (any hallucinated slug is dropped) and cached by SHA-256 content hash.
+
+**Validation:** Before the full backfill, 50 posts + 50 JDs were hand-audited. Precision: TBD — audit pending (see plan Task A5). Audit record: [`docs/classifier-audit-2026-04.md`](https://github.com/btighe428/design-drift/blob/main/docs/classifier-audit-2026-04.md).
+
+## Scoring formula
+
+For each topic, across the 52-week window:
+
+```
+influencerShare = posts_with_topic / total_posts
+jdShare         = jds_with_topic   / total_jds
+gapRatio        = influencerShare / jdShare
+logGap          = log₂(gapRatio)
+```
+
+A `logGap` of +1 means the topic appears twice as often in posts (per-capita) as in JDs; −1 means the reverse.
+
+## Exclusion rules
+
+A topic is excluded from the report if:
+- It has fewer than 10 posts mentioning it in the window (reason: `sample-size`).
+- It has fewer than 10 JDs mentioning it (reason: `sample-size`).
+- `jdShare === 0` (reason: `zero-jd-share`).
+
+The essay lists excluded topics in a sidenote to prevent selective omission.
+
+## Known limitations
+
+- **English-only.** Both corpora are filtered to English content.
+- **Public-company bias.** JDs come from ATS aggregators; companies on greenhouse.io / ashbyhq / etc. skew larger and better-funded.
+- **Influencer selection bias.** The 483 influencers were hand-curated; the sample is not randomized.
+- **Attribution sensitivity.** Individual companies and humans are anonymized in the essay — aggregate-only. Sidenotes may cite example descriptors (*"a Staff role at a Series C fintech"*) without naming organizations.
+- **Classifier approximation.** Haiku is not perfect. Precision is measured and disclosed.
+
+## Reproducibility
+
+The JSON snapshot the essay references is committed at [`content/data/2026/discourse-vs-hiring.json`](https://github.com/btighe428/briantighe-design-v2/blob/main/content/data/2026/discourse-vs-hiring.json). Any third party can check out that commit, rerun `npm run bake discourse-vs-hiring` against their own Design Drift instance (or a mock), and regenerate the exact figures in the essay.

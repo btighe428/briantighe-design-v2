@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "bake": "node --env-file=.env.local scripts/bake-data.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
